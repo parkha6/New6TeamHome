@@ -2,35 +2,35 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 /// <summary>
-/// °ÔÀÓ¸Å´ÏÀú ¼ø¼­°ü¸®
+/// ê²Œì„ë§¤ë‹ˆì € ìˆœì„œê´€ë¦¬
 /// </summary>
 public class GameManager : MonoSingleton<GameManager>
 {
     /// <summary>
-    /// sceneName¿¡ ¾À ÀÌ¸§À» ÀÔ·ÂÇÏ¸é ÇØ´ç¾ÀÀ¸·Î ÀÌµ¿.
+    /// sceneNameì— ì”¬ ì´ë¦„ì„ ì…ë ¥í•˜ë©´ í•´ë‹¹ì”¬ìœ¼ë¡œ ì´ë™.
     /// </summary>
     /// <param name="sceneName"></param>
     internal void ChangeScene(string sceneName)
     { SceneManager.LoadScene(sceneName); }
     /// <summary>
-    /// ÀÏ½ÃÁ¤Áö½Ã UI¶ç¿ì±â
+    /// ì¼ì‹œì •ì§€ì‹œ UIë„ìš°ê¸°
     /// </summary>
     internal void Pause()
     { StopTime(); }
     internal void EndPause()
     { RunTime(); }
     /// <summary>
-    /// ½Ã°£À» ¸ØÃá´Ù.
+    /// ì‹œê°„ì„ ë©ˆì¶˜ë‹¤.
     /// </summary>
     void StopTime()
     { Time.timeScale = Consts.none; }
     /// <summary>
-    /// ½Ã°£À» ´Ù½Ã ¿òÁ÷ÀÎ´Ù.
+    /// ì‹œê°„ì„ ë‹¤ì‹œ ì›€ì§ì¸ë‹¤.
     /// </summary>
     void RunTime()
     { Time.timeScale = Consts.minValue; }
     /// <summary>
-    /// °ÔÀÓ Á¾·á
+    /// ê²Œì„ ì¢…ë£Œ
     /// </summary>
     internal void EndGame()
     {

@@ -1,15 +1,15 @@
 using UnityEngine;
 /// <summary>
-/// ¸ÅÁ÷³Ñ¹ö Ã³¸®¿ë
+/// ë§¤ì§ë„˜ë²„ ì²˜ë¦¬ìš©
 /// </summary>
 public class Consts : MonoBehaviour
 {
     /// <summary>
-    /// ¾Æ¹«°Íµµ ¾øÀ» ¶§
+    /// ì•„ë¬´ê²ƒë„ ì—†ì„ ë•Œ
     /// </summary>
     internal const byte none = 0;
     /// <summary>
-    /// ÃÖ¼Ò°ª
+    /// ìµœì†Œê°’
     /// </summary>
     internal const byte minValue = 1;
 }
