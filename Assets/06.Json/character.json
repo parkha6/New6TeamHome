@@ -1,6 +1,5 @@
-﻿
- {
- "character": [
+
+ [
  {
   "ID": 10001,
   "Name": "Player",
@@ -38,4 +37,4 @@
   "Spd_Value_max": 0.6
  }
  ]
- }
+ 
