@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 /// <summary>
@@ -28,4 +29,14 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     void RunTime()
     { Time.timeScale = Consts.minValue; }
+    /// <summary>
+    /// 게임 종료
+    /// </summary>
+    internal void EndGame()
+    {
+#if UNITY_EDITOR
+        if (EditorApplication.isPlaying)
+        { EditorApplication.ExitPlaymode(); }
+#endif
+        Application.Quit(); }
 }
