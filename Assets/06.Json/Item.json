@@ -1,0 +1,79 @@
+﻿
+ {
+"items": [
+ {
+  "ID": 20001,
+  "Name": "Gold",
+  "Type": "item"
+ },
+ {
+  "ID": 20002,
+  "Name": "skin_piece",
+  "Type": "item"
+ },
+ {
+  "ID": 20003,
+  "Name": "wing_piece",
+  "Type": "item"
+ },
+ {
+  "ID": 20004,
+  "Name": "mantis_weapon",
+  "Type": "weapon",
+  "Atk_Value": 0.4,
+  "Def_Value": 10,
+  "Spd_Value": 0,
+  "HP_Value": 0
+ },
+ {
+  "ID": 20005,
+  "Name": "wasp_weapon",
+  "Type": "weapon",
+  "Atk_Value": 0.6,
+  "Def_Value": -0.2,
+  "Spd_Value": 0.1,
+  "HP_Value": 0
+ },
+ {
+  "ID": 20006,
+  "Name": "grasshopper_weapon",
+  "Type": "weapon",
+  "Atk_Value": 0,
+  "Def_Value": 0.3,
+  "Spd_Value": 0.2,
+  "HP_Value": 0
+ },
+ {
+  "ID": 20007,
+  "Name": "bee_weapon",
+  "Type": "weapon",
+  "Atk_Value": 0,
+  "Def_Value": 0.2,
+  "Spd_Value": 0,
+  "HP_Value": 50
+ },
+ {
+  "ID": 20008,
+  "Name": "cockroach_weapon",
+  "Type": "weapon",
+  "Atk_Value": 0,
+  "Def_Value": 0,
+  "Spd_Value": 0,
+  "HP_Value": 0
+ },
+ {
+  "ID": 20009,
+  "Name": "ant_weapon",
+  "Type": "weapon",
+  "Atk_Value": 0.2,
+  "Def_Value": 0,
+  "Spd_Value": 0,
+  "HP_Value": 80
+ },
+ {
+  "ID": 20010,
+  "Name": "weapon_chest",
+  "Type": "item"
+ }
+]
+ }
