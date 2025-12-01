@@ -1,4 +1,4 @@
-﻿using Newtonsoft;
+using Newtonsoft;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -37,7 +37,7 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    private void LoadDefaultData() // 나중에 역직렬화 방법 바꿔서도 해보자..
+    private void LoadDefaultData()
     {
         if (defaultPlayerDataAsset == null)
         {
