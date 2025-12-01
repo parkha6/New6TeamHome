@@ -8,6 +8,7 @@ public class CockroachSkill : BaseSkill
     [Header("Skill 1 Settings")]
     public Vector2 skill1BoxSize = new Vector2(1.1f, 1f);
     public float skill1Distance = 1.1f;
+    public float skill1Height = 1f;
 
     [Header("Skill 2 Settings")]
     public Vector2 skill2BoxSize = new Vector2(2.5f, 2.5f);
@@ -23,7 +24,11 @@ public class CockroachSkill : BaseSkill
 
     public override void SkillNum1()
     {
-        Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance);
+        Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance, skill1Height);
+
+#if UNITY_EDITOR
+        DebugDrawBox(skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.2f);
+#endif
 
         foreach (Collider2D hit in hits)
         {

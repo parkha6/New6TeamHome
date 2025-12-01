@@ -14,10 +14,10 @@ public abstract class BaseSkill : MonoBehaviour
     public abstract void SkillNum1();
     public abstract void SkillNum2();
 
-    protected Collider2D[] CheckRange(Vector2 size, float distance)
+    protected Collider2D[] CheckRange(Vector2 size, float distance, float height)
     {
         Vector2 forward = player.transform.right;
-        Vector2 center = (Vector2)player.transform.position + forward * distance;
+        Vector2 center = (Vector2)player.transform.position + forward * distance + Vector2.up * height;
         return Physics2D.OverlapBoxAll(center, size, 0f);
     }
 
@@ -26,12 +26,10 @@ public abstract class BaseSkill : MonoBehaviour
         player.transform.position += (Vector3)(direction.normalized * distance);
     }
 
-
-
 #if UNITY_EDITOR
-    protected void DebugDrawBox(Vector2 boxSize, float distance, Color color, float duration = 0.1f)
+    protected void DebugDrawBox(Vector2 boxSize, float distance, Color color, float height, float duration = 0.1f)
     {
-        Vector2 center = (Vector2)player.transform.position + Vector2.right * distance;
+        Vector2 center = (Vector2)player.transform.position + Vector2.right * distance + Vector2.up * height;
 
         Vector2 half = boxSize / 2f;
 
