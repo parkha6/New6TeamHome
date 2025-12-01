@@ -276,6 +276,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f69703f6bed8254a810635331b270fa, type: 3}
+--- !u!1 &1333064518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1333064520}
+  - component: {fileID: 1333064519}
+  m_Layer: 0
+  m_Name: CurrencyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1333064519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333064518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 875e76228498f5b4e820015529704c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gold: 0
+  skin_piece: 0
+  wing_piece: 0
+  goldItem: {fileID: 0}
+  skin_pieceItem: {fileID: 0}
+  wing_pieceItem: {fileID: 0}
+--- !u!4 &1333064520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333064518}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.9889019, y: 4.6307983, z: 0.0020067906}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1567825322
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -340,3 +390,4 @@ SceneRoots:
   - {fileID: 786347654}
   - {fileID: 1567825322}
   - {fileID: 588401948}
+  - {fileID: 1333064520}
