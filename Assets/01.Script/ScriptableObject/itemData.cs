@@ -1,13 +1,13 @@
-
+ï»¿
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/Item")]
-public class itemData : ScriptableObject
+public class ItemData : ScriptableObject
 {
     public int id;
     public string itemName;
     public Sprite icon;
 
-    public ItemType itemType;    // Currency / Equipment ±¸ºĞ
-    public SkinType skinType;    // ¾î¶² ¿ÜÇÇÀÎÁö ±¸ºĞ
+    public ItemType itemType;    // Currency / Equipment êµ¬ë¶„
+    public SkinType skinType;    // ì–´ë–¤ ì™¸í”¼ì¸ì§€ êµ¬ë¶„
 }
