@@ -15,6 +15,8 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance { get; private set; }
     public event Action OnPlayerStatusChanged;
     public event Action OnPlayerInvChanged;
+    public bool isInvincible = false; 
+    public float invincibilityDuration; //무적 시간
 
     [Header("Default Data & Config")]
     [SerializeField]
@@ -156,4 +158,9 @@ public class PlayerManager : MonoBehaviour
     //{
 
     //}
+    public void Invincibility()
+    {
+        // 추후 takedamage 무시 로직 추가
+    }
+
 }
