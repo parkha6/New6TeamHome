@@ -37,7 +37,7 @@ public class CockroachSkill : BaseSkill
         Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance, skill1Height);
 
 #if UNITY_EDITOR
-        DebugDrawBox(skillOrigin, skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.2f);
+        DebugDrawBox(skillOrigin, skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.5f);
 #endif
         foreach (Collider2D hit in hits)
         {
