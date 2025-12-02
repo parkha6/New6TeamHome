@@ -51,7 +51,7 @@ public class PlayerManager : MonoBehaviour
         try
         {
             JToken root = JToken.Parse(defaultPlayerDataAsset.text);
-            JArray playerArray = (JArray)root["Players"];
+            JArray playerArray = root as JArray;
 
             if (playerArray != null && playerArray.Count > 0)
             {
