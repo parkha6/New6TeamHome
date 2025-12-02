@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash;
     public float facingDirection = 1.0f; // 바라보는 방향 디폴트는 1f(오른쪽)
     private float originalGravityScale; // 원래 중력값 저장할 변수
+    private Collider2D playerCollider;
 
 
     private Rigidbody2D rb;
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         canDash = true;
         originalGravityScale = rb.gravityScale;
+        playerCollider = GetComponent<Collider2D>();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -100,7 +102,10 @@ public class PlayerMovement : MonoBehaviour
     {
         isDashing = true;
         canDash = false;
-
+        if (playerCollider != null) // 기획의도대로 콜라이더 비활성화하여 회피기능 추가
+        {
+            playerCollider.enabled = false;
+        }
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero; // 대시 작동 시 순간적으로 플레이어에게 가해지는 물리력 0으로 만들어 온전히 대시만 기능하게 함
 
@@ -113,7 +118,12 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashDuration);
         canDash = true;
         isDashing = false;
+        if (playerCollider != null)
+        {
+            playerCollider.enabled = true;
+        }
         rb.gravityScale = originalGravityScale; // 원래대로 중력 되돌려줌.
+
         Debug.Log("대시 사용 가능");
 
     }
