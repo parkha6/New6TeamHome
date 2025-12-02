@@ -20,14 +20,27 @@ public class EnhanceNPC : MonoBehaviour
         else if (data.skinType == SkinType.Cockroach)
             currentLevel = skinState.cockroachLevel;
 
-        // 'maxLevel' → 'maxlevel'로 변경 (정의된 필드명과 일치)
-        if (currentLevel >= data.maxlevel)
+        if (currentLevel >= data.maxLevel)
         {
             Debug.Log("이미 최대 강화 레벨입니다.");
             return;
         }
         // 3) costs로 재화 충분한지 확인
-        // 4) 충분하면 TrySpendCurrency로 차감
-        // 5) skinState.IncreaseLevel(data.skinType); 로 강화 레벨 +1
+          foreach (EvolutionCost cost in data.costs)
+        {
+            if (!wallet.HasCurrency(cost.item, cost.amount))
+            {
+                Debug.Log("재화 부족");
+                return;
+            }
+        }
+        // 4) 이제 실제로 비용 차감
+        foreach (EvolutionCost cost in data.costs)
+        {
+            wallet.TrySpendCurrency(cost.item, cost.amount);
+        }
+
+        // 5) 마지막으로 레벨 업
+        skinState.IncreaseLevel(data.skinType);
     }
 }

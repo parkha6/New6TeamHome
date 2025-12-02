@@ -9,7 +9,7 @@ public class SkinEnhanceData : ScriptableObject
     public string description;
 
     public SkinType skinType;
-    public int maxlevel;
+    public int maxLevel;
 
     public EvolutionCost[] costs;
 }
