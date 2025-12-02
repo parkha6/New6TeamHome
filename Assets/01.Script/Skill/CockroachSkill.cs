@@ -11,6 +11,8 @@ public class CockroachSkill : BaseSkill
     public float skill1Height = 1f;
     public float skill1AttackDistance = 3;
 
+    public float invincibility;
+
     void Update() // Test
     {
         if (Input.GetKeyDown(KeyCode.A))
@@ -45,6 +47,10 @@ public class CockroachSkill : BaseSkill
     }
     public override void SkillNum2()
     {
-        
+        if (PlayerManager.Instance.isInvincible) return;
+        PlayerManager.Instance.invincibilityDuration = invincibility;
+        invincibility = 5f;
+        PlayerManager.Instance.Invincibility();
+        Debug.Log($"{invincibility}");
     }
 }
