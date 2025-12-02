@@ -380,6 +380,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1113143895765047573, guid: 5db5dad34dcaed7498e001bc68ced366, type: 3}
+      propertyPath: isWorking
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1113143895765047573, guid: 5db5dad34dcaed7498e001bc68ced366, type: 3}
+      propertyPath: whichScene
+      value: EasyStage
+      objectReference: {fileID: 0}
     - target: {fileID: 8112720681878268048, guid: 5db5dad34dcaed7498e001bc68ced366, type: 3}
       propertyPath: m_Name
       value: Door

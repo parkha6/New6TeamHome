@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    [Header("문에서 이동할 씬의 이름.")]
     /// <summary>
     /// 이동할 씬
     /// </summary>
@@ -18,7 +19,13 @@ public class Door : MonoBehaviour
         if (!isWorking)
         { GameManager.Instance.ChangeScene(whichScene); }
     }
-    private void OnCollisionEnter(Collision collision)
+    /// <summary>
+    /// 플레이어가 문과 충돌하면 문 매니저에 씬 정보를 보낸다.
+    /// </summary>
+    /// <param name="other"></param>
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("Player"))
+            DoorManager.Instance.DoorInfo(whichScene);
     }
 }
