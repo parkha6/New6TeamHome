@@ -116,15 +116,14 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
 
         yield return new WaitForSeconds(dashDuration);
-        canDash = true;
         isDashing = false;
         if (playerCollider != null)
         {
             playerCollider.enabled = true;
         }
         rb.gravityScale = originalGravityScale; // 원래대로 중력 되돌려줌.
-
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
         Debug.Log("대시 사용 가능");
-
     }
 }
