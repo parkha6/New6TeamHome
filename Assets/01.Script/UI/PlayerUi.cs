@@ -21,5 +21,7 @@ public class PlayerUi : MonoBehaviour
     /// 생성시 플레이어UI에 자신을 넣는다.
     /// </summary>
     private void Awake()
-    { GameManager.Instance.PutPlayerUi(this); }
+    {
+        DontDestroyOnLoad(this.gameObject);
+        GameManager.Instance.PutPlayerUi(this); }
 }
