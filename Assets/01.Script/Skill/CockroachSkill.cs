@@ -6,15 +6,12 @@ using UnityEngine;
 public class CockroachSkill : BaseSkill
 {
     [Header("Skill 1 Settings")]
-    public Vector2 skill1BoxSize = new Vector2(1.1f, 1f);
-    public float skill1Distance = 1.1f;
+    public Vector2 skill1BoxSize = new Vector2(3f, 3f);
+    public float skill1Distance = 1f;
     public float skill1Height = 1f;
-    public float skill1AttackDistance = 5;
+    public float skill1AttackDistance = 3;
 
-    [Header("Skill 2 Settings")]
-    public Vector2 skill2BoxSize = new Vector2(2.5f, 2.5f);
-    public float skill2Distance = 2.5f;
-    public float skill2Height = 1f;
+    public float invincibility;
 
     void Update() // Test
     {
@@ -32,12 +29,12 @@ public class CockroachSkill : BaseSkill
     {
 
         CaptureSkillOrigin();
-        StartCoroutine(Move(Vector2.right, 5f, 0.2f));
+        StartCoroutine(Move(Vector2.right, skill1AttackDistance, 0.2f));
 
         Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance, skill1Height);
 
 #if UNITY_EDITOR
-        DebugDrawBox(skillOrigin, skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.2f);
+        DebugDrawBox(skillOrigin, skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.5f);
 #endif
         foreach (Collider2D hit in hits)
         {
@@ -50,6 +47,10 @@ public class CockroachSkill : BaseSkill
     }
     public override void SkillNum2()
     {
-        
+        if (PlayerManager.Instance.isInvincible) return;
+        PlayerManager.Instance.invincibilityDuration = invincibility;
+        invincibility = 5f;
+        PlayerManager.Instance.Invincibility();
+        Debug.Log($"{invincibility}");
     }
 }

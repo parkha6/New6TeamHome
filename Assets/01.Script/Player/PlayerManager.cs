@@ -13,8 +13,8 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
-    public event Action OnPlayerStatusChanged;
-    public event Action OnPlayerInvChanged;
+    public event Action OnPlayerStatusChanged; // statusUI에 알려주기 위한 이벤트
+    public event Action OnPlayerInvChanged; // invUI에 알려주기 위한 이벤트
     public bool isInvincible = false; 
     public float invincibilityDuration; //무적 지속 시간
     public Dictionary<string, PlayerItemData> EquippedItems { get; private set; } = new Dictionary<string, PlayerItemData>();
@@ -97,7 +97,7 @@ public class PlayerManager : MonoBehaviour
     //    }
     //} 인벤토리 추가되먼 주석해제
 
-    public void EquipItem(PlayerItemData data) // 나중에 ItemDatas 구조체 따로 만들어두자.....
+    public void EquipItem(PlayerItemData data) // 나중에 itemdata 받아서 다시 수정
     {
         string slotKey;
         if (data.Type.ToLower() == "weapon")
