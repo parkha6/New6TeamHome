@@ -6,13 +6,17 @@ public class GrasshopperSkill : BaseSkill
 {
     [Header("Skill 1 Settings")]
     public Vector2 skill1BoxSize = new Vector2(2f, 0.5f);
-    public float skill1Distance = 0.5f;
+    public float skill1Distance = 0.4f;
     public float skill1Height = 0f;
 
     [Header("Skill 2 Settings")]
-    public Vector2 skill2BoxSize = new Vector2(2.5f, 2.5f);
-    public float skill2Distance = 2.5f;
-    public float skill2Height = 1f;
+    public Vector2 skill2BoxSize = new Vector2(0.5f, 1f);
+    public float skill2Distance = 0.5f;
+    public float skill2Height = 0.5f;
+    private void Awake()
+    {
+        player = this.gameObject;
+    }
 
     void Update() // Test
     {

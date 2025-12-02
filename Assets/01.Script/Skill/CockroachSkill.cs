@@ -6,15 +6,16 @@ using UnityEngine;
 public class CockroachSkill : BaseSkill
 {
     [Header("Skill 1 Settings")]
-    public Vector2 skill1BoxSize = new Vector2(1.1f, 1f);
-    public float skill1Distance = 1.1f;
+    public Vector2 skill1BoxSize = new Vector2(3f, 3f);
+    public float skill1Distance = 1f;
     public float skill1Height = 1f;
-    public float skill1AttackDistance = 5;
+    public float skill1AttackDistance = 3;
 
-    [Header("Skill 2 Settings")]
-    public Vector2 skill2BoxSize = new Vector2(2.5f, 2.5f);
-    public float skill2Distance = 2.5f;
-    public float skill2Height = 1f;
+    public float invincibility;
+    private void Awake()
+    {
+        player = this.gameObject;
+    }
 
     void Update() // Test
     {
@@ -50,6 +51,10 @@ public class CockroachSkill : BaseSkill
     }
     public override void SkillNum2()
     {
-        
+        if (PlayerManager.Instance.isInvincible) return;
+        PlayerManager.Instance.invincibilityDuration = invincibility;
+        invincibility = 5f;
+        PlayerManager.Instance.Invincibility();
+        Debug.Log($"{invincibility}");
     }
 }

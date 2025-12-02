@@ -5,14 +5,18 @@ using UnityEngine;
 public class MantisSkill : BaseSkill
 {
     [Header("Skill 1 Settings")]
-    public Vector2 skill1BoxSize = new Vector2(2f, 2f);
+    public Vector2 skill1BoxSize = new Vector2(1f, 1f);
     public float skill1Distance = 1f;
-    public float skill1Height = 1f;
+    public float skill1Height = 0.5f;
 
     [Header("Skill 2 Settings")]
-    public Vector2 skill2BoxSize = new Vector2(3f, 0.5f);
-    public float skill2Distance = 0f;
-    public float skill2Height = 1.2f;
+    public Vector2 skill2BoxSize = new Vector2(3.5f, 0.5f);
+    public float skill2Distance = 0.4f;
+    public float skill2Height = 1f;
+    private void Awake()
+    {
+        player = this.gameObject;
+    }
 
     void Update() // Test
     {
