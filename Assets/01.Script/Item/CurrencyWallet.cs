@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class CurrencyWallet : MonoBehaviour
 {
@@ -61,6 +61,25 @@ public class CurrencyWallet : MonoBehaviour
             return false;
         }
         // 모든 경로에서 값을 반환하도록 수정
+        return false;
+    }
+
+    public bool HasCurrency(ItemData item, int amount)
+    {
+        if (item == goldItem)
+        {
+            return gold >= amount;
+        }
+        else if (item == skin_pieceItem)
+        {
+            return skin_piece >= amount;
+        }
+        else if (item == wing_pieceItem)
+        {
+            return wing_piece >= amount;
+        }
+
+        // 어느 것도 해당 안 되면 false
         return false;
     }
 }
