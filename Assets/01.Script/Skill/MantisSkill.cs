@@ -43,7 +43,7 @@ public class MantisSkill : BaseSkill
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
             {
                 //TakeDamage
-                Debug.Log("Skill 1 Attack");
+                Debug.Log("Mantis Skill 1 Attack");
             }
         }
     }
@@ -61,7 +61,7 @@ public class MantisSkill : BaseSkill
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
             {
                 //TakeDamage
-                Debug.Log("Skill 2 Attack");
+                Debug.Log("Mantis Skill 2 Attack");
             }
         }
     }

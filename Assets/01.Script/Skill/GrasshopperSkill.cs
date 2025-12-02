@@ -52,7 +52,7 @@ public class GrasshopperSkill : BaseSkill
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
             {
                 //TakeDamage
-                Debug.Log("Skill 1 Attack");
+                Debug.Log("Grasshopper Skill 1 Attack");
             }
         }
     }
@@ -72,7 +72,7 @@ public class GrasshopperSkill : BaseSkill
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
             {
                 //TakeDamage
-                Debug.Log("Skill 1 Attack");
+                Debug.Log("Grasshopper Skill 2 Attack");
             }
         }
     }
