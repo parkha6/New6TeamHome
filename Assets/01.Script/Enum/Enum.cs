@@ -1,4 +1,4 @@
-﻿public enum SkinType
+public enum SkinType
 {
     Mantis, // 사마귀
     Grasshopper, // 메뚜기
@@ -17,4 +17,13 @@ public enum EvolutionStatType
     Attack,
     Defense,
     MoveSpeed
+}
+/// <summary>
+/// 게임 상태 체크용
+/// </summary>
+public enum Phase
+{
+    Menu,//메인 매뉴
+    Game,//게임 중
+    Pause,//일시정지 중
 }
