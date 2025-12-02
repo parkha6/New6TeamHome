@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: WhiteRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 7599822563924738551, guid: 229917e2c4686a84f98fc7029e13e077, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8961675446307069666, guid: 229917e2c4686a84f98fc7029e13e077, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27
