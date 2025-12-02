@@ -15,4 +15,4 @@ public class PlayerItemData
     public float Spd_Value;
     public float HP_Value;
 }
-
+//임시로 제작 추후 itemdata에 밸류값 추가되면 삭제 예정
