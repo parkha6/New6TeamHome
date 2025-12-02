@@ -1,7 +1,15 @@
-﻿
+
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Data/EvolutionUpgrade")]
+
+[System.Serializable]
+public class EvolutionCost
+{
+    public ItemData item;  // 어떤 재화인지
+    public int amount;     // 몇 개 쓰는지
+}
+
 public class EvolutionUpgradeData : ScriptableObject
 {
     public string upgradeName;
@@ -10,7 +18,6 @@ public class EvolutionUpgradeData : ScriptableObject
     public EvolutionStatType statType;
     public int maxLevel;
 
-    public ItemData costItem;  // 어떤 재화로
-    public int costPerLevel;   // 레벨당 비용
+    public EvolutionCost[] costs;
 }
 

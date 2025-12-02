@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool isDashing = false;
     private bool canDash;
-    private float facingDirection = 1.0f; // 바라보는 방향 디폴트는 1f(오른쪽)
+    public float facingDirection = 1.0f; // 바라보는 방향 디폴트는 1f(오른쪽)
     private float originalGravityScale; // 원래 중력값 저장할 변수
 
 
