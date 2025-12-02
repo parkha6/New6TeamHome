@@ -14,6 +14,18 @@ public class MantisSkill : BaseSkill
     public float skill2Distance = 0f;
     public float skill2Height = 1.2f;
 
+    void Update() // Test
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+        {
+            SkillNum1();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            SkillNum2();
+        }
+    }
+
     public override void SkillNum1()
     {
         CaptureSkillOrigin();
@@ -45,7 +57,7 @@ public class MantisSkill : BaseSkill
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
             {
                 //TakeDamage
-                Debug.Log("Skill 1 Attack");
+                Debug.Log("Skill 2 Attack");
             }
         }
     }
