@@ -1,52 +1,46 @@
-﻿
 using UnityEngine;
 
 public class EnhanceNPC : MonoBehaviour
 {
-    public string npcName;  // 혹시 여러 NPC 구분용
+    public CurrencyWallet wallet;          // 재화
+    public SkinUpdateState skinState;      // 각 외피 강화 레벨
+    public SkinEnhanceData[] enhances;     // Mantis / Grasshopper / Cockroach 강화 데이터들
 
-    bool isPlayerInRange = false;
-    CurrencyWallet wallet;
-    public ItemData enhanceCostItem;
-    public int enhanceCostAmount;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    public void TryEnhanceByIndex(int index)
     {
-        // TODO: 플레이어 들어왔는지 체크
-    }
+        SkinEnhanceData data = enhances[index];
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        // TODO: 플레이어 나갔는지 체크
-    }
+        // 1) 현재 레벨 가져오기
+        int currentLevel = 0;
+        // 2) 최대 레벨 체크
+        if (data.skinType == SkinType.Mantis)
+            currentLevel = skinState.mantisLevel;
+        else if (data.skinType == SkinType.Grasshopper)
+            currentLevel = skinState.grasshopperLevel;
+        else if (data.skinType == SkinType.Cockroach)
+            currentLevel = skinState.cockroachLevel;
 
-    private void Update()
-    {
-        // TODO: 플레이어가 범위 안에 있을 때 상호작용 키 입력 받기
-    }
-
-    void OpenEnhanceUI()
-    {
-        // TODO: 강화/진화 UI 열기
-    }
-
-    public void TryEnhance()
-    {
-
-        if (wallet.TrySpendCurrency(enhanceCostItem, enhanceCostAmount))
+        if (currentLevel >= data.maxLevel)
         {
-            // 강화 성공 처리
+            Debug.Log("이미 최대 강화 레벨입니다.");
+            return;
         }
-        else
+        // 3) costs로 재화 충분한지 확인
+          foreach (EvolutionCost cost in data.costs)
         {
-            // 재화 부족 처리
+            if (!wallet.HasCurrency(cost.item, cost.amount))
+            {
+                Debug.Log("재화 부족");
+                return;
+            }
         }
+        // 4) 이제 실제로 비용 차감
+        foreach (EvolutionCost cost in data.costs)
+        {
+            wallet.TrySpendCurrency(cost.item, cost.amount);
+        }
+
+        // 5) 마지막으로 레벨 업
+        skinState.IncreaseLevel(data.skinType);
     }
-
-    public void TryEvolve()
-    {
-        // TODO: 재화 체크 + 진화 처리
-    }
-
-
 }

@@ -50,13 +50,13 @@ public class EvolveNPC : MonoBehaviour
 
         // 5) 마지막으로 레벨 업
         if (upgradeData.statType == EvolutionStatType.MaxHP)
-            permanentStats.IncreaseMaxHealthLevel();
+            permanentStats.maxHpLevel++;
         else if (upgradeData.statType == EvolutionStatType.Attack)
-            permanentStats.IncreaseAttackLevel();
+            permanentStats.attackLevel++;
         else if (upgradeData.statType == EvolutionStatType.Defense)
-            permanentStats.IncreaseDefenseLevel();
+            permanentStats.defenseLevel++;
         else if (upgradeData.statType == EvolutionStatType.MoveSpeed)
-            permanentStats.IncreaseSpeedLevel();
+            permanentStats.moveSpeedLevel++;
     }
 }
 
