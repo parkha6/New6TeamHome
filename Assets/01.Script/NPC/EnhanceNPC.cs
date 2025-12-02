@@ -6,6 +6,9 @@ public class EnhanceNPC : MonoBehaviour
     public string npcName;  // 혹시 여러 NPC 구분용
 
     bool isPlayerInRange = false;
+    CurrencyWallet wallet;
+    public ItemData enhanceCostItem;
+    public int enhanceCostAmount;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -29,11 +32,21 @@ public class EnhanceNPC : MonoBehaviour
 
     public void TryEnhance()
     {
-        // TODO: 재화 체크 + 강화 처리
+
+        if (wallet.TrySpendCurrency(enhanceCostItem, enhanceCostAmount))
+        {
+            // 강화 성공 처리
+        }
+        else
+        {
+            // 재화 부족 처리
+        }
     }
 
     public void TryEvolve()
     {
         // TODO: 재화 체크 + 진화 처리
     }
+
+
 }

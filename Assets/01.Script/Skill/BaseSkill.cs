@@ -1,41 +1,35 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.GameCenter;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public abstract class BaseSkill : MonoBehaviour
 {
-    [Header("플레이어")]
-    protected GameObject player;
+    [Header("Player")]
+    [SerializeField]protected GameObject player;
 
     public abstract void SkillNum1();
     public abstract void SkillNum2();
 
-    protected Collider2D[] CheckRange(Vector2 Size, float distance)
+    protected Collider2D[] CheckRange(Vector2 size, float distance, float height)
     {
-        Vector2 facing = GetFacing();
-        Vector2 center = (Vector2)player.transform.position + facing * distance;
-
-        return Physics2D.OverlapBoxAll(center, Size, 0f);
+        Vector2 forward = player.transform.right;
+        Vector2 center = (Vector2)player.transform.position + forward * distance + Vector2.up * height;
+        return Physics2D.OverlapBoxAll(center, size, 0f);
     }
 
-    protected void MovePlayer(Vector2 dir, float dist)
+    protected void MovePlayer(Vector2 direction, float distance)
     {
-        player.transform.position += (Vector3)(dir.normalized * dist);
+        player.transform.position += (Vector3)(direction.normalized * distance);
     }
-
-    protected Vector2 GetFacing()
-    {
-        return player.transform.localScale.x > 0 ? Vector2.right : Vector2.left;
-    }
-
 
 #if UNITY_EDITOR
-    protected void DebugDrawBox(Vector2 boxSize, float distance, Color color, float duration = 0.1f)
+    protected void DebugDrawBox(Vector2 boxSize, float distance, Color color, float height, float duration = 0.1f)
     {
-        Vector2 facing = GetFacing();
-        Vector2 center = (Vector2)player.transform.position + facing * distance;
+        Vector2 center = (Vector2)player.transform.position + Vector2.right * distance + Vector2.up * height;
 
         Vector2 half = boxSize / 2f;
 
