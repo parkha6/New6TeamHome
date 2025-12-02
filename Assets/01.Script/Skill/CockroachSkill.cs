@@ -12,6 +12,10 @@ public class CockroachSkill : BaseSkill
     public float skill1AttackDistance = 3;
 
     public float invincibility;
+    private void Awake()
+    {
+        player = this.gameObject;
+    }
 
     void Update() // Test
     {
