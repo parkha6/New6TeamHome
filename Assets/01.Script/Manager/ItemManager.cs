@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    public EquipmentItemData currentskin;
     public SkinType currentSkin;          // 지금 장착된 외피
     public SkinUpdateState skinState;     // 각 외피 강화 레벨 정보 (이미 만들었음)
+
 
     public void EquipSkin(SkinType newSkin)
     {

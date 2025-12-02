@@ -6,6 +6,7 @@ public class SkinDropPickup : MonoBehaviour
     public SkinType skinType;   // 이 드롭이 어떤 외피인지 (사마귀/메뚜기/바퀴)
 
     bool isPlayerInRange = false;
+    ItemManager playerItemManager;
     GameObject player;
 
     void OnTriggerEnter2D(Collider2D other)
@@ -28,23 +29,14 @@ public class SkinDropPickup : MonoBehaviour
 
     void Update()
     {
-        // 예: 공격 키(J키)로 줍기
+        // 예: 공격 키(X키)로 줍기
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.X))
         {
-            TryPickup();
+            if (playerItemManager != null)
+            {
+                playerItemManager.OnSkinItemPickedUp(skinType);
+                Destroy(gameObject);
+            }
         }
-    }
-
-    void TryPickup()
-    {
-        if (player == null) return;
-
-        ItemManager itemManager = player.GetComponent<ItemManager>();
-        if (itemManager != null)
-        {
-            itemManager.OnSkinItemPickedUp(skinType);
-        }
-
-        Destroy(gameObject);
     }
 }

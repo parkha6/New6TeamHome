@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02c05468d7d3f44eb34e3a0c3d3c154, type: 3}
+  m_Name: EQ_MantisWeapon
+  m_EditorClassIdentifier: 
+  id: 0
+  itemName: mantis_weapon
+  icon: {fileID: -1667415638, guid: ebaade6370fa2d6469b0455d452a94db, type: 3}
+  itemType: 1
+  skinType: 0
+  atkValue: 0
+  defValue: 0
+  spdValue: 0
+  hpValue: 0
