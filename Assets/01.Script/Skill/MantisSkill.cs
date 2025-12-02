@@ -13,8 +13,9 @@ public class MantisSkill : BaseSkill
     public Vector2 skill2BoxSize = new Vector2(3.5f, 0.5f);
     public float skill2Distance = 0.4f;
     public float skill2Height = 1f;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         player = this.gameObject;
     }
 

@@ -13,8 +13,9 @@ public class GrasshopperSkill : BaseSkill
     public Vector2 skill2BoxSize = new Vector2(0.5f, 1f);
     public float skill2Distance = 0.5f;
     public float skill2Height = 0.5f;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         player = this.gameObject;
     }
 
