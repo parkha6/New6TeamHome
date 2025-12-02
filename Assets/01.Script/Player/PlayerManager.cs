@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
     public event Action OnPlayerStatusChanged;
     public event Action OnPlayerInvChanged;
     public bool isInvincible = false; 
-    public float invincibilityDuration; //무적 시간
+    public float invincibilityDuration; //무적 지속 시간
 
     [Header("Default Data & Config")]
     [SerializeField]
@@ -160,7 +160,16 @@ public class PlayerManager : MonoBehaviour
     //}
     public void Invincibility()
     {
-        // 추후 takedamage 무시 로직 추가
+        // 추후 takedamage에 무적이면 무시 로직 추가
+        StartCoroutine(InvincibilityCoroutine());
+    }
+    private IEnumerator InvincibilityCoroutine()
+    {
+        Debug.Log("무적 시작");
+        isInvincible = true;
+        yield return new WaitForSeconds(invincibilityDuration);
+        isInvincible = false;
+        Debug.Log("무적 종료");
     }
 
 }
