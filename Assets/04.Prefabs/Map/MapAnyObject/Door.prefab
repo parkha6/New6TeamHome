@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 359960874196614589}
   - component: {fileID: 7085452918768460710}
   - component: {fileID: 3962636550219209761}
+  - component: {fileID: 1113143895765047573}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -369,3 +370,17 @@ PolygonCollider2D:
       - {x: 0.83043474, y: 5.8260865}
       - {x: 0.84782606, y: 5.869565}
   m_UseDelaunayMesh: 0
+--- !u!114 &1113143895765047573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8112720681878268048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7859f2fafbafe40b1e910d5c2f9124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  whichScene: 
+  isWorking: 0
