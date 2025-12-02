@@ -13,14 +13,15 @@ public class MantisSkill : BaseSkill
     public Vector2 skill2BoxSize = new Vector2(3f, 0.5f);
     public float skill2Distance = 0f;
     public float skill2Height = 1.2f;
+
     public override void SkillNum1()
     {
+        CaptureSkillOrigin();
         Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance, skill1Height);
 
 #if UNITY_EDITOR
-        DebugDrawBox(skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.2f);
+        DebugDrawBox(skillOrigin, skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.2f);
 #endif
-
         foreach (Collider2D hit in hits)
         {
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
@@ -33,12 +34,12 @@ public class MantisSkill : BaseSkill
 
     public override void SkillNum2()
     {
+        CaptureSkillOrigin();
         Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance, skill1Height);
 
 #if UNITY_EDITOR
-        DebugDrawBox(skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.2f);
+        DebugDrawBox(skillOrigin, skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.2f);
 #endif
-
         foreach (Collider2D hit in hits)
         {
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
