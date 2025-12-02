@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerUi : MonoBehaviour
 {
     /// <summary>
+    /// 플레이어 화면표시 UI
+    /// </summary>
+    [SerializeField] GameObject playerScreenUi;
+    /// <summary>
     /// 일시정지시 띄우는 창
     /// </summary>
     [SerializeField] GameObject pauseUi;
@@ -18,10 +22,20 @@ public class PlayerUi : MonoBehaviour
             pauseUi.SetActive(isSet);
     }
     /// <summary>
+    /// 배틀씬에서 화면표시 UI만 끄기
+    /// </summary>
+    /// <param name="isSet"></param>
+    internal void SetPlayerScreenUi(bool isSet)
+    {
+        if (playerScreenUi != null)
+            playerScreenUi.SetActive(isSet);
+    }
+    /// <summary>
     /// 생성시 플레이어UI에 자신을 넣는다.
     /// </summary>
     private void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        GameManager.Instance.PutPlayerUi(this); }
+        GameManager.Instance.PutPlayerUi(this);
+    }
 }

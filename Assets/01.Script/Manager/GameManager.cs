@@ -21,8 +21,19 @@ public class GameManager : MonoSingleton<GameManager>
     internal void PutPlayerUi(PlayerUi userUi)
     {
         if (userUi != null)
+        {
             systemPhase = Phase.Game;
             playerUi = userUi;
+        }
+    }
+    /// <summary>
+    /// 플레이어 UI 활성 & 비활성
+    /// </summary>
+    /// <param name="isSet"></param>
+    internal void SetPlayerUi(bool isSet)
+    {
+        if (playerUi != null)
+            playerUi.SetPlayerScreenUi(isSet);
     }
     /// <summary>
     /// 일시정지 체크용 업데이트
