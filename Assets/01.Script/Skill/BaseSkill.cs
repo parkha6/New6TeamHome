@@ -12,24 +12,24 @@ public abstract class BaseSkill : MonoBehaviour
     [SerializeField]protected GameObject player;
     [SerializeField]protected Vector2 skillOrigin;
 
-    //protected BoxCollider2D playerCollider;
-    //protected float originalGravityScale; // 원래 중력값 저장할 변수
-    //protected Rigidbody2D rb;
+    protected BoxCollider2D playerCollider;
+    protected float originalGravityScale; // 원래 중력값 저장할 변수
+    protected Rigidbody2D rb;
 
     public abstract void SkillNum1();
     public abstract void SkillNum2();
-    //private void Awake()
-    //{
-    //    player = this.gameObject;
-    //    if (player == null)
-    //        player = this.gameObject;
+    protected virtual void Awake()
+    {
+        player = this.gameObject;
+        if (player == null)
+            player = this.gameObject;
 
-    //    rb = player.GetComponent<Rigidbody2D>();
-    //    playerCollider = player.GetComponent<BoxCollider2D>();
+        rb = player.GetComponent<Rigidbody2D>();
+        playerCollider = player.GetComponent<BoxCollider2D>();
 
-    //    if (rb != null)
-    //        originalGravityScale = rb.gravityScale;
-    //}
+        if (rb != null)
+            originalGravityScale = rb.gravityScale;
+    }
 
     protected Collider2D[] CheckRange(Vector2 size, float distance, float height)
     {
@@ -43,30 +43,35 @@ public abstract class BaseSkill : MonoBehaviour
 
     protected IEnumerator Move(Vector2 direction, float distance, float duration) // 돌진
     {
+        if (player == null || rb == null)
+        {
+            Debug.Log("player가 null입니다");
+            yield break;
+        }
         Vector2 start = player.transform.position;
         Vector2 end = start + direction.normalized * distance;
 
-        //rb.gravityScale = 0f;
-        //rb.velocity = Vector2.zero;
+        rb.gravityScale = 0f;
+        rb.velocity = Vector2.zero;
 
         float t = 0;
         while (t < duration)
         {
-            //if (playerCollider != null)
-            //{
-            //    playerCollider.enabled = false;
-            //}
+            if (playerCollider != null)
+            {
+                playerCollider.enabled = false;
+            }
             t += Time.deltaTime;
             player.transform.position = Vector2.Lerp(start, end, t / duration);
             yield return null;
         }
         player.transform.position = end;
 
-        //if (playerCollider != null)
-        //{
-        //    playerCollider.enabled = true;
-        //}
-        //rb.gravityScale = originalGravityScale;
+        if (playerCollider != null)
+        {
+            playerCollider.enabled = true;
+        }
+        rb.gravityScale = originalGravityScale;
     }
     protected IEnumerator Jump(Vector2 direction, float distance, float height, float duration) // 점프
     {

@@ -12,8 +12,9 @@ public class CockroachSkill : BaseSkill
     public float skill1AttackDistance = 3;
 
     public float invincibility;
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         player = this.gameObject;
     }
 
