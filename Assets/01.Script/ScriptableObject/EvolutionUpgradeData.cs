@@ -1,8 +1,6 @@
 
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Data/EvolutionUpgrade")]
-
 [System.Serializable]
 public class EvolutionCost
 {
@@ -10,6 +8,7 @@ public class EvolutionCost
     public int amount;     // 몇 개 쓰는지
 }
 
+[CreateAssetMenu(menuName = "Data/EvolutionUpgrade")]
 public class EvolutionUpgradeData : ScriptableObject
 {
     public string upgradeName;
