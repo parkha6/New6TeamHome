@@ -12,20 +12,17 @@ public class Door : MonoBehaviour
     /// </summary>
     [SerializeField] bool isWorking;
     /// <summary>
-    /// 문 작동
-    /// </summary>
-    void EnterRoom()
-    {
-        if (!isWorking)
-        { GameManager.Instance.ChangeScene(whichScene); }
-    }
-    /// <summary>
     /// 플레이어가 문과 충돌하면 문 매니저에 씬 정보를 보낸다.
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
-            DoorManager.Instance.DoorInfo(whichScene);
+        {
+            if (isWorking)
+                DoorManager.Instance.DoorInfo(whichScene);
+            else
+                DoorManager.Instance.NotDoor();
+        }
     }
 }
