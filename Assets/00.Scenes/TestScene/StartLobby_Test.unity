@@ -489,7 +489,7 @@ PrefabInstance:
       addedObject: {fileID: 1629977617}
     - targetCorrespondingSourceObject: {fileID: 6301229160640232235, guid: d9fe61baa700a0b4db5fc25aec8f33f1, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1629977623}
+      addedObject: {fileID: 1629977621}
   m_SourcePrefab: {fileID: 100100000, guid: d9fe61baa700a0b4db5fc25aec8f33f1, type: 3}
 --- !u!1 &1629977613 stripped
 GameObject:
@@ -532,7 +532,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
-    oldSize: {x: 0.49, y: 0.96}
+    oldSize: {x: 0.7, y: 1}
     newSize: {x: 1.6782609, y: 2.6086957}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -541,7 +541,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.6782609, y: 2.6086957}
   m_EdgeRadius: 0
---- !u!114 &1629977623
+--- !u!114 &1629977621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -550,17 +550,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1629977613}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2a4c8986d7bddd498a0c2fce9282012, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e3527f415d5e8b4aa3a57d2eaa4d417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1629977613}
   skillOrigin: {x: 0, y: 0}
-  skill1BoxSize: {x: 2, y: 0.5}
-  skill1Distance: 0.5
-  skill1Height: 0
-  skill2BoxSize: {x: 2.5, y: 2.5}
-  skill2Distance: 2.5
-  skill2Height: 1
+  skill1BoxSize: {x: 2, y: 2}
+  skill1Distance: 1
+  skill1Height: 1
+  skill2BoxSize: {x: 3, y: 0.5}
+  skill2Distance: 0
+  skill2Height: 1.2
 --- !u!1 &1941251784
 GameObject:
   m_ObjectHideFlags: 0

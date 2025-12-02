@@ -47,10 +47,10 @@ public class MantisSkill : BaseSkill
     public override void SkillNum2()
     {
         CaptureSkillOrigin();
-        Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance, skill1Height);
+        Collider2D[] hits = CheckRange(skill2BoxSize, skill2Distance, skill2Height);
 
 #if UNITY_EDITOR
-        DebugDrawBox(skillOrigin, skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.2f);
+        DebugDrawBox(skillOrigin, skill2BoxSize, skill2Distance, Color.red, skill2Height, 0.2f);
 #endif
         foreach (Collider2D hit in hits)
         {
