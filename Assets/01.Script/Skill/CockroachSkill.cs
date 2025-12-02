@@ -45,7 +45,7 @@ public class CockroachSkill : BaseSkill
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
             {
                 //TakeDamage
-                Debug.Log("Skill 1 Attack");
+                Debug.Log("Cockroach Skill 1 Attack");
             }
         }
     }
