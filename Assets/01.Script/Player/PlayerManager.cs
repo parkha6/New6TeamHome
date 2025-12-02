@@ -53,7 +53,7 @@ public class PlayerManager : MonoBehaviour
                 CharacterData defaultStatus = playerArray[0].ToObject<CharacterData>();
                 CurrentSaveData.status = defaultStatus;
                 //CurrentSaveData.inventoryStacks = new Dictionary<int, int> //추후 인벤토리 제작 후 주석해제
-                
+
                 //Debug.Log("기본 아이템을 가지고 시작합니다"); // 초기 아이템 있다면 추가
             }
         }
@@ -135,5 +135,25 @@ public class PlayerManager : MonoBehaviour
     //        OnPlayerInvChanged?.Invoke();
     //        OnPlayerStatusChanged?.Invoke();
     //    }
+    //}
+
+    //public int TotalAttack()
+    //{
+
+    //}
+
+    //public int TotalDef()
+    //{
+
+    //}
+
+    //public int TotalHP()
+    //{
+
+    //}
+
+    //public int TotalSpeed()
+    //{
+
     //}
 }
