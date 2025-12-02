@@ -21,6 +21,7 @@ public class GameManager : MonoSingleton<GameManager>
     internal void PutPlayerUi(PlayerUi userUi)
     {
         if (userUi != null)
+            systemPhase = Phase.Game;
             playerUi = userUi;
     }
     /// <summary>
