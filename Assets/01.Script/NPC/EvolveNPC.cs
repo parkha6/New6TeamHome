@@ -6,11 +6,13 @@ public class EvolveNPC : MonoBehaviour
 {
     public CurrencyWallet wallet;
     public PermanentStats permanentStats;
+    public EvolutionUpgradeData[] upgrades;
 
-    public EvolutionUpgradeData upgradeData;
-
-    public void TryEvolve()
+    public void TryEvolveByIndex(int index)
     {
+        EvolutionUpgradeData upgradeData = upgrades[index];
+        // 여기 안에서 기존 TryEvolve 로직을 이 upgradeData 기준으로 돌릴 예정
+
         int currentLevel = 0;
 
         // 1) 현재 레벨 가져오기
@@ -56,8 +58,7 @@ public class EvolveNPC : MonoBehaviour
         else if (upgradeData.statType == EvolutionStatType.MoveSpeed)
             permanentStats.IncreaseSpeedLevel();
     }
-
-    }
+}
 
 
     

@@ -25,7 +25,7 @@ public abstract class BaseSkill : MonoBehaviour
         skillOrigin = player.transform.position;
     }
 
-    protected IEnumerator Move(Vector2 direction, float distance, float duration)
+    protected IEnumerator Move(Vector2 direction, float distance, float duration) // 돌진
     {
         Vector2 start = player.transform.position;
         Vector2 end = start + direction.normalized * distance;
@@ -38,6 +38,41 @@ public abstract class BaseSkill : MonoBehaviour
             yield return null;
         }
         player.transform.position = end;
+    }
+    protected IEnumerator Jump(Vector2 direction, float distance, float height, float duration) // 점프
+    {
+        Vector2 start = player.transform.position; // 시작 위치
+        Vector2 peak = start + new Vector2(direction.x * distance / 2f, height); // 대각 점프
+        Vector2 end = start + new Vector2(direction.x * distance, 0f); // 대각 하강
+
+        float riseDuration = duration * 0.70f; // 상승 속도
+        float fallDuration = duration * 0.30f; // 하강 속도
+
+        // 상승
+        float t = 0f;
+        while (t < riseDuration)
+        {
+            t += Time.deltaTime;
+            float normalizedT = Mathf.Clamp01(t / riseDuration);
+            float x = Mathf.Lerp(start.x, peak.x, normalizedT);
+            float y = Mathf.Lerp(start.y, peak.y, normalizedT);
+            player.transform.position = new Vector2(x, y);
+            yield return null;
+        }
+
+        // 하강
+        t = 0f;
+        while (t < fallDuration)
+        {
+            t += Time.deltaTime;
+            float normalizedT = Mathf.Clamp01(t / fallDuration);
+            float x = Mathf.Lerp(peak.x, end.x, normalizedT);
+            float y = Mathf.Lerp(peak.y, end.y, normalizedT);
+            player.transform.position = new Vector2(x, y);
+            yield return null;
+        }
+
+        player.transform.position = end; // 최종 위치 보정
     }
 
 #if UNITY_EDITOR
