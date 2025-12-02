@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7936d0c4ba5b5dd42924a8415a57882a, type: 3}
+  m_Name: EV_MoveSpeed
+  m_EditorClassIdentifier: 
+  upgradeName: "\uACF5\uACA9\uB825"
+  description: 
+  statType: 1
+  maxLevel: 5
+  costItem: {fileID: 11400000, guid: 3129817461f92e14b80c56e25f081b4e, type: 2}
+  costPerLevel: 100
