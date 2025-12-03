@@ -6,9 +6,9 @@ using UnityEngine;
 public class CockroachSkill : BaseSkill
 {
     [Header("Skill 1 Settings")]
-    public Vector2 skill1BoxSize = new Vector2(3f, 3f);
+    public Vector2 skill1BoxSize = new Vector2(2.5f, 1f);
     public float skill1Distance = 1f;
-    public float skill1Height = 1f;
+    public float skill1Height = 0.5f;
     public float skill1AttackDistance = 3;
 
     [Header("SkillEnhance Data")]
