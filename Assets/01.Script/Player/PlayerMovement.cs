@@ -90,11 +90,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))  // 태그 Ground 로
         {
-            Vector2 vector2 = rb.velocity;   // ground태그 + 착지순간 y값 0이면 true
-            if (vector2.y == 0)
-            {
-                isGrounded = true;
-            }
+            //Vector2 vector2 = rb.velocity;   // ground태그 + 착지순간 y값 0이면 true
+            //if (vector2.y == 0)
+            //{
+                
+            //}
+            isGrounded = true;
         }
     }
 
