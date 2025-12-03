@@ -16,10 +16,12 @@ GameObject:
   - component: {fileID: 2870229671430757001}
   - component: {fileID: 1711475631057938351}
   - component: {fileID: 6118119244065534808}
+  - component: {fileID: -875809453482640212}
+  - component: {fileID: -4357157632413132075}
   - component: {fileID: 5295474149936998618}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -233,6 +235,34 @@ MonoBehaviour:
   goldItem: {fileID: 11400000, guid: 5171b312a98b089499d303d4df9ca118, type: 2}
   skin_pieceItem: {fileID: 11400000, guid: 3521be1c7d7330742b8669a95eabebe8, type: 2}
   wing_pieceItem: {fileID: 11400000, guid: 3129817461f92e14b80c56e25f081b4e, type: 2}
+--- !u!114 &-875809453482640212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959479312870782438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5874a12c82022134b96bf95c7f150490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4357157632413132075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959479312870782438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 079cbcbf7f2773a4fb87224e6cd727d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionRange: 3
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &5295474149936998618
 MonoBehaviour:
   m_ObjectHideFlags: 0

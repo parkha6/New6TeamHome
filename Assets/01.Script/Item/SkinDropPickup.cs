@@ -12,13 +12,14 @@ public class SkinDropPickup : MonoBehaviour, IInteractable
 
     public void OnInteraction()
     {
-        throw new System.NotImplementedException();
-
+        Debug.Log("OnInteraction 작동");
         if (isPlayerInRange)
         {
             if (playerItemManager != null)
             {
+                Debug.Log("Player가 근처에 있습니다.");
                 playerItemManager.OnSkinItemPickedUp(skinType);
+                // PlayerManager.Instance.EquipItem(EquipmentItemData.);
                 Destroy(gameObject);
             }
         }
