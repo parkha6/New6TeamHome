@@ -49,7 +49,11 @@ public class MainSceneUI : MonoBehaviour
     void StartGame()
     {
         if (startLobbyScene != null)
+        {
+            GameManager.Instance.systemPhase = Phase.Game;
             GameManager.Instance.ChangeScene(startLobbyScene);
+            PlayerUi.Instance.SetPlayerScreenUi(true);
+        }
     }
     /// <summary>
     /// 옵션 UI켜기

@@ -1,22 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Default Data & Config")]
+    [SerializeField]
+    private TextAsset defaultEnemyDataAsset;
+    public EnemySaveData CurrentSaveData { get; private set; } = new EnemySaveData(); // 초기데이터 세팅 그릇
+    public CharacterData CurrentStatus => CurrentSaveData.status;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        LoadDefaultData();
+    }
+    private void LoadDefaultData()
+    {
+        if (defaultEnemyDataAsset == null)
+        {
+            Debug.LogError("기본 Enemy 에셋이 연결 안됨");
+        }
+        try
+        {
+            JToken root = JToken.Parse(defaultEnemyDataAsset.text);
+            JArray enemyArray = root as JArray;
+
+            if (enemyArray != null && enemyArray.Count > 0)
+            {
+                CharacterData defaultStatus = enemyArray[1].ToObject<CharacterData>();
+                CurrentSaveData.status = defaultStatus;
+            }
+        }
+        catch (Exception)
+        {
+            Debug.Log("기본 Enemy 데이터 로드 및 파싱 오류");
+        }
+        //OnPlayerStatusChanged?.Invoke();
+        //OnPlayerInvChanged?.Invoke(); // 초기 로드 후 UI에 알려줌
     }
     public void TakePhisicalDamage()
     {
-        throw new System.NotImplementedException();
+        throw new NotImplementedException();
     }
+
 }
