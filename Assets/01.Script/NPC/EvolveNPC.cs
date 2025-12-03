@@ -1,12 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class EvolveNPC : MonoBehaviour
+public class EvolveNPC : MonoBehaviour, IInteractable
 {
     public CurrencyWallet wallet;
     public PermanentStats permanentStats;
     public EvolutionUpgradeData[] upgrades;
+    public Button evolutionButton;
+
+    public void OnInteraction()
+    {
+        throw new System.NotImplementedException();
+    }
 
     public void TryEvolveByIndex(int index)
     {
