@@ -1,6 +1,5 @@
 using UnityEngine;
-
-public class Door : MonoBehaviour
+public class Door : MonoBehaviour, IInteractable
 {
     [Header("문에서 이동할 씬의 이름.")]
     /// <summary>
@@ -12,17 +11,18 @@ public class Door : MonoBehaviour
     /// </summary>
     [SerializeField] bool isWorking;
     /// <summary>
-    /// 플레이어가 문과 충돌하면 문 매니저에 씬 정보를 보낸다.
+    /// 플레이어가 문과 충돌하면 문에 UI를 띄운다
     /// </summary>
     /// <param name="other"></param>
     private void OnTriggerEnter2D(Collider2D other)
+    { //UI띄우기
+    }
+    /// <summary>
+    /// 작동하는 문이면 씬을 이동한다.
+    /// </summary>
+    public void OnInteraction()
     {
-        if (other.CompareTag("Player"))
-        {
-            if (isWorking)
-                DoorManager.Instance.DoorInfo(whichScene);
-            else
-                DoorManager.Instance.NotDoor();
-        }
+        if (isWorking)
+            GameManager.Instance.ChangeScene(whichScene);
     }
 }
