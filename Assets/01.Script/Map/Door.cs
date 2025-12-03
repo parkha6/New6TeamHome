@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 /// <summary>
 /// 문의 기능을 담당하는 클래스
@@ -35,10 +36,16 @@ public class Door : MonoBehaviour, IInteractable
         {
             if (fkeyUi != null)
             {
-                if(isWorking)
-                fkeyUi.SetActive(true);
+                if (isWorking)
+                    fkeyUi.SetActive(true);
+                else
+                    Debug.Log("작동하는 문이 아님");
             }
+            else
+                Debug.Log("F키 UI가 없음");
         }
+        else
+            Debug.Log("플레이어가 아님");
     }
     /// <summary>
     /// 나갈때 안내가 꺼짐
@@ -51,10 +58,18 @@ public class Door : MonoBehaviour, IInteractable
             if (fkeyUi != null)
             {
                 if (isWorking)
-                fkeyUi.SetActive(false);
+                    fkeyUi.SetActive(false);
+                else
+                    Debug.Log("작동하는 문이 아님");
             }
+            else
+                Debug.Log("F키 UI가 없음");
         }
-
+        else
+            Debug.Log("플레이어가 아님");
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
     }
     /// <summary>
     /// 작동하는 문이면 씬을 이동한다.
