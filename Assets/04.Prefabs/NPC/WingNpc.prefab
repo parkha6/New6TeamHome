@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2424128808396265446}
   - component: {fileID: 6637010008967753917}
   - component: {fileID: -2705382002303264646}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WingNpc
   m_TagString: Untagged
   m_Icon: {fileID: 0}

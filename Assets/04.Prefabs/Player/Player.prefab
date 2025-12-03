@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 6612618922172128486}
   - component: {fileID: 900510066590915783}
   - component: {fileID: 1550643616024408029}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -205,7 +205,6 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  facingDirection: 1
   spriteRenderer: {fileID: 5546577497582836753}
 --- !u!114 &8269657225445766382
 MonoBehaviour:
@@ -252,7 +251,7 @@ MonoBehaviour:
   interactionRange: 3
   interactableLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 128
 --- !u!114 &1550643616024408029
 MonoBehaviour:
   m_ObjectHideFlags: 0
