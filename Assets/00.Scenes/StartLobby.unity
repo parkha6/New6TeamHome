@@ -487,7 +487,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 900510066590915783, guid: 2838d1e8a4ef1bc44b83c6df1446969e, type: 3}
       propertyPath: interactableLayer.m_Bits
-      value: 448
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 1766513361079543910, guid: 2838d1e8a4ef1bc44b83c6df1446969e, type: 3}
       propertyPath: orthographic size

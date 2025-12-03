@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2242754070395902234}
   - component: {fileID: 6621429380532408385}
   - component: {fileID: 8278089573586527060}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Drop_WingPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
