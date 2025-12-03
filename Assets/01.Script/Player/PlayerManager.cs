@@ -143,6 +143,7 @@ public class PlayerManager : MonoBehaviour
         }
         EquippedItems.Add(slotKey, data);
         Debug.Log($"{data.itemName} 장착 완료. 상태 업데이트.");
+        Debug.Log($"{TotalAttack()}공격력 적용");
         OnPlayerInvChanged?.Invoke();// 나중에 가져가서 구독하세요
         OnPlayerStatusChanged?.Invoke();// 나중에 가져가서 구독하세요
     }
@@ -178,7 +179,7 @@ public class PlayerManager : MonoBehaviour
         float totalAttack = CurrentStatus.ATK;
         foreach (var item in EquippedItems.Values)
         {
-            totalAttack *= item.atkValue; // 추후 강화value도 추가하자.
+            totalAttack += totalAttack * item.atkValue; // 추후 강화value도 추가하자.
         }
         return totalAttack;
     }
@@ -188,7 +189,7 @@ public class PlayerManager : MonoBehaviour
         float totalDef = CurrentStatus.DEF;
         foreach (var item in EquippedItems.Values)
         {
-            totalDef *= item.defValue; // 추후 강화value도 추가하자.
+            totalDef += totalDef * item.defValue; // 추후 강화value도 추가하자.
         }
         return totalDef;
     }
@@ -198,7 +199,7 @@ public class PlayerManager : MonoBehaviour
         float totalHP = CurrentStatus.HP;
         foreach (var item in EquippedItems.Values)
         {
-            totalHP *= item.defValue; // 추후 강화value도 추가하자.
+            totalHP += totalHP * item.defValue; // 추후 강화value도 추가하자.
         }
         return totalHP;
 
@@ -209,7 +210,7 @@ public class PlayerManager : MonoBehaviour
         float totalSpeed = CurrentStatus.SPEED;
         foreach (var item in EquippedItems.Values)
         {
-            totalSpeed *= item.spdValue; // 추후 강화value도 추가하자.
+            totalSpeed += totalSpeed * item.spdValue; // 추후 강화value도 추가하자.
         }
         return totalSpeed;
 
