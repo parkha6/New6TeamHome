@@ -71,6 +71,25 @@ public class PlayerUi : MonoSingleton<PlayerUi>
             playerScreenUi.SetActive(isSet);
     }
     /// <summary>
+    /// 전부 한번에 세팅
+    /// </summary>
+    /// <param name="currentHp"></param>
+    /// <param name="wholeHp"></param>
+    /// <param name="wing"></param>
+    /// <param name="skin"></param>
+    /// <param name="gold"></param>
+    /// <param name="atkStat"></param>
+    /// <param name="skinStat"></param>
+    /// <param name="wingStat"></param>
+    /// <param name="hpStat"></param>
+    internal void SetEverything(float currentHp, float wholeHp, int wing, int skin, int gold, float atkStat, float skinStat, float wingStat, float hpStat)
+    {
+        PlayerUi.Instance.SetPlayerHp(currentHp, wholeHp);//원래는 여기에 세팅해야 됨.
+        PlayerUi.Instance.SetScoreText(wing, skin, gold);
+        PlayerUi.Instance.SetStat(atkStat, skinStat, wingStat, hpStat);
+    }
+
+    /// <summary>
     /// HP를 입력하면 바에 표시 됨.
     /// </summary>
     /// <param name="currentHp"></param>

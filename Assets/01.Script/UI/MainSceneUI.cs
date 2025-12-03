@@ -51,6 +51,7 @@ public class MainSceneUI : MonoBehaviour
         if (startLobbyScene != null)
         {
             GameManager.Instance.systemPhase = Phase.Game;
+            PlayerUi.Instance.SetEverything(1,1,0,0,0,0,0,0,0);
             GameManager.Instance.ChangeScene(startLobbyScene);
             if (GameManager.Instance.async.isDone)
                 PlayerUi.Instance.SetPlayerScreenUi(true);
