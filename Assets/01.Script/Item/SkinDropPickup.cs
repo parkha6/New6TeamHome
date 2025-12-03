@@ -14,11 +14,13 @@ public class SkinDropPickup : MonoBehaviour, IInteractable
     {
  
 
+        Debug.Log("OnInteraction 작동");
         if (isPlayerInRange)
         {
             if (playerItemManager != null)
             {
                 TryPickup();
+                // PlayerManager.Instance.EquipItem(EquipmentItemData.);
                 Destroy(gameObject);
             }
         }
