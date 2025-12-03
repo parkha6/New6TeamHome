@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 /// <summary>
 /// 플레이어 UI관리용
 /// </summary>
@@ -12,6 +13,22 @@ public class PlayerUi : MonoSingleton<PlayerUi>
     /// 일시정지시 띄우는 창
     /// </summary>
     [SerializeField] GameObject pauseUi;
+    /// <summary>
+    /// hp바 이미지
+    /// </summary>
+    [SerializeField] Image hpBar;
+    /// <summary>
+    /// 외피조각 스코어
+    /// </summary>
+    [SerializeField] Text skinPieceText;
+    /// <summary>
+    /// 날개조각 스코어
+    /// </summary>
+    [SerializeField] Text wingPieceText;
+    /// <summary>
+    /// 골드 스코어
+    /// </summary>
+    [SerializeField] Text goldPieceText;
     /// <summary>
     /// 일시정지 UI 활성& 비활성
     /// </summary>
