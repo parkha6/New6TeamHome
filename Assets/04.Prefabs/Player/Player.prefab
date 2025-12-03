@@ -298,7 +298,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079cbcbf7f2773a4fb87224e6cd727d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionRange: 3
+  interactionRange: 1
   interactableLayer:
     serializedVersion: 2
     m_Bits: 128
