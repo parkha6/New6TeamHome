@@ -90,6 +90,7 @@ public class CurrencyWallet : MonoBehaviour
     /// </summary>
     private void Start()
     {
+        Debug.Log("스코어 삽입");
         GameManager.Instance.PlayerUi.SetScoreText(wing_piece, skin_piece, gold);
     }
 }

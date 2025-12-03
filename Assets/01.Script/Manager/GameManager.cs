@@ -22,6 +22,7 @@ public class GameManager : MonoSingleton<GameManager>
         {
             if (playerUi == null)
             {
+                Debug.Log("플레이어 UI생성");
                 GameObject obj = Instantiate(playerUiPrefab);
                 playerUi = obj.GetComponent<PlayerUi>();
             }
@@ -62,7 +63,7 @@ public class GameManager : MonoSingleton<GameManager>
     internal void Pause()
     {
         StopTime();
-        PlayerUi.SetPauseUi(true);
+        PlayerUi.SetPauseUi(true);//여기서 UI가 생성되면서 문제가 생기는거 같음.
         systemPhase = Phase.Pause;
     }
     /// <summary>
@@ -70,7 +71,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     internal void EndPause()
     {
-        PlayerUi.SetPauseUi(false);
+        PlayerUi.SetPauseUi(false);//여기서 UI가 생성되면서 문제가 생기는거 같음.
         RunTime();
         systemPhase = Phase.Game;
     }
