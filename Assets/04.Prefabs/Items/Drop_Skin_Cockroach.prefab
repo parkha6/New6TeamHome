@@ -134,4 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinType: 2
-  skinData: {fileID: 0}
+  skinData: {fileID: 11400000, guid: cf432119570a18a43b25779b8a3285a2, type: 2}

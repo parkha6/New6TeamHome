@@ -485,6 +485,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3130422126279994917}
     m_Modifications:
+    - target: {fileID: -2705382002303264646, guid: c37234197675bb146847e12175807258, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2424128808396265446, guid: c37234197675bb146847e12175807258, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5
@@ -532,8 +536,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8910034672753384331, guid: c37234197675bb146847e12175807258, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3782771157153984465}
   m_SourcePrefab: {fileID: 100100000, guid: c37234197675bb146847e12175807258, type: 3}
+--- !u!1 &1811442498365581093 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8910034672753384331, guid: c37234197675bb146847e12175807258, type: 3}
+  m_PrefabInstance: {fileID: 7099155193127861422}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3782771157153984465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1811442498365581093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29996a2b9dc82cf4da887e2a757b2097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallet: {fileID: 0}
+  permanentStats: {fileID: 0}
+  upgrades:
+  - {fileID: 11400000, guid: 0b176c2ef83e9174d9ddb111a31f86d5, type: 2}
+  - {fileID: 11400000, guid: e67916762a48cf946b57332017e375a2, type: 2}
+  - {fileID: 11400000, guid: d4f9ce148734de740b9dbefbf02ab414, type: 2}
+  - {fileID: 11400000, guid: 18ceda58349b26244a3206db7d0139ed, type: 2}
 --- !u!4 &4837279724357118792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2424128808396265446, guid: c37234197675bb146847e12175807258, type: 3}
