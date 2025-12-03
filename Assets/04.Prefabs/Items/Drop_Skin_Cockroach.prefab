@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7041968043606868393}
   - component: {fileID: 4348611165013362646}
   - component: {fileID: 4442011527954412967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Drop_Skin_Cockroach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,3 +134,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skinType: 2
+  skinData: {fileID: 0}

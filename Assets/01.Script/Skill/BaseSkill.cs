@@ -15,6 +15,7 @@ public abstract class BaseSkill : MonoBehaviour
     protected BoxCollider2D playerCollider;
     protected float originalGravityScale; // 원래 중력값 저장할 변수
     protected Rigidbody2D rb;
+    protected PlayerMovement playerMovement;
 
     public abstract void SkillNum1();
     public abstract void SkillNum2();
@@ -29,6 +30,12 @@ public abstract class BaseSkill : MonoBehaviour
 
         if (rb != null)
             originalGravityScale = rb.gravityScale;
+        playerMovement = GetComponent<PlayerMovement>();
+
+        if (playerMovement == null)
+        {
+            Debug.LogError("PlayerMovement를 찾을 수 없습니다");
+        }
     }
 
     protected Collider2D[] CheckRange(Vector2 size, float distance, float height)

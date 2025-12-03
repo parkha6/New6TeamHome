@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7989525905832461495}
   - component: {fileID: 2556298632876974985}
   - component: {fileID: -4562296680430155640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ArmourNpc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
