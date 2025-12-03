@@ -9,13 +9,16 @@ public class Player : MonoBehaviour, IDamageable
 
     private void Awake()
     {
-        playerManager = PlayerManager.Instance;
         rb = GetComponent<Rigidbody2D>();
+
+    }
+    private void Start()
+    {
+        playerManager = PlayerManager.Instance;
         if (playerManager == null)
         {
             Debug.LogError("플레이어 매니저 연결 안됨");
         }
-
     }
     public void TakePhisicalDamage(float amount) // 나중에 float로 바꾸는게 편할듯. player능력치가 다 float임
     {

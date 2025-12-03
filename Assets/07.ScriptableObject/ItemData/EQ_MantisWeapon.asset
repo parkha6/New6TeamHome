@@ -15,9 +15,11 @@ MonoBehaviour:
   id: 0
   itemName: mantis_weapon
   icon: {fileID: -1667415638, guid: ebaade6370fa2d6469b0455d452a94db, type: 3}
+  skillIcon1: {fileID: 0}
+  skillIcon2: {fileID: 0}
   itemType: 1
   skinType: 0
-  atkValue: 0
-  defValue: 0
+  atkValue: 0.4
+  defValue: 10
   spdValue: 0
   hpValue: 0
