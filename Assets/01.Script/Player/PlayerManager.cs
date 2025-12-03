@@ -17,7 +17,9 @@ public class PlayerManager : MonoBehaviour
     public event Action OnPlayerInvChanged; // invUI에 알려주기 위한 이벤트
     public bool isInvincible = false; 
     public float invincibilityDuration; //무적 지속 시간
+
     public Dictionary<string, EquipmentItemData> EquippedItems { get; private set; } = new Dictionary<string, EquipmentItemData>();
+    public Dictionary<int, int> CurrencyAmounts { get; private set; } = new Dictionary<int, int>(); // item의 id를 사용하여 딕셔너리로 관리
 
     [Header("Default Data & Config")]
     [SerializeField]
@@ -96,7 +98,29 @@ public class PlayerManager : MonoBehaviour
     //        OnPlayerInvChanged?.Invoke();
     //    }
     //} 인벤토리 추가되먼 주석해제
+    public void AddItem(ItemData data)
+    {
+        if(data.itemType != ItemType.Currency)
+        {
+            Debug.LogError($"{data.itemName}은 Currency 타입이 아닙니다");
+            return;
+        }
+        int currencyValue = 1;
+        string currencyName = data.itemName;
+        int currencyId = data.id;
 
+        if (CurrencyAmounts.ContainsKey(currencyId))
+        {
+            CurrencyAmounts[currencyId] += currencyValue;
+            Debug.Log($"{data.itemName}을  {currencyValue}개 만큼 획득하였습니다.");
+        }
+        else
+        {
+            CurrencyAmounts.Add(currencyId, currencyValue); // 획득한 적 없는 화폐(딕셔너리에 id가없음)라면 새로 추가하고 수량을 설정
+        }
+        OnPlayerInvChanged?.Invoke(); // 나중에 가져가서 구독하세요
+
+    }
     public void EquipItem(EquipmentItemData data) // 나중에 itemdata 받아서 다시 수정
     {
         string slotKey;
@@ -118,8 +142,8 @@ public class PlayerManager : MonoBehaviour
         }
         EquippedItems.Add(slotKey, data);
         Debug.Log($"{data.itemName} 장착 완료. 상태 업데이트.");
-        OnPlayerInvChanged?.Invoke();
-        OnPlayerStatusChanged?.Invoke();
+        OnPlayerInvChanged?.Invoke();// 나중에 가져가서 구독하세요
+        OnPlayerStatusChanged?.Invoke();// 나중에 가져가서 구독하세요
     }
 
     public void UnEquipItem(EquipmentItemData data)
