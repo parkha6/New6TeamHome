@@ -50,5 +50,11 @@ public class Enemy : MonoBehaviour, IDamageable
             hp = Mathf.Max(hp, 0);
         }
         Debug.Log($"{hp}");
+        Die();
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }
