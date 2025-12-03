@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7085452918768460710}
   - component: {fileID: 1113143895765047573}
   - component: {fileID: 5182328200868225608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -244,8 +244,20 @@ PrefabInstance:
       value: FkeyMessage
       objectReference: {fileID: 0}
     - target: {fileID: 5970595948346261957, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970595948346261957, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874109300451281280, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914965025029534012, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -354,9 +354,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2802587914070458566, guid: ee91f9ecc258520428571ef56eaf1263, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 3168286030732537980, guid: ee91f9ecc258520428571ef56eaf1263, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5297128470862105569, guid: ee91f9ecc258520428571ef56eaf1263, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405297287180487305, guid: ee91f9ecc258520428571ef56eaf1263, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6815697552692934201, guid: ee91f9ecc258520428571ef56eaf1263, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033905269280741702, guid: ee91f9ecc258520428571ef56eaf1263, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7122650891289512429, guid: ee91f9ecc258520428571ef56eaf1263, type: 3}
       propertyPath: m_Name
       value: EasyStageMap
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277483971491311420, guid: ee91f9ecc258520428571ef56eaf1263, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
