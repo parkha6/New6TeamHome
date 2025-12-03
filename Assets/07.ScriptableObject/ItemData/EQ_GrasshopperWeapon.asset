@@ -15,9 +15,11 @@ MonoBehaviour:
   id: 0
   itemName: Grasshopper_weapon
   icon: {fileID: 2088864368, guid: ebaade6370fa2d6469b0455d452a94db, type: 3}
+  skillIcon1: {fileID: 0}
+  skillIcon2: {fileID: 0}
   itemType: 1
   skinType: 1
   atkValue: 0
-  defValue: 0
-  spdValue: 0
+  defValue: 0.3
+  spdValue: 0.2
   hpValue: 0
