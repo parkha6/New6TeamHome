@@ -42,8 +42,6 @@ public class MainSceneUI : MonoBehaviour
             optionButton.onClick.AddListener(OptionOn);
         if (endButton != null)
             endButton.onClick.AddListener(GameManager.Instance.EndGame);
-        PlayerUi.Instance.SetPlayerScreenUi(false);
-        PlayerUi.Instance.SetPauseUi(false);
     }
     /// <summary>
     /// 게임 시작씬으로 넘어가기
@@ -53,10 +51,7 @@ public class MainSceneUI : MonoBehaviour
         if (startLobbyScene != null)
         {
             GameManager.Instance.systemPhase = Phase.Game;
-            PlayerUi.Instance.SetEverything(1,1,0,0,0,0,0,0,0);
             GameManager.Instance.ChangeScene(startLobbyScene);
-            if (GameManager.Instance.async.isDone)
-                PlayerUi.Instance.SetPlayerScreenUi(true);
         }
     }
     /// <summary>

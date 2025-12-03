@@ -29,7 +29,7 @@ public class EasyRandom : MonoBehaviour
         ArrRandom(leftPatterns);
         ArrRandom(rightPatterns);
         ArrRandom(exits);
-        PlayerUi.Instance.SetPlayerScreenUi(false);
+        GameManager.Instance.PlayerUi.SetPlayerScreenUi(false);
     }
     /// <summary>
     /// 지정된 게임오브젝트 배열중 하나만 활성화
@@ -40,9 +40,13 @@ public class EasyRandom : MonoBehaviour
         for (int i = Consts.none; i < targetObjs.Length; ++i)
         {
             if (i == whichOne)
-            { targetObjs[i].SetActive(true); }
+            { 
+                targetObjs[i].SetActive(true); 
+            }
             else
-            { targetObjs[i].SetActive(false); }
+            { 
+                targetObjs[i].SetActive(false); 
+            }
         }
     }
 }

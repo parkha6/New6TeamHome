@@ -56,7 +56,9 @@ public class Door : MonoBehaviour, IInteractable
         if (other.CompareTag("Player"))
         {
             if (fkeyUi != null)
-            { fkeyUi.SetActive(false); }
+            { 
+                fkeyUi.SetActive(false); 
+            }
             else
                 Debug.Log("F키 UI가 없음");
         }

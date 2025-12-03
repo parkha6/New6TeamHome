@@ -4,7 +4,7 @@ using UnityEngine.UI;
 /// <summary>
 /// 플레이어 UI관리용
 /// </summary>
-public class PlayerUi : MonoSingleton<PlayerUi>
+public class PlayerUi : MonoBehaviour
 {
     /// <summary>
     /// 플레이어 화면표시 UI
@@ -84,9 +84,9 @@ public class PlayerUi : MonoSingleton<PlayerUi>
     /// <param name="hpStat"></param>
     internal void SetEverything(float currentHp, float wholeHp, int wing, int skin, int gold, float atkStat, float skinStat, float wingStat, float hpStat)
     {
-        PlayerUi.Instance.SetPlayerHp(currentHp, wholeHp);//원래는 여기에 세팅해야 됨.
-        PlayerUi.Instance.SetScoreText(wing, skin, gold);
-        PlayerUi.Instance.SetStat(atkStat, skinStat, wingStat, hpStat);
+        SetPlayerHp(currentHp, wholeHp);//원래는 여기에 세팅해야 됨.
+        SetScoreText(wing, skin, gold);
+        SetStat(atkStat, skinStat, wingStat, hpStat);
     }
 
     /// <summary>
@@ -184,10 +184,14 @@ public class PlayerUi : MonoSingleton<PlayerUi>
     /// 생성시 버튼 연결
     /// </summary>
     private void Start()
-    { pauseUiEndButton.onClick.AddListener(GameManager.Instance.EndPause); }
+    { 
+        pauseUiEndButton.onClick.AddListener(GameManager.Instance.EndPause); 
+    }
     /// <summary>
     /// 파괴시 버튼 구독 해제
     /// </summary>
     private void OnDestroy()
-    { pauseUiEndButton.onClick.RemoveAllListeners(); }
+    { 
+        pauseUiEndButton.onClick.RemoveAllListeners(); 
+    }
 }

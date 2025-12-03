@@ -14,6 +14,20 @@ public class GameManager : MonoSingleton<GameManager>
     /// 비동기 처리용
     /// </summary>
     internal AsyncOperation async;
+    [SerializeField] private GameObject playerUiPrefab; 
+    private PlayerUi playerUi;
+    public PlayerUi PlayerUi
+    {
+        get
+        {
+            if (playerUi == null)
+            {
+                GameObject obj = Instantiate(playerUiPrefab);
+                playerUi = obj.GetComponent<PlayerUi>();
+            }
+            return playerUi;
+        }
+    }
     /// <summary>
     /// 일시정지 체크용 업데이트
     /// </summary>
@@ -22,12 +36,16 @@ public class GameManager : MonoSingleton<GameManager>
         if (systemPhase == Phase.Game)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
-            { Pause(); }
+            {
+                Pause();
+            }
         }
         else if (systemPhase == Phase.Pause)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
-            { EndPause(); }
+            {
+                EndPause();
+            }
         }
     }
     /// <summary>
@@ -35,14 +53,16 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     /// <param name="sceneName"></param>
     internal void ChangeScene(string sceneName)
-    { async = SceneManager.LoadSceneAsync(sceneName); }
+    {
+        async = SceneManager.LoadSceneAsync(sceneName);
+    }
     /// <summary>
     /// 일시정지시 UI띄우기
     /// </summary>
     internal void Pause()
     {
         StopTime();
-        PlayerUi.Instance.SetPauseUi(true);
+        PlayerUi.SetPauseUi(true);
         systemPhase = Phase.Pause;
     }
     /// <summary>
@@ -50,7 +70,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     internal void EndPause()
     {
-        PlayerUi.Instance.SetPauseUi(false);
+        PlayerUi.SetPauseUi(false);
         RunTime();
         systemPhase = Phase.Game;
     }
@@ -58,12 +78,16 @@ public class GameManager : MonoSingleton<GameManager>
     /// 시간을 멈춘다.
     /// </summary>
     void StopTime()
-    { Time.timeScale = Consts.none; }
+    {
+        Time.timeScale = Consts.none;
+    }
     /// <summary>
     /// 시간을 다시 움직인다.
     /// </summary>
     void RunTime()
-    { Time.timeScale = Consts.minValue; }
+    {
+        Time.timeScale = Consts.minValue;
+    }
     /// <summary>
     /// 게임 종료
     /// </summary>
@@ -71,7 +95,9 @@ public class GameManager : MonoSingleton<GameManager>
     {
 #if UNITY_EDITOR
         if (EditorApplication.isPlaying)
-        { EditorApplication.ExitPlaymode(); }
+        {
+            EditorApplication.ExitPlaymode();
+        }
 #endif
         Application.Quit();
     }
