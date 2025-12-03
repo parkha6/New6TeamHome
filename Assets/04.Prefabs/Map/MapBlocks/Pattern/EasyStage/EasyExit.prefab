@@ -207,7 +207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1113143895765047573, guid: 5db5dad34dcaed7498e001bc68ced366, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8112720681878268048, guid: 5db5dad34dcaed7498e001bc68ced366, type: 3}
       propertyPath: m_Name
@@ -485,7 +485,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3195536998279104428, guid: a6e41ffed72069c4f9b12803881ab30c, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5014493289603574415, guid: a6e41ffed72069c4f9b12803881ab30c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -541,7 +541,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7990876968327755822, guid: a6e41ffed72069c4f9b12803881ab30c, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -571,7 +571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2891314989796258329, guid: b6cc637a09b9e254c884c7e9ba504790, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3913966242363447896, guid: b6cc637a09b9e254c884c7e9ba504790, type: 3}
       propertyPath: m_LocalPosition.x
@@ -637,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3195536998279104428, guid: a6e41ffed72069c4f9b12803881ab30c, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5014493289603574415, guid: a6e41ffed72069c4f9b12803881ab30c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -693,7 +693,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7990876968327755822, guid: a6e41ffed72069c4f9b12803881ab30c, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -847,7 +847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2891314989796258329, guid: b6cc637a09b9e254c884c7e9ba504790, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3913966242363447896, guid: b6cc637a09b9e254c884c7e9ba504790, type: 3}
       propertyPath: m_LocalPosition.x
@@ -917,7 +917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2891314989796258329, guid: b6cc637a09b9e254c884c7e9ba504790, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3913966242363447896, guid: b6cc637a09b9e254c884c7e9ba504790, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1111,7 +1111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2891314989796258329, guid: b6cc637a09b9e254c884c7e9ba504790, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3913966242363447896, guid: b6cc637a09b9e254c884c7e9ba504790, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1225,7 +1225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1113143895765047573, guid: 5db5dad34dcaed7498e001bc68ced366, type: 3}
       propertyPath: whichScene
-      value: Lobby
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8112720681878268048, guid: 5db5dad34dcaed7498e001bc68ced366, type: 3}
       propertyPath: m_Name
