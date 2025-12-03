@@ -12,8 +12,6 @@ public class SkinDropPickup : MonoBehaviour, IInteractable
 
     public void OnInteraction()
     {
- 
-
         Debug.Log("OnInteraction 작동");
         if (isPlayerInRange)
         {
