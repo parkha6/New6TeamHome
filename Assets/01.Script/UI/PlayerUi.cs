@@ -52,6 +52,9 @@ public class PlayerUi : MonoBehaviour
     /// 생명력 스텟 텍스트
     /// </summary>
     [SerializeField] TMP_Text hpStatText;
+    [SerializeField] Image SkinIcon;
+    [SerializeField] Image SkillIcon1;
+    [SerializeField] Image SkillIcon2;
     /// <summary>
     /// 일시정지 UI 활성& 비활성
     /// </summary>
@@ -180,6 +183,12 @@ public class PlayerUi : MonoBehaviour
         if (hpStatText != null)
             hpStatText.text = $"생명력 : +{hpStat * 100}%";
     }
+    internal void SetSkinIcon(Sprite skinIcon)
+    { }//skinIcon.}
+    internal void SetSkillIcon(Sprite skill1)
+    { }
+    internal void SetSkillIcon2(Sprite skill2)
+    { }
     /// <summary>
     /// 생성시 버튼 연결
     /// </summary>
