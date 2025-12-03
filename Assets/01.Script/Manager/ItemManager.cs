@@ -2,22 +2,30 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
+    // 외피 ScriptableObject
     public EquipmentItemData currentskin;
-    public SkinType currentSkin;          // 지금 장착된 외피
-    public SkinUpdateState skinState;     // 각 외피 강화 레벨 정보 (이미 만들었음)
 
+    // 현재 외피 타입
+    public SkinType currentSkin;
 
-    public void EquipSkin(SkinType newSkin)
+    // (이미 만들었던 외피 강화 레벨 정보)
+    public SkinUpdateState skinState;
+
+    // 🔹 SO를 받아서 둘 다 세팅하는 버전
+    public void EquipSkin(EquipmentItemData newSkinData)
     {
-        // 1) currentSkin 바꾸고
-        // 2) 외형/능력치 스크립트에 알려주기 (TODO: 팀원 코드랑 연결)
-        currentSkin = newSkin;
-        Debug.Log($"외피 교체: {newSkin}");
+        // SO 그대로 저장
+        currentskin = newSkinData;
+
+        // SO 안에 어떤 외피 타입인지 들어있다고 가정 (EquipmentItemData.skinType)
+        currentSkin = newSkinData.skinType;
+
+        Debug.Log($"외피 교체: {newSkinData.itemName} / 타입: {currentSkin}");
     }
 
-    public void OnSkinItemPickedUp(SkinType skinType)
+    public void OnSkinItemPickedUp(EquipmentItemData skinData)
     {
         // 나중에 여기서 "교체할 때 효과" 같은 것도 추가 가능
-        EquipSkin(skinType);
+        EquipSkin(skinData);
     }
 }
