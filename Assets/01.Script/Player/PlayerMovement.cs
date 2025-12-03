@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     public float facingDirection = 1.0f; // 바라보는 방향 디폴트는 1f(오른쪽)
     private float originalGravityScale; // 원래 중력값 저장할 변수
     private Collider2D playerCollider;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
 
     private Rigidbody2D rb;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveInput.x != 0)
         {
             facingDirection = Mathf.Sign(moveInput.x); // moveInput.x > 0 이면 1.0f(우), 아니면 -1.0f(좌) 저장  mathf.sign = 값을 받아 양수면 1.0, 음수면 -1.0을 저장함. 마지막으로 입력된 방향값을 변수에 저장하기 위함
+            spriteRenderer.flipX = (facingDirection < 0);
         }
     }
     public void OnJump(InputAction.CallbackContext context)
