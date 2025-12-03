@@ -11,6 +11,10 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     internal Phase systemPhase = Phase.Menu;
     /// <summary>
+    /// 비동기 처리용
+    /// </summary>
+    internal AsyncOperation async;
+    /// <summary>
     /// 일시정지 체크용 업데이트
     /// </summary>
     private void Update()
@@ -31,7 +35,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     /// <param name="sceneName"></param>
     internal void ChangeScene(string sceneName)
-    { SceneManager.LoadScene(sceneName); }
+    { async = SceneManager.LoadSceneAsync(sceneName); }
     /// <summary>
     /// 일시정지시 UI띄우기
     /// </summary>
