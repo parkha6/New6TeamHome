@@ -9,7 +9,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// <summary>
     /// 현재 페이즈 변수
     /// </summary>
-    internal Phase systemPhase = Phase.Menu;
+    [SerializeField] internal Phase systemPhase = Phase.Menu;
     /// <summary>
     /// 비동기 처리용
     /// </summary>
