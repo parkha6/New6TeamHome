@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7085452918768460710}
   - component: {fileID: 1113143895765047573}
   - component: {fileID: 5182328200868225608}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Door
   m_TagString: Door
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.047073796, y: 0.7198469}
+  m_Offset: {x: 0.031922936, y: 0.96983606}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -149,7 +149,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8497145, y: 1.4396938}
+  m_Size: {x: 1.6375589, y: 1.9396721}
   m_EdgeRadius: 0
 --- !u!1001 &6830329234162966306
 PrefabInstance:
@@ -244,8 +244,20 @@ PrefabInstance:
       value: FkeyMessage
       objectReference: {fileID: 0}
     - target: {fileID: 5970595948346261957, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970595948346261957, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8874109300451281280, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8914965025029534012, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
