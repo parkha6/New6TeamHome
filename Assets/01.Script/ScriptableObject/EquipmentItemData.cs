@@ -8,6 +8,8 @@ public class EquipmentItemData : ScriptableObject
     public int id;             // 20004 ~ 20009 같은 ID
     public string itemName;    // mantis_weapon 등
     public Sprite icon;        // 인게임 표시용
+    public Sprite skillIcon1; // 스킬 아이콘1
+    public Sprite skillIcon2; // 스킬 아이콘2
 
     public ItemType itemType;    // Currency / Equipment 구분
     public SkinType skinType;    // 어떤 외피인지 구분
