@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour, IDamageable
         //OnPlayerStatusChanged?.Invoke();
         //OnPlayerInvChanged?.Invoke(); // 초기 로드 후 UI에 알려줌
     }
-    public void TakePhisicalDamage(int amount)
+    public void TakePhisicalDamage(float amount)
     {
         float hp = CurrentStatus.HP;
         hp -= amount;

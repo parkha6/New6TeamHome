@@ -38,6 +38,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void NomalAttack()
     {
+        float playerAtk = PlayerManager.Instance.TotalAttack();
         Vector2 origin = rb.position; 
         Vector2 offset = new Vector2(attackDistance * facingDirection, 0f); // 전방
         Vector2 point = origin + offset;
@@ -47,6 +48,7 @@ public class PlayerAttack : MonoBehaviour
         {
             if (hit.TryGetComponent<Enemy>(out Enemy enemy)) // 실제로 데미지를 주기 위해서 enemy(스크립트)컴퍼넌트가 있는지 확인하고 있으면 데미지로직 실행
             {
+                enemy.TakePhisicalDamage(playerAtk);
                 Debug.Log("적에게 일반공격 적중"); // 추후 데미지 계산해서 넣자
             }
         }

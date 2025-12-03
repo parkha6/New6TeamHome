@@ -17,7 +17,7 @@ public class Player : MonoBehaviour, IDamageable
         }
 
     }
-    public void TakePhisicalDamage(int amount) // 나중에 float로 바꾸는게 편할듯. player능력치가 다 float임
+    public void TakePhisicalDamage(float amount) // 나중에 float로 바꾸는게 편할듯. player능력치가 다 float임
     {
         if (playerManager.isInvincible)
         {
