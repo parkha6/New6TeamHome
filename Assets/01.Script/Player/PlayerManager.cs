@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
     public event Action OnPlayerInvChanged; // invUI에 알려주기 위한 이벤트
     public bool isInvincible = false; 
     public float invincibilityDuration; //무적 지속 시간
-    public Dictionary<string, PlayerItemData> EquippedItems { get; private set; } = new Dictionary<string, PlayerItemData>();
+    public Dictionary<string, EquipmentItemData> EquippedItems { get; private set; } = new Dictionary<string, EquipmentItemData>();
 
     [Header("Default Data & Config")]
     [SerializeField]
@@ -97,47 +97,47 @@ public class PlayerManager : MonoBehaviour
     //    }
     //} 인벤토리 추가되먼 주석해제
 
-    public void EquipItem(PlayerItemData data) // 나중에 itemdata 받아서 다시 수정
+    public void EquipItem(EquipmentItemData data) // 나중에 itemdata 받아서 다시 수정
     {
         string slotKey;
-        if (data.Type.ToLower() == "weapon")
+        if (data.itemType.ToString() == "Equipment")
         {
-            slotKey = "weapon"; // 무기는 'weapon' 키 사용
+            slotKey = "weapon"; //외피는 하나만 장착 가능하기때문에 한개의 슬롯키(weapon)만 생성하여 하나만 장착 가능하게 함.
         }
         else
         {
             // 장착 불가능한 타입은 여기서 종료
-            Debug.LogWarning($"{data.Name}은(는) 장착 가능한 타입이 아닙니다.");
+            Debug.LogWarning($"{data.itemName}은(는) 장착 가능한 타입이 아닙니다.");
             return;
         }
 
         if (EquippedItems.ContainsKey(slotKey)) // 이미 장착된 아이템 있으면
         {
-            PlayerItemData oldItem = EquippedItems[slotKey]; // 기존 아이템을 되돌림
+            EquipmentItemData oldItem = EquippedItems[slotKey]; // 기존 아이템을 되돌림
             EquippedItems.Remove(slotKey);
         }
         EquippedItems.Add(slotKey, data);
-        Debug.Log($"{data.Name} 장착 완료. 상태 업데이트.");
+        Debug.Log($"{data.itemName} 장착 완료. 상태 업데이트.");
         OnPlayerInvChanged?.Invoke();
         OnPlayerStatusChanged?.Invoke();
     }
 
-    public void UnEquipItem(PlayerItemData data)
+    public void UnEquipItem(EquipmentItemData data)
     {
         string slotKey;
-        if (data.Type.ToLower() == "weapon")
+        if (data.itemType.ToString() == "Equipment")
         {
-            slotKey = "weapon";
+            slotKey = "weapon"; 
         }
         else
         {
             return;
         }
         //string type = data.type.ToLower();
-        if (EquippedItems.ContainsKey(slotKey) && EquippedItems[slotKey].ID == data.ID)
+        if (EquippedItems.ContainsKey(slotKey) && EquippedItems[slotKey].id == data.id)
         {
             EquippedItems.Remove(slotKey);
-            Debug.Log($"{data.Name} 해제 완료. 상태 업데이트.");
+            Debug.Log($"{data.itemName} 해제 완료. 상태 업데이트.");
             OnPlayerInvChanged?.Invoke();
             OnPlayerStatusChanged?.Invoke();
         }
@@ -148,7 +148,7 @@ public class PlayerManager : MonoBehaviour
         float totalAttack = CurrentStatus.ATK;
         foreach (var item in EquippedItems.Values)
         {
-            totalAttack *= item.Atk_Value; // 추후 강화value도 추가하자.
+            totalAttack *= item.atkValue; // 추후 강화value도 추가하자.
         }
         return totalAttack;
     }
@@ -158,20 +158,32 @@ public class PlayerManager : MonoBehaviour
         float totalDef = CurrentStatus.DEF;
         foreach (var item in EquippedItems.Values)
         {
-            totalDef *= item.Def_Value; // 추후 강화value도 추가하자.
+            totalDef *= item.defValue; // 추후 강화value도 추가하자.
         }
         return totalDef;
     }
 
-    //public int TotalHP()
-    //{
+    public float TotalHP()
+    {
+        float totalHP = CurrentStatus.HP;
+        foreach (var item in EquippedItems.Values)
+        {
+            totalHP *= item.defValue; // 추후 강화value도 추가하자.
+        }
+        return totalHP;
 
-    //}
+    }
 
-    //public int TotalSpeed()
-    //{
+    public float TotalSpeed()
+    {
+        float totalSpeed = CurrentStatus.SPEED;
+        foreach (var item in EquippedItems.Values)
+        {
+            totalSpeed *= item.spdValue; // 추후 강화value도 추가하자.
+        }
+        return totalSpeed;
 
-    //}
+    }
     public void Invincibility()
     {
         // 추후 takedamage에 무적이면 무시 로직 추가
