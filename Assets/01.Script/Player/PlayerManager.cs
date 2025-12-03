@@ -139,11 +139,17 @@ public class PlayerManager : MonoBehaviour
         {
             EquipmentItemData oldItem = EquippedItems[slotKey]; // 기존 아이템을 되돌림
             EquippedItems.Remove(slotKey);
+            Debug.Log($"{oldItem.itemName}을 해제합니다");
         }
         EquippedItems.Add(slotKey, data);
         Debug.Log($"{data.itemName} 장착 완료. 상태 업데이트.");
         OnPlayerInvChanged?.Invoke();// 나중에 가져가서 구독하세요
         OnPlayerStatusChanged?.Invoke();// 나중에 가져가서 구독하세요
+    }
+    public void OnSkinItemPickedUp(EquipmentItemData skinData)
+    {
+        EquipItem(skinData);
+        Debug.Log($"{skinData.itemName}을(를) 획득하고 장착했습니다.");
     }
 
     public void UnEquipItem(EquipmentItemData data)

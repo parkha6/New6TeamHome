@@ -27,5 +27,7 @@ public class ItemManager : MonoBehaviour
     {
         // 나중에 여기서 "교체할 때 효과" 같은 것도 추가 가능
         EquipSkin(skinData);
+        PlayerManager.Instance.EquipItem(skinData);
+
     }
 }

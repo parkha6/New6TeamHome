@@ -18,7 +18,6 @@ public class SkinDropPickup : MonoBehaviour, IInteractable
             if (playerItemManager != null)
             {
                 TryPickup();
-                // PlayerManager.Instance.EquipItem(EquipmentItemData.);
             }
         }
     }
