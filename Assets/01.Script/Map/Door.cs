@@ -30,7 +30,7 @@ public class Door : MonoBehaviour, IInteractable
     /// 플레이어가 문과 충돌하면 문에 UI를 띄운다
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("player"))
         {
@@ -46,6 +46,7 @@ public class Door : MonoBehaviour, IInteractable
         }
         else
             Debug.Log("플레이어가 아님");
+        Debug.Log("충돌인식은 되나?");
     }
     /// <summary>
     /// 나갈때 안내가 꺼짐
@@ -56,20 +57,13 @@ public class Door : MonoBehaviour, IInteractable
         if (other.CompareTag("player"))
         {
             if (fkeyUi != null)
-            {
-                if (isWorking)
-                    fkeyUi.SetActive(false);
-                else
-                    Debug.Log("작동하는 문이 아님");
-            }
+            { fkeyUi.SetActive(false); }
             else
                 Debug.Log("F키 UI가 없음");
         }
         else
             Debug.Log("플레이어가 아님");
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
+        Debug.Log("충돌인식은 되나?");
     }
     /// <summary>
     /// 작동하는 문이면 씬을 이동한다.
