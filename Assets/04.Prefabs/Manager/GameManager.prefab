@@ -45,3 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   systemPhase: 1
+  playerUiPrefab: {fileID: 4769970095234070474, guid: 2d2ac6099a37a804c8cf397ea2eaee32, type: 3}
