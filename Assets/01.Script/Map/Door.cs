@@ -1,4 +1,7 @@
 using UnityEngine;
+/// <summary>
+/// 문의 기능을 담당하는 클래스
+/// </summary>
 public class Door : MonoBehaviour, IInteractable
 {
     [Header("문에서 이동할 씬의 이름.")]
