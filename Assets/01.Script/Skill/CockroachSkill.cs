@@ -56,6 +56,6 @@ public class CockroachSkill : BaseSkill
         PlayerManager.Instance.invincibilityDuration = invincibility;
         invincibility = 5f;
         PlayerManager.Instance.Invincibility();
-        Debug.Log($"{invincibility}");
+        Debug.Log($"{invincibility}초");
     }
 }
