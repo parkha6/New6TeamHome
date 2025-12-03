@@ -32,9 +32,10 @@ public class CockroachSkill : BaseSkill
 
     public override void SkillNum1()
     {
-
+        float currentFacingDirection = playerMovement.facingDirection;
+        Vector2 attackDirection = new Vector2(currentFacingDirection, 0);
         CaptureSkillOrigin();
-        StartCoroutine(Move(Vector2.right, skill1AttackDistance, 0.2f));
+        StartCoroutine(Move(attackDirection, skill1AttackDistance, 0.2f));
 
         Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance, skill1Height);
 
