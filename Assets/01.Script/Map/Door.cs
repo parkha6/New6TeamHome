@@ -29,9 +29,9 @@ public class Door : MonoBehaviour, IInteractable
     /// 플레이어가 문과 충돌하면 문에 UI를 띄운다
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("player"))
+        if (other.CompareTag("Player"))
         {
             if (fkeyUi != null)
             {
@@ -51,9 +51,9 @@ public class Door : MonoBehaviour, IInteractable
     /// 나갈때 안내가 꺼짐
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("player"))
+        if (other.CompareTag("Player"))
         {
             if (fkeyUi != null)
             { fkeyUi.SetActive(false); }
