@@ -52,9 +52,18 @@ public class PlayerUi : MonoBehaviour
     /// 생명력 스텟 텍스트
     /// </summary>
     [SerializeField] TMP_Text hpStatText;
-    [SerializeField] Image SkinIcon;
-    [SerializeField] Image SkillIcon1;
-    [SerializeField] Image SkillIcon2;
+    /// <summary>
+    /// 외피 아이콘
+    /// </summary>
+    [SerializeField] Image skinIcon;
+    /// <summary>
+    /// 스킬 1 아이콘 
+    /// </summary>
+    [SerializeField] Image skillIcon1;
+    /// <summary>
+    /// 스킬 2 아이콘
+    /// </summary>
+    [SerializeField] Image skillIcon2;
     /// <summary>
     /// 일시정지 UI 활성& 비활성
     /// </summary>
@@ -178,29 +187,66 @@ public class PlayerUi : MonoBehaviour
         if (wingStatText != null)
             wingStatText.text = $"날개 : +{wingStat * 100}%";
     }
+    /// <summary>
+    /// 생명력 스텟 세팅
+    /// </summary>
+    /// <param name="hpStat"></param>
     internal void SetHpStat(float hpStat)
     {
         if (hpStatText != null)
             hpStatText.text = $"생명력 : +{hpStat * 100}%";
     }
-    internal void SetSkinIcon(Sprite skinIcon)
-    { }//skinIcon.}
-    internal void SetSkillIcon(Sprite skill1)
-    { }
-    internal void SetSkillIcon2(Sprite skill2)
-    { }
+    /// <summary>
+    /// 외피&스킬 아이콘 전부 세팅
+    /// </summary>
+    /// <param name="skin"></param>
+    /// <param name="skill1"></param>
+    /// <param name="skill2"></param>
+    internal void SkinNSkillIcon(Sprite skin, Sprite skill1, Sprite skill2)
+    {
+        SetSkinIcon(skin);
+        SetSkillIcon(skill1);
+        SetSkillIcon(skill2);
+    }
+    /// <summary>
+    /// 외피 아이콘 세팅
+    /// </summary>
+    /// <param name="icon"></param>
+    internal void SetSkinIcon(Sprite icon)
+    {
+        if (skinIcon != null)
+            skinIcon.sprite = icon;
+    }
+    /// <summary>
+    /// 스킬1 아이콘 세팅
+    /// </summary>
+    /// <param name="icon"></param>
+    internal void SetSkillIcon(Sprite icon)
+    {
+        if (skillIcon1 != null)
+            skillIcon1.sprite = icon;
+    }
+    /// <summary>
+    /// 스킬2 아이콘 세팅
+    /// </summary>
+    /// <param name="icon"></param>
+    internal void SetSkillIcon2(Sprite icon)
+    {
+        if (skillIcon2 != null)
+            skillIcon2.sprite = icon;
+    }
     /// <summary>
     /// 생성시 버튼 연결
     /// </summary>
     private void Start()
-    { 
-        pauseUiEndButton.onClick.AddListener(GameManager.Instance.EndPause); 
+    {
+        pauseUiEndButton.onClick.AddListener(GameManager.Instance.EndPause);
     }
     /// <summary>
     /// 파괴시 버튼 구독 해제
     /// </summary>
     private void OnDestroy()
-    { 
-        pauseUiEndButton.onClick.RemoveAllListeners(); 
+    {
+        pauseUiEndButton.onClick.RemoveAllListeners();
     }
 }
