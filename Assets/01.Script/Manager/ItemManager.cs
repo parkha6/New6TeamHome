@@ -23,6 +23,7 @@ public class ItemManager : MonoBehaviour
 
         GameManager.Instance.PlayerUi.SkinNSkillIcon(newSkinData.icon, newSkinData.skillIcon1, newSkinData.skillIcon2);
         Debug.Log($"외피 교체: {newSkinData.itemName} / 타입: {currentSkin}");
+        PlayerSkillController.Instance.SetState(currentSkin);
     }
 
     public void OnSkinItemPickedUp(EquipmentItemData skinData)
