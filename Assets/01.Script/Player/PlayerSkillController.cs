@@ -6,8 +6,25 @@ using UnityEngine;
 
 public class PlayerSkillController : MonoBehaviour
 {
+    public static PlayerSkillController Instance { get; private set; }
+
     private SkinType skinType;
 
+    public SkinEnhanceData enhanceCoData;
+    public SkinEnhanceData enhanceGrData;
+    public SkinEnhanceData enhanceMaData;
+
+    private void Awake()
+    {
+        // 같은 씬에서 중복 생성 방지
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
     private void Start()
     {
         SetState(SkinType.Cockroach);

@@ -13,10 +13,16 @@ public class MantisSkill : BaseSkill
     public Vector2 skill2BoxSize = new Vector2(3.5f, 0.5f);
     public float skill2Distance = 0.4f;
     public float skill2Height = 1f;
+
+    [Header("SkillEnhance Data")]
+    public SkinEnhanceData enhanceData;
+    
+
     protected override void Awake()
     {
         base.Awake();
         player = this.gameObject;
+        enhanceData = PlayerSkillController.Instance.enhanceMaData;
     }
 
     void Update() // Test
@@ -25,9 +31,12 @@ public class MantisSkill : BaseSkill
         {
             SkillNum1();
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (enhanceData.maxLevel >= 2)
         {
-            SkillNum2();
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                SkillNum2();
+            }
         }
     }
 

@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeName: "\uCD5C\uB300 \uCCB4\uB825"
   description: 
   statType: 0
-  maxLevel: 5
+  maxLevel: 3
   costs:
   - item: {fileID: 11400000, guid: 5171b312a98b089499d303d4df9ca118, type: 2}
     amount: 0

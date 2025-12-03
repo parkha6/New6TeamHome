@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,17 +10,35 @@ public class EvolveNPC : MonoBehaviour, IInteractable
     public CurrencyWallet wallet;
     public PermanentStats permanentStats;
     public EvolutionUpgradeData[] upgrades;
-    public Button evolutionButton;
+    public GameObject evolutionUI;
+    public TextMeshProUGUI atkText;
+    public TextMeshProUGUI defText;
+    public TextMeshProUGUI hpText;
+    public TextMeshProUGUI speedText;
+
+    public void Start()
+    {
+        evolutionUI.SetActive(false);
+        UITextSet();
+    }
 
     public void OnInteraction()
     {
-        throw new System.NotImplementedException();
+        evolutionUI.SetActive(true);
+    }
+    public void UITextSet()
+    {
+        atkText.text = $"{upgrades[0].name}";
+        defText.text = $"{upgrades[1].name}";
+        hpText.text = $"{upgrades[2].name}";
+        speedText.text = $"{upgrades[3].name}";
     }
 
     public void TryEvolveByIndex(int index)
     {
         EvolutionUpgradeData upgradeData = upgrades[index];
         // 여기 안에서 기존 TryEvolve 로직을 이 upgradeData 기준으로 돌릴 예정
+        Debug.Log($"현재 강화 능력치 {upgradeData}");
 
         int currentLevel = 0;
 

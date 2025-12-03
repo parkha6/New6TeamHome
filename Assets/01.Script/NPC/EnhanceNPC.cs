@@ -1,10 +1,15 @@
 using UnityEngine;
 
-public class EnhanceNPC : MonoBehaviour
+public class EnhanceNPC : MonoBehaviour, IInteractable
 {
     public CurrencyWallet wallet;          // 재화
     public SkinUpdateState skinState;      // 각 외피 강화 레벨
     public SkinEnhanceData[] enhances;     // Mantis / Grasshopper / Cockroach 강화 데이터들
+
+    public void OnInteraction()
+    {
+        throw new System.NotImplementedException();
+    }
 
     public void TryEnhanceByIndex(int index)
     {

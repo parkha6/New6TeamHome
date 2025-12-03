@@ -11,11 +11,15 @@ public class CockroachSkill : BaseSkill
     public float skill1Height = 1f;
     public float skill1AttackDistance = 3;
 
+    [Header("SkillEnhance Data")]
+    public SkinEnhanceData enhanceData;
+
     public float invincibility;
     protected override void Awake()
     {
         base.Awake();
         player = this.gameObject;
+        enhanceData = PlayerSkillController.Instance.enhanceCoData;
     }
 
     void Update() // Test
@@ -24,10 +28,14 @@ public class CockroachSkill : BaseSkill
         {
             SkillNum1();
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (enhanceData.maxLevel >= 2)
         {
-            SkillNum2();
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                SkillNum2();
+            }
         }
+
     }
 
     public override void SkillNum1()

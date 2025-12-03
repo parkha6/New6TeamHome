@@ -13,10 +13,14 @@ public class GrasshopperSkill : BaseSkill
     public Vector2 skill2BoxSize = new Vector2(0.5f, 1f);
     public float skill2Distance = 0.5f;
     public float skill2Height = 0.5f;
+
+    [Header("SkillEnhance Data")]
+    public SkinEnhanceData enhanceData;
     protected override void Awake()
     {
         base.Awake();
         player = this.gameObject;
+        enhanceData = PlayerSkillController.Instance.enhanceGrData;
     }
 
     void Update() // Test
@@ -25,9 +29,12 @@ public class GrasshopperSkill : BaseSkill
         {
             SkillNum1();
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (enhanceData.maxLevel >= 2)
         {
-            SkillNum2();
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                SkillNum2();
+            }
         }
     }
 

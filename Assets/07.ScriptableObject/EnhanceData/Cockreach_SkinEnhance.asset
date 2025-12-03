@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71a2f1d61cef2040a4aa17f162c639a, type: 3}
   m_Name: Cockreach_SkinEnhance
   m_EditorClassIdentifier: 
-  enhanceName: Mantis
+  enhanceName: Cockreach
   description: 
-  skinType: 0
-  maxlevel: 5
+  skinType: 2
+  maxLevel: 3
   costs:
   - item: {fileID: 11400000, guid: 3521be1c7d7330742b8669a95eabebe8, type: 2}
     amount: 0

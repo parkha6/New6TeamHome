@@ -15,7 +15,7 @@ MonoBehaviour:
   enhanceName: Mantis
   description: 
   skinType: 0
-  maxlevel: 5
+  maxLevel: 3
   costs:
   - item: {fileID: 11400000, guid: 3521be1c7d7330742b8669a95eabebe8, type: 2}
     amount: 0
