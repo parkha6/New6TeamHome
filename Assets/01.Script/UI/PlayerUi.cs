@@ -136,7 +136,7 @@ public class PlayerUi : MonoSingleton<PlayerUi>
     internal void SetAtkStat(float atkStat)
     {
         if (atkStatText != null)
-            atkStatText.text = $"턱 : {atkStat}%";
+            atkStatText.text = $"턱 : +{atkStat}%";
     }
     /// <summary>
     /// 갑각 스텟 세팅
@@ -145,7 +145,7 @@ public class PlayerUi : MonoSingleton<PlayerUi>
     internal void SetSkinStat(float skinStat)
     {
         if (skinStatText != null)
-            skinStatText.text = $"갑각 : {skinStat}%";
+            skinStatText.text = $"갑각 : +{skinStat}%";
     }
     /// <summary>
     /// 날개 스텟 세팅
@@ -154,12 +154,12 @@ public class PlayerUi : MonoSingleton<PlayerUi>
     internal void SetWingStat(float wingStat)
     {
         if (wingStatText != null)
-            wingStatText.text = $"날개 : {wingStat}%";
+            wingStatText.text = $"날개 : +{wingStat}%";
     }
     internal void SetHpStat(float hpStat)
     {
         if (hpStatText != null)
-            hpStatText.text = $"생명력 : {hpStat}%";
+            hpStatText.text = $"생명력 : +{hpStat}%";
     }
     /// <summary>
     /// 생성시 버튼 연결
