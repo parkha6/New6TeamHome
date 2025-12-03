@@ -43,6 +43,7 @@ public class Enemy : MonoBehaviour, IDamageable
     }
     public void TakePhisicalDamage(float amount)
     {
+        amount = PlayerManager.Instance.TotalAttack();
         float hp = CurrentStatus.HP;
         hp -= amount;
         if (hp <= 0)
