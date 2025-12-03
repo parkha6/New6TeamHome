@@ -98,7 +98,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa7859f2fafbafe40b1e910d5c2f9124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whichScene: 
+  whichScene: 4
+  mainscene: MainScene
+  startLobby: StartLobby
+  lobby: Lobby
+  easyStage: EasyStage
   isWorking: 0
 --- !u!60 &-1260880650613190124
 PolygonCollider2D:

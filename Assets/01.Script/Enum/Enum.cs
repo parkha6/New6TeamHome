@@ -27,3 +27,14 @@ public enum Phase
     Game,//게임 중
     Pause,//일시정지 중
 }
+/// <summary>
+/// 이동시 씬 이름 처리용 enum
+/// </summary>
+public enum sceneName
+{
+    MainScene,
+    StartLobby,
+    Lobby,
+    EasyStage,
+    None,
+}
