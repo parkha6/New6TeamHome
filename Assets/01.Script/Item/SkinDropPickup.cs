@@ -21,7 +21,6 @@ public class SkinDropPickup : MonoBehaviour, IInteractable
             {
                 TryPickup();
                 // PlayerManager.Instance.EquipItem(EquipmentItemData.);
-                Destroy(gameObject);
             }
         }
     }
@@ -32,7 +31,7 @@ public class SkinDropPickup : MonoBehaviour, IInteractable
             return;
 
         // EquipSkin은 SkinType을 인자로 받으므로 skinData.skinType을 전달해야 합니다.
-        playerItemManager.EquipSkin(skinData.skinType);
+        playerItemManager.OnSkinItemPickedUp(skinData);
         Destroy(gameObject);
     }
 
