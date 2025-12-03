@@ -17,14 +17,17 @@ public class CurrencyWallet : MonoBehaviour
         if (item == goldItem)
         {
             gold += amount;
+            GameManager.Instance.PlayerUi.SetGoldScore(gold);
         }
         else if (item == skin_pieceItem)
         {
             skin_piece += amount;
+            GameManager.Instance.PlayerUi.SetSkinScore(skin_piece);
         }
         else if (item == wing_pieceItem)
         {
             wing_piece += amount;
+            GameManager.Instance.PlayerUi.SetWingScore(wing_piece);
         }
     }
 
@@ -81,6 +84,13 @@ public class CurrencyWallet : MonoBehaviour
 
         // 어느 것도 해당 안 되면 false
         return false;
+    }
+    /// <summary>
+    /// 시작 함수에서 스코어 입력
+    /// </summary>
+    private void Start()
+    {
+        GameManager.Instance.PlayerUi.SetScoreText(wing_piece, skin_piece, gold);
     }
 }
 
