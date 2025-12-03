@@ -35,7 +35,7 @@ public class PlayerSkillController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) SetState(SkinType.Mantis);
         if (Input.GetKeyDown(KeyCode.Alpha3)) SetState(SkinType.Grasshopper);
     }
-    private void SetState(SkinType state)
+    public void SetState(SkinType state)
     {
         skinType = state;
 

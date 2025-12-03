@@ -21,6 +21,10 @@ public class EasyRandom : MonoBehaviour
     /// </summary>
     [SerializeField] GameObject[] exits;
     /// <summary>
+    /// 보상 아이템
+    /// </summary>
+    [SerializeField] GameObject[] rewardSkin;
+    /// <summary>
     /// 생성시 스테이지 랜덤배치
     /// </summary>
     private void Awake()
@@ -29,6 +33,7 @@ public class EasyRandom : MonoBehaviour
         ArrRandom(leftPatterns);
         ArrRandom(rightPatterns);
         ArrRandom(exits);
+        ArrRandom(rewardSkin);
         GameManager.Instance.PlayerUi.SetPlayerScreenUi(false);
     }
     /// <summary>
