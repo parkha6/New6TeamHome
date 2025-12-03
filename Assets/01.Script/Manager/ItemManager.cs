@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemManager : MonoBehaviour
@@ -20,6 +21,7 @@ public class ItemManager : MonoBehaviour
         // SO 안에 어떤 외피 타입인지 들어있다고 가정 (EquipmentItemData.skinType)
         currentSkin = newSkinData.skinType;
 
+        GameManager.Instance.PlayerUi.SkinNSkillIcon(newSkinData.icon, newSkinData.skillIcon1, newSkinData.skillIcon2);
         Debug.Log($"외피 교체: {newSkinData.itemName} / 타입: {currentSkin}");
     }
 
