@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class EnhanceNPC : MonoBehaviour, IInteractable
@@ -6,9 +7,24 @@ public class EnhanceNPC : MonoBehaviour, IInteractable
     public SkinUpdateState skinState;      // 각 외피 강화 레벨
     public SkinEnhanceData[] enhances;     // Mantis / Grasshopper / Cockroach 강화 데이터들
 
+    // 강화 UI 패널 + 텍스트들
+    public GameObject enhanceUI;
+    public TextMeshProUGUI mantisText;
+    public TextMeshProUGUI grasshopperText;
+    public TextMeshProUGUI cockroachText;
+
+    void Start()
+    {
+        if (enhanceUI != null)
+            enhanceUI.SetActive(false);
+
+        UITextSet();
+    }
+
     public void OnInteraction()
     {
-        throw new System.NotImplementedException();
+        if (enhanceUI != null)
+            enhanceUI.SetActive(true);
     }
 
     public void TryEnhanceByIndex(int index)
@@ -48,4 +64,18 @@ public class EnhanceNPC : MonoBehaviour, IInteractable
         // 5) 마지막으로 레벨 업
         skinState.IncreaseLevel(data.skinType);
     }
+
+    public void UITextSet()
+    {
+        // 규칙: 0=사마귀, 1=메뚜기, 2=바퀴벌레 라고 약속
+        if (mantisText != null && enhances.Length > 0)
+            mantisText.text = enhances[0].name;
+
+        if (grasshopperText != null && enhances.Length > 1)
+            grasshopperText.text = enhances[1].name;
+
+        if (cockroachText != null && enhances.Length > 2)
+            cockroachText.text = enhances[2].name;
+    }
+
 }
