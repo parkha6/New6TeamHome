@@ -8,5 +8,5 @@ public class Lobby : MonoBehaviour
     /// 로비에 들어오면 플레이어 UI를 세팅한다.
     /// </summary>
     private void Start()
-    { GameManager.Instance.SetPlayerUi(true); }
+    { PlayerUi.Instance.SetPlayerScreenUi(true); }
 }

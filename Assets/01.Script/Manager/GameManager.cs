@@ -11,31 +11,6 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     internal Phase systemPhase = Phase.Menu;
     /// <summary>
-    /// 플레이어 UI변수
-    /// </summary>
-    private PlayerUi playerUi;
-    /// <summary>
-    /// 플레이어 Ui를 외부에서 넣기.
-    /// </summary>
-    /// <param name="userUi"></param>
-    internal void PutPlayerUi(PlayerUi userUi)
-    {
-        if (userUi != null)
-        {
-            systemPhase = Phase.Game;
-            playerUi = userUi;
-        }
-    }
-    /// <summary>
-    /// 플레이어 UI 활성 & 비활성
-    /// </summary>
-    /// <param name="isSet"></param>
-    internal void SetPlayerUi(bool isSet)
-    {
-        if (playerUi != null)
-            playerUi.SetPlayerScreenUi(isSet);
-    }
-    /// <summary>
     /// 일시정지 체크용 업데이트
     /// </summary>
     private void Update()
@@ -63,8 +38,7 @@ public class GameManager : MonoSingleton<GameManager>
     internal void Pause()
     {
         StopTime();
-        if (playerUi != null)
-            playerUi.SetPauseUi(true);
+        PlayerUi.Instance.SetPauseUi(true);
         systemPhase = Phase.Pause;
     }
     /// <summary>
@@ -72,8 +46,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     internal void EndPause()
     {
-        if (playerUi != null)
-            playerUi.SetPauseUi(false);
+        PlayerUi.Instance.SetPauseUi(false);
         RunTime();
         systemPhase = Phase.Game;
     }

@@ -2,7 +2,7 @@ using UnityEngine;
 /// <summary>
 /// 플레이어 UI관리용
 /// </summary>
-public class PlayerUi : MonoBehaviour
+public class PlayerUi : MonoSingleton<PlayerUi>
 {
     /// <summary>
     /// 플레이어 화면표시 UI
@@ -29,13 +29,5 @@ public class PlayerUi : MonoBehaviour
     {
         if (playerScreenUi != null)
             playerScreenUi.SetActive(isSet);
-    }
-    /// <summary>
-    /// 생성시 플레이어UI에 자신을 넣는다.
-    /// </summary>
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-        GameManager.Instance.PutPlayerUi(this);
     }
 }
