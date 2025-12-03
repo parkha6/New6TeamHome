@@ -19,11 +19,39 @@ public class Door : MonoBehaviour, IInteractable
     /// </summary>
     [SerializeField] bool isWorking;
     /// <summary>
+    /// F키를 안내할 UI
+    /// </summary>
+    [SerializeField] GameObject fkeyUi;
+    /// <summary>
     /// 플레이어가 문과 충돌하면 문에 UI를 띄운다
     /// </summary>
     /// <param name="other"></param>
-    private void OnTriggerEnter2D(Collider2D other)
-    { //UI띄우기
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("player"))
+        {
+            if (fkeyUi != null)
+            {
+                if(isWorking)
+                fkeyUi.SetActive(true);
+            }
+        }
+    }
+    /// <summary>
+    /// 나갈때 안내가 꺼짐
+    /// </summary>
+    /// <param name="other"></param>
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("player"))
+        {
+            if (fkeyUi != null)
+            {
+                if (isWorking)
+                fkeyUi.SetActive(false);
+            }
+        }
+
     }
     /// <summary>
     /// 작동하는 문이면 씬을 이동한다.
