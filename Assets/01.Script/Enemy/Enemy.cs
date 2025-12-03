@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -40,9 +41,14 @@ public class Enemy : MonoBehaviour, IDamageable
         //OnPlayerStatusChanged?.Invoke();
         //OnPlayerInvChanged?.Invoke(); // 초기 로드 후 UI에 알려줌
     }
-    public void TakePhisicalDamage()
+    public void TakePhisicalDamage(int amount)
     {
-        throw new NotImplementedException();
+        float hp = CurrentStatus.HP;
+        hp -= amount;
+        if (hp <= 0)
+        {
+            hp = Mathf.Max(hp, 0);
+        }
+        Debug.Log($"{hp}");
     }
-
 }
