@@ -126,4 +126,11 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
         Debug.Log("대시 사용 가능");
     }
+
+    private void OnEnable() // 오브젝트가 꺼졌을 때 버그 방지용 코드. 초기화 해야하는 변수들 초기화 시켜준다.
+    {
+        isDashing = false;
+        canDash = true;
+        StopAllCoroutines();
+    }
 }
