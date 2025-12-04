@@ -10,6 +10,8 @@ public class SkinEnhanceData : ScriptableObject
 
     public SkinType skinType;
     public int maxLevel;
+    [Header("현재 강화 레벨 (0 ~ maxLevel)")]
+    public int currentLevel;
 
     public EvolutionCost[] costs;
     public float[] enhanceValues;
