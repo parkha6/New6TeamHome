@@ -12,11 +12,20 @@ public class SkinUpdateState : MonoBehaviour
     {
         // switch나 if로 분기해서 해당 레벨만 올려주기
         if (skinType == SkinType.Mantis)
+        {
             mantisLevel++;
+            GameManager.Instance.PlayerUi.SetMenLevel(mantisLevel);
+        }
         else if (skinType == SkinType.Grasshopper)
+        {
             grasshopperLevel++;
+            GameManager.Instance.PlayerUi.SetGraLevel(grasshopperLevel);
+        }
         else if (skinType == SkinType.Cockroach)
+        {
             cockroachLevel++;
+            GameManager.Instance.PlayerUi.SetCockLevel(cockroachLevel);
+        }
     }
 
     public int GetLevel(SkinType skinType)

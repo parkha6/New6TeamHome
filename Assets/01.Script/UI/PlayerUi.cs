@@ -31,6 +31,18 @@ public class PlayerUi : MonoBehaviour
     /// 골드 스코어
     /// </summary>
     [SerializeField] TMP_Text goldPieceText;
+    /// <summary>
+    /// 사마귀 외피 레벨
+    /// </summary>
+    [SerializeField] TMP_Text menLvText;
+    /// <summary>
+    /// 메뚜기 외피 레벨
+    /// </summary>
+    [SerializeField] TMP_Text graLvText;
+    /// <summary>
+    /// 바퀴벌레 외피 레벨
+    /// </summary>
+    [SerializeField] TMP_Text cockLvText;
     [Header("일시정지 UI")]
     /// <summary>
     /// 일시정지 창 닫기 버튼
@@ -131,6 +143,30 @@ public class PlayerUi : MonoBehaviour
     {
         if (hpBar != null)
             hpBar.fillAmount = currentHp / wholeHp;
+    }
+    /// <summary>
+    /// 사마귀 스킨레벨 텍스트 세팅
+    /// </summary>
+    /// <param name="skinLv"></param>
+    internal void SetMenLevel(int skinLv)
+    {
+        menLvText.text = skinLv.ToString();
+    }
+    /// <summary>
+    /// 메뚜기 스킨레벨 텍스트 세팅
+    /// </summary>
+    /// <param name="skinLv"></param>
+    internal void SetGraLevel(int skinLv)
+    {
+        graLvText.text = skinLv.ToString();
+    }
+    /// <summary>
+    /// 바퀴 스킨레벨 텍스트 세팅
+    /// </summary>
+    /// <param name="skinLv"></param>
+    internal void SetCockLevel(int skinLv)
+    {
+        cockLvText.text = skinLv.ToString();
     }
     /// <summary>
     /// 날개,외피,골드 스코어 한번에 세팅
