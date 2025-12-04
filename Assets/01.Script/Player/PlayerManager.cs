@@ -102,30 +102,39 @@ public class PlayerManager : MonoBehaviour
     public float TotalAttack()
     {
         float totalAttack = CurrentStatus.ATK;
+        float itemAtkValue = Consts.none;
         foreach (var item in EquippedItems.Values)
         {
             totalAttack += totalAttack * item.atkValue; // 추후 강화value도 추가하자.
+            itemAtkValue += item.atkValue;
         }
+        GameManager.Instance.PlayerUi.SetAtkStat(itemAtkValue);
         return totalAttack;
     }
 
     public float TotalDef()
     {
         float totalDef = CurrentStatus.DEF;
+        float itemDefValue = Consts.none;
         foreach (var item in EquippedItems.Values)
         {
             totalDef += totalDef * item.defValue; // 추후 강화value도 추가하자.
+            itemDefValue += item.defValue;
         }
+        GameManager.Instance.PlayerUi.SetSkinStat(itemDefValue);
         return totalDef;
     }
 
     public float TotalHP()
     {
         float totalHP = CurrentStatus.HP;
+        float itemHpValue = Consts.none;
         foreach (var item in EquippedItems.Values)
         {
             totalHP += totalHP * item.defValue; // 추후 강화value도 추가하자.
+            itemHpValue += item.hpValue;
         }
+        GameManager.Instance.PlayerUi.SetHpStat(itemHpValue);
         return totalHP;
 
     }
@@ -133,10 +142,13 @@ public class PlayerManager : MonoBehaviour
     public float TotalSpeed()
     {
         float totalSpeed = CurrentStatus.SPEED;
+        float itemSpeedValue = Consts.none;
         foreach (var item in EquippedItems.Values)
         {
             totalSpeed += totalSpeed * item.spdValue; // 추후 강화value도 추가하자.
+            itemSpeedValue += item.spdValue;
         }
+        GameManager.Instance.PlayerUi.SetHpStat(itemSpeedValue);
         return totalSpeed;
 
     }
@@ -152,6 +164,24 @@ public class PlayerManager : MonoBehaviour
         yield return new WaitForSeconds(invincibilityDuration);
         isInvincible = false;
         Debug.Log("무적 종료");
+    }
+    /// <summary>
+    /// 시작시 스텟 삽입
+    /// </summary>
+    private void Start()
+    {
+        float itemAtkValue = Consts.none;
+        float itemDefValue = Consts.none;
+        float itemSpdValue = Consts.none;
+        float itemHpValue = Consts.none;
+        foreach (var item in EquippedItems.Values)
+        {
+            itemAtkValue += item.atkValue;
+            itemDefValue += item.defValue;
+            itemSpdValue += item.spdValue;
+            itemHpValue += item.hpValue;
+        }
+        GameManager.Instance.PlayerUi.SetStat(itemAtkValue,itemDefValue,itemSpdValue,itemHpValue);
     }
 
 }
