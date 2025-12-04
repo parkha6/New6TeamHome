@@ -18,5 +18,6 @@ public class EvolutionUpgradeData : ScriptableObject
     public int maxLevel;
 
     public EvolutionCost[] costs;
+    public float[] evolveValues;
 }
 

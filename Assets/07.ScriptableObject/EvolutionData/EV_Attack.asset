@@ -21,3 +21,7 @@ MonoBehaviour:
     amount: 0
   - item: {fileID: 11400000, guid: 3129817461f92e14b80c56e25f081b4e, type: 2}
     amount: 0
+  evolveValues:
+  - 1.5
+  - 1.75
+  - 2
