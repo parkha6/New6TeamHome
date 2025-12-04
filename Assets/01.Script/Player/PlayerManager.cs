@@ -19,6 +19,9 @@ public class PlayerManager : MonoBehaviour
     public float invincibilityDuration; //무적 지속 시간
     float baseValue = 1.0f;
     [SerializeField] private EvolutionUpgradeData evAttackData;
+    [SerializeField] private EvolutionUpgradeData evDefenceData;
+    [SerializeField] private EvolutionUpgradeData evHPData;
+    [SerializeField] private EvolutionUpgradeData evSpeedData;
 
     public Dictionary<EvolutionStatType, int> AppliedEvolutionLevels = new Dictionary<EvolutionStatType, int>();
 
@@ -115,13 +118,14 @@ public class PlayerManager : MonoBehaviour
 
     public float TotalAttack()
     {
+        int curLevel = evAttackData.currentLevel;
         float totalAttack = CurrentStatus.ATK;
-        totalAttack += evAttackData.evolveValues[]; // currentlevel값 찾아서 넣
+        //totalAttack += evAttackData.evolveValues[curLevel]; // currentlevel값 찾아서 넣
         float itemAtkValue = Consts.none;
         foreach (var item in EquippedItems.Values)
         {
-            totalAttack += totalAttack * item.atkValue; // 추후 강화value도 추가하자. so를 가지고있자
-            itemAtkValue += item.atkValue;
+            totalAttack *= (item.atkValue + evAttackData.evolveValues[curLevel]); // so를 가지고있자
+            itemAtkValue += item.atkValue + evAttackData.evolveValues[curLevel];
         }
         GameManager.Instance.PlayerUi.SetAtkStat(itemAtkValue);
         return totalAttack;
@@ -129,12 +133,13 @@ public class PlayerManager : MonoBehaviour
 
     public float TotalDef()
     {
+        int curLevel = evDefenceData.currentLevel;
         float totalDef = CurrentStatus.DEF;
         float itemDefValue = Consts.none;
         foreach (var item in EquippedItems.Values)
         {
-            totalDef += totalDef * item.defValue; // 추후 강화value도 추가하자.
-            itemDefValue += item.defValue;
+            totalDef *= (item.defValue + evDefenceData.evolveValues[curLevel]); // 추후 강화value도 추가하자.
+            itemDefValue += item.defValue + evDefenceData.evolveValues[curLevel];
         }
         GameManager.Instance.PlayerUi.SetSkinStat(itemDefValue);
         return totalDef;
@@ -146,7 +151,7 @@ public class PlayerManager : MonoBehaviour
         float itemHpValue = Consts.none;
         foreach (var item in EquippedItems.Values)
         {
-            totalHP += totalHP * item.defValue; // 추후 강화value도 추가하자.
+            totalHP += totalHP * item.hpValue; // 추후 강화value도 추가하자.
             itemHpValue += item.hpValue;
         }
         GameManager.Instance.PlayerUi.SetHpStat(itemHpValue);
