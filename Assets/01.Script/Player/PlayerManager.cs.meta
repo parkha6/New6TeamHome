@@ -4,6 +4,10 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - evAttackData: {fileID: 11400000, guid: 0b176c2ef83e9174d9ddb111a31f86d5, type: 2}
+  - evDefenceData: {fileID: 11400000, guid: e67916762a48cf946b57332017e375a2, type: 2}
+  - evHPData: {fileID: 11400000, guid: d4f9ce148734de740b9dbefbf02ab414, type: 2}
+  - evSpeedData: {fileID: 11400000, guid: 18ceda58349b26244a3206db7d0139ed, type: 2}
   - defaultPlayerDataAsset: {fileID: 4900000, guid: 1c7e86664cd35234bb3bdb4b48e7e5db, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}

@@ -21,5 +21,6 @@ public class EvolutionUpgradeData : ScriptableObject
 
     public EvolutionCost[] costs;
     public float[] evolveValues;
+
 }
 
