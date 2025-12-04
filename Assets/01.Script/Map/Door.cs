@@ -86,21 +86,21 @@ public class Door : MonoBehaviour, IInteractable
                     if (startLobby != null)
                     {
                         Debug.Log("시작로비 씬 이동");
-                        //GameManager.Instance.ChangeScene(startLobby);
+                        GameManager.Instance.nextDoorPosition = startLobby.transform.position;
                     }
                         break;
                 case sceneName.Lobby:
                     if (lobby != null)
                     {
                         Debug.Log("로비 씬 이동");
-                        //GameManager.Instance.ChangeScene(lobby);
+                        GameManager.Instance.nextDoorPosition = lobby.transform.position;
                     }
                         break;
                 case sceneName.EasyStage:
                     if (easyStage != null)
                     {
                         Debug.Log("스테이지 씬 이동");
-                        //GameManager.Instance.ChangeScene(easyStage);
+                        GameManager.Instance.nextDoorPosition = easyStage.transform.position;
                     }
                         break;
                 case sceneName.None:

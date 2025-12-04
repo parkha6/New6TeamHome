@@ -773,6 +773,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 819297516707332041, guid: cf1988aafd397994aa6473e40d9f4c07, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 943122982870983425, guid: cf1988aafd397994aa6473e40d9f4c07, type: 3}
       propertyPath: m_Name
       value: EasyStage
@@ -1092,6 +1096,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1397819359}
     m_Modifications:
+    - target: {fileID: 4266343369830041824, guid: 2838d1e8a4ef1bc44b83c6df1446969e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6155132042981799500, guid: 2838d1e8a4ef1bc44b83c6df1446969e, type: 3}
       propertyPath: skinState
       value: 

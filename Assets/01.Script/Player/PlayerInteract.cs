@@ -34,6 +34,8 @@ public class PlayerInteract : MonoBehaviour
             {
                 interactableObject.OnInteraction();
                 Debug.Log($"상호작용 성공: {hit.gameObject.name} 와 상호작용했습니다.");
+                if (hit.CompareTag("Door"))
+                { transform.position = GameManager.Instance.UseDoor(); }
             }
             else
             {
