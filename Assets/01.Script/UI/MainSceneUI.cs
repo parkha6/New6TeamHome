@@ -50,8 +50,14 @@ public class MainSceneUI : MonoBehaviour
     {
         if (startLobbyScene != null)
         {
+
             GameManager.Instance.systemPhase = Phase.Game;
             GameManager.Instance.ChangeScene(startLobbyScene);
+            if (GameManager.Instance.async.isDone)
+            {
+                GameManager.Instance.PlayerUi.SetPauseUi(false);
+                GameManager.Instance.PlayerUi.SetPlayerScreenUi(true);
+            }
         }
     }
     /// <summary>
