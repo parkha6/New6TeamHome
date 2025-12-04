@@ -13,6 +13,11 @@ public class Enemy : MonoBehaviour, IDamageable
     public EnemySaveData CurrentSaveData { get; private set; } = new EnemySaveData(); // 초기데이터 세팅 그릇
     public CharacterData CurrentStatus => CurrentSaveData.status;
 
+    [Header("DropPrefab")]
+    public GameObject goldPrefab;
+    public GameObject skinPiecePrefab;
+    public GameObject wingPiecePrefab;
+
     private void Awake()
     {
         LoadDefaultData();
@@ -46,6 +51,7 @@ public class Enemy : MonoBehaviour, IDamageable
         //amount = PlayerManager.Instance.TotalAttack();
         float hp = CurrentStatus.HP;
         hp -= amount;
+        Debug.Log("Hit");
         if (hp <= 0)
         {
             hp = Mathf.Max(hp, 0);
@@ -56,7 +62,30 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void Die()
     {
+        SpawnDrop(goldPrefab);
+        SpawnDrop(skinPiecePrefab);
+        SpawnDrop(wingPiecePrefab);
+
         Destroy(gameObject);
-        // 재화
+    }
+
+    // ---------------- 드랍 생성 메서드 ----------------
+    private void SpawnDrop(GameObject prefab)
+    {
+        if (prefab == null) return;
+
+        GameObject drop = Instantiate(prefab, transform.position, Quaternion.identity);
+        Rigidbody2D rb = drop.GetComponent<Rigidbody2D>();
+        if (rb == null) return;
+
+        // 3) 랜덤 방향 + 위로 튀어오르게 힘 주기
+        Vector2 ranPop = new Vector2(UnityEngine.Random.Range(-1f, 1f), 1f).normalized;
+        float force = UnityEngine.Random.Range(3f, 6f);
+
+        rb.AddForce(ranPop * force, ForceMode2D.Impulse);
+
+        // 4) 랜덤 회전도 살짝 추가(있으면 느낌 좋음)
+        float torque = UnityEngine.Random.Range(-2f, 2f);
+        rb.AddTorque(torque, ForceMode2D.Impulse);
     }
 }

@@ -64,6 +64,13 @@ public class PlayerUi : MonoBehaviour
     /// 스킬 2 아이콘
     /// </summary>
     [SerializeField] Image skillIcon2;
+    [SerializeField] GameObject startLobbycircle;
+    [SerializeField] GameObject stagecircle;
+    [SerializeField] GameObject lobbycircle;
+    [SerializeField] Image currentPlaceIcon;
+    [SerializeField] Sprite startLobbyIcon;
+    [SerializeField] Sprite stageIcon;
+    [SerializeField] Sprite lobbyIcon;
     /// <summary>
     /// 생성시 버튼 연결
     /// </summary>
@@ -220,7 +227,7 @@ public class PlayerUi : MonoBehaviour
     {
         SetSkinIcon(skin);
         SetSkillIcon(skill1);
-        SetSkillIcon(skill2);
+        SetSkillIcon2(skill2);
     }
     /// <summary>
     /// 외피 아이콘 세팅
@@ -248,5 +255,26 @@ public class PlayerUi : MonoBehaviour
     {
         if (skillIcon2 != null)
             skillIcon2.sprite = icon;
+    }
+    internal void SetStartLobbyCircle()
+    {
+        startLobbycircle.SetActive(true);
+        stagecircle.SetActive(false);
+        lobbycircle.SetActive(false);
+        currentPlaceIcon.sprite = startLobbyIcon;
+    }
+    internal void SetStageCircle()
+    {
+        startLobbycircle.SetActive(false);
+        stagecircle.SetActive(true);
+        lobbycircle.SetActive(false);
+        currentPlaceIcon.sprite = stageIcon;
+    }
+    internal void SetLobbyCircle()
+    {
+        startLobbycircle.SetActive(false);
+        stagecircle.SetActive(false);
+        lobbycircle.SetActive(true);
+        currentPlaceIcon.sprite = lobbyIcon;
     }
 }

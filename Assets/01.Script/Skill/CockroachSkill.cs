@@ -6,8 +6,8 @@ using UnityEngine;
 public class CockroachSkill : BaseSkill
 {
     [Header("Skill 1 Settings")]
-    public Vector2 skill1BoxSize = new Vector2(2.5f, 1f);
-    public float skill1Distance = 1f;
+    public Vector2 skill1BoxSize = new Vector2(3f, 1f);
+    public float skill1Distance = 0f;
     public float skill1Height = 0.5f;
     public float skill1AttackDistance = 3;
 
@@ -47,9 +47,8 @@ public class CockroachSkill : BaseSkill
 
         Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance, skill1Height);
 
-#if UNITY_EDITOR
-        DebugDrawBox(skillOrigin, skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.5f);
-#endif
+        SpawnHitBoxEffect(skillOrigin, skill1BoxSize, skill1Distance, skill1Height, 0.3f);
+
         foreach (Collider2D hit in hits)
         {
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))

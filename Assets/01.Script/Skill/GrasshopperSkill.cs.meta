@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - player: {instanceID: 0}
+  - hitBoxPrefab: {fileID: 5857357926779417568, guid: b74c483834e99014ab3f2d1fdffa06ab, type: 3}
   - enhanceData: {fileID: 11400000, guid: d9d03e42043f4f34f83be462b4445ad7, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
