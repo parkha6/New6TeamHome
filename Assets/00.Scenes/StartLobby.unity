@@ -228,6 +228,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3782771157153984465, guid: ccc6fe0a3a6cb3f44911bfb59f8f5f65, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 5607603596570306487}
+    - target: {fileID: 3782771157153984465, guid: ccc6fe0a3a6cb3f44911bfb59f8f5f65, type: 3}
       propertyPath: wallet
       value: 
       objectReference: {fileID: 5607603596570306486}
@@ -576,6 +580,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875e76228498f5b4e820015529704c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &5607603596570306487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8822832124894388474, guid: 2838d1e8a4ef1bc44b83c6df1446969e, type: 3}
+  m_PrefabInstance: {fileID: 5607603596570306484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
