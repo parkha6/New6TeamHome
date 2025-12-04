@@ -62,10 +62,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        SpawnDrop(goldPrefab);
-        SpawnDrop(skinPiecePrefab);
-        SpawnDrop(wingPiecePrefab);
-
+        for(int i = 0; i < 5; i++)
+        {
+            SpawnDrop(goldPrefab);
+            SpawnDrop(skinPiecePrefab);
+            SpawnDrop(wingPiecePrefab);
+        }
         Destroy(gameObject);
     }
 
