@@ -220,7 +220,7 @@ public class PlayerUi : MonoBehaviour
     {
         SetSkinIcon(skin);
         SetSkillIcon(skill1);
-        SetSkillIcon(skill2);
+        SetSkillIcon2(skill2);
     }
     /// <summary>
     /// 외피 아이콘 세팅
