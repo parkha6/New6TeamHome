@@ -20,7 +20,9 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private EvolutionUpgradeData evAttackData;
     [SerializeField] private EvolutionUpgradeData evDefenceData;
     [SerializeField] private EvolutionUpgradeData evHPData;
-    [SerializeField] private EvolutionUpgradeData evSpeedData;
+    [SerializeField] public EvolutionUpgradeData evSpeedData;
+
+    
 
     public Dictionary<EvolutionStatType, int> AppliedEvolutionLevels = new Dictionary<EvolutionStatType, int>();
 
