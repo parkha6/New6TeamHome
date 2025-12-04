@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
     private bool canDash;
     public int playerLayer;
     public int enemyLayer;
+    private int maxDashCount = 1;
+    private int dashCount;
+    private int maxJumpCount = 2;
+    private int jumpCount;
     public float facingDirection { get; private set; } = 1.0f; // 바라보는 방향 디폴트는 1f(오른쪽)
     private float originalGravityScale; // 원래 중력값 저장할 변수
     private Collider2D playerCollider;
@@ -46,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.started && isGrounded)
+        if(context.started && jumpCount < maxJumpCount)
         {
             Jump();
         }
@@ -79,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
+        jumpCount++;
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         isGrounded = false;
     }
@@ -91,13 +96,19 @@ public class PlayerMovement : MonoBehaviour
         {
 
             isGrounded = true;
+            jumpCount = 0;
         }
     }
 
     private IEnumerator DashCorutine()
     {
+        int speedLv = PlayerManager.Instance.evSpeedData.currentLevel;
         isDashing = true;
         canDash = false;
+        if(speedLv == 1)
+        {
+            maxDashCount = 2;
+        }
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero; // 대시 작동 시 순간적으로 플레이어에게 가해지는 물리력 0으로 만들어 온전히 대시만 기능하게 함
@@ -108,14 +119,29 @@ public class PlayerMovement : MonoBehaviour
 
         rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
 
+        dashCount++;
+        Debug.Log($"현재 대시 횟수{dashCount}/최대 대시 횟수{maxDashCount}");
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
 
-        rb.gravityScale = originalGravityScale; // 원래대로 중력 되돌려줌.
+        rb.gravityScale = originalGravityScale;
+        
+        if (dashCount < maxDashCount)
+        {
+            yield return new WaitForSeconds(dashDuration);
+            isDashing = false;
+            rb.gravityScale = originalGravityScale; // 원래대로 중력 되돌려줌.
+            canDash = true;
+            yield return new WaitForSeconds(0.5f); // 0.5초안에 대시키 한번 더 누르면 2단대시 가능.
+            Debug.Log("대시 사용 가능");
+        }
+        canDash = false;
         yield return new WaitForSeconds(dashCooldown);
+        dashCount = 0;
         canDash = true;
-        Debug.Log("대시 사용 가능");
+        Debug.Log("dash 초기화");
+
     }
 
     private void OnEnable() // 오브젝트가 꺼졌을 때 버그 방지용 코드. 초기화 해야하는 변수들 초기화 시켜준다.

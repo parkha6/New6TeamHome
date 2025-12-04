@@ -101,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whichScene: 4
   mainscene: MainScene
-  startLobby: StartLobby
-  lobby: Lobby
-  easyStage: EasyStage
+  startLobby: {fileID: 0}
+  lobby: {fileID: 0}
+  easyStage: {fileID: 0}
   isWorking: 0
   fkeyUi: {fileID: 869728396352888551}
 --- !u!61 &5182328200868225608
@@ -238,6 +238,14 @@ PrefabInstance:
     - target: {fileID: 1080797046694110185, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829656551230161573, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829656551230161573, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 2.25
       objectReference: {fileID: 0}
     - target: {fileID: 5970595948346261957, guid: 3b2e0023a6e68464bbc1650a100d540a, type: 3}
       propertyPath: m_Name
