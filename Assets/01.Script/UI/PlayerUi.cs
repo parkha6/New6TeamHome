@@ -65,6 +65,27 @@ public class PlayerUi : MonoBehaviour
     /// </summary>
     [SerializeField] Image skillIcon2;
     /// <summary>
+    /// 생성시 삭제 막음
+    /// </summary>
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+    /// <summary>
+    /// 생성시 버튼 연결
+    /// </summary>
+    private void Start()
+    {
+        pauseUiEndButton.onClick.AddListener(GameManager.Instance.EndPause);
+    }
+    /// <summary>
+    /// 파괴시 버튼 구독 해제
+    /// </summary>
+    private void OnDestroy()
+    {
+        pauseUiEndButton.onClick.RemoveAllListeners();
+    }
+    /// <summary>
     /// 일시정지 UI 활성& 비활성
     /// </summary>
     /// <param name="isSet"></param>
@@ -234,19 +255,5 @@ public class PlayerUi : MonoBehaviour
     {
         if (skillIcon2 != null)
             skillIcon2.sprite = icon;
-    }
-    /// <summary>
-    /// 생성시 버튼 연결
-    /// </summary>
-    private void Start()
-    {
-        pauseUiEndButton.onClick.AddListener(GameManager.Instance.EndPause);
-    }
-    /// <summary>
-    /// 파괴시 버튼 구독 해제
-    /// </summary>
-    private void OnDestroy()
-    {
-        pauseUiEndButton.onClick.RemoveAllListeners();
     }
 }
