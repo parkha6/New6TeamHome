@@ -43,7 +43,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3130422126279994917}
-  - component: {fileID: 1235379252324915145}
   m_Layer: 0
   m_Name: StartLobbyMap
   m_TagString: Untagged
@@ -73,18 +72,6 @@ Transform:
   - {fileID: 5959702984308573992}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1235379252324915145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9088317641901675889}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15e941c930161dd45a5683243d2db762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1401954393609818979
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -565,6 +552,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e67916762a48cf946b57332017e375a2, type: 2}
   - {fileID: 11400000, guid: d4f9ce148734de740b9dbefbf02ab414, type: 2}
   - {fileID: 11400000, guid: 18ceda58349b26244a3206db7d0139ed, type: 2}
+  evolutionUI: {fileID: 0}
+  atkText: {fileID: 0}
+  defText: {fileID: 0}
+  hpText: {fileID: 0}
+  speedText: {fileID: 0}
 --- !u!4 &4837279724357118792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2424128808396265446, guid: c37234197675bb146847e12175807258, type: 3}

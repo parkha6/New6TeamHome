@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5619413680598444376}
-  - component: {fileID: 6442961330488371840}
   m_Layer: 0
   m_Name: LobbyMap
   m_TagString: Untagged
@@ -39,18 +38,6 @@ Transform:
   - {fileID: 7643740656204342380}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6442961330488371840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 890771268111763288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15e941c930161dd45a5683243d2db762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3692928948043660756
 GameObject:
   m_ObjectHideFlags: 0
@@ -577,6 +564,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5507b907e7954a24fba8d3e1323782f0, type: 2}
   - {fileID: 11400000, guid: d9d03e42043f4f34f83be462b4445ad7, type: 2}
   - {fileID: 11400000, guid: 90c940970057ba34980a3cd9fbd52ccb, type: 2}
+  enhanceUI: {fileID: 0}
+  mantisText: {fileID: 0}
+  grasshopperText: {fileID: 0}
+  cockroachText: {fileID: 0}
 --- !u!1001 &6969695224671575285
 PrefabInstance:
   m_ObjectHideFlags: 0
