@@ -14,7 +14,8 @@ public class GameManager : MonoSingleton<GameManager>
     /// 비동기 처리용
     /// </summary>
     internal AsyncOperation async;
-    [SerializeField] private GameObject playerUiPrefab; 
+    [SerializeField] private GameObject playerUiPrefab;
+    
     private PlayerUi playerUi;
     public PlayerUi PlayerUi
     {
@@ -29,6 +30,10 @@ public class GameManager : MonoSingleton<GameManager>
             return playerUi;
         }
     }
+    /// <summary>
+    /// 다음 씬 이동 값
+    /// </summary>
+    internal Vector3 nextDoorPosition;
     /// <summary>
     /// 일시정지 체크용 업데이트
     /// </summary>
@@ -49,6 +54,12 @@ public class GameManager : MonoSingleton<GameManager>
             }
         }
     }
+    /// <summary>
+    /// 문짝 입력
+    /// </summary>
+    /// <param name="nextPos"></param>
+    internal Vector3 UseDoor()
+    { return nextDoorPosition; }
     /// <summary>
     /// sceneName에 씬 이름을 입력하면 해당씬으로 이동.
     /// </summary>
