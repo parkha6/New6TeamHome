@@ -95,6 +95,8 @@ public class PlayerManager : MonoBehaviour
         EquippedItems.Add(slotKey, data);
         Debug.Log($"{data.itemName} 장착 완료. 상태 업데이트.");
         Debug.Log($"{TotalAttack()}공격력 적용");
+        Debug.Log($"{TotalDef()}방어력 적용");
+        Debug.Log($"{TotalHP()}HP 적용");
         OnPlayerInvChanged?.Invoke();// 나중에 가져가서 구독하세요
         OnPlayerStatusChanged?.Invoke();// 나중에 가져가서 구독하세요
     }
