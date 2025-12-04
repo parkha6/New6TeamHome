@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DroppedSkinUi : MonoBehaviour
+public class InterectingUi : MonoBehaviour
 {
     /// <summary>
     /// F키를 안내할 UI
