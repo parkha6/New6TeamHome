@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool isDashing = false;
     private bool canDash;
+    public int playerLayer;
+    public int enemyLayer;
     public float facingDirection { get; private set; } = 1.0f; // 바라보는 방향 디폴트는 1f(오른쪽)
     private float originalGravityScale; // 원래 중력값 저장할 변수
     private Collider2D playerCollider;
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
         originalGravityScale = rb.gravityScale;
         playerCollider = GetComponent<Collider2D>();
+        playerLayer = LayerMask.NameToLayer("Player");
+        enemyLayer = LayerMask.NameToLayer("Enemy");
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -79,24 +83,13 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = false;
     }
 
-    //public void Dash()
-    //{
-    //    float dashDirectionX = moveInput.x != 0 ? moveInput.x : 1f; // 이동중이면(moveinput.x값이 있으면 그대로 사용, 없으면 1f(오른쪽) 사용하여 대시 방향을 결정
 
-    //    Vector2 dashDirection = new Vector2(dashDirectionX, 0f);
-
-    //    rb.AddForce(dashDirection * dashForce, ForceMode2D.Impulse);
-    //}
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))  // 태그 Ground 로
         {
-            //Vector2 vector2 = rb.velocity;   // ground태그 + 착지순간 y값 0이면 true
-            //if (vector2.y == 0)
-            //{
-                
-            //}
+
             isGrounded = true;
         }
     }
@@ -105,10 +98,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isDashing = true;
         canDash = false;
-        if (playerCollider != null) // 기획의도대로 콜라이더 비활성화하여 회피기능 추가
-        {
-            playerCollider.enabled = false;
-        }
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero; // 대시 작동 시 순간적으로 플레이어에게 가해지는 물리력 0으로 만들어 온전히 대시만 기능하게 함
 
@@ -120,10 +110,8 @@ public class PlayerMovement : MonoBehaviour
 
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
-        if (playerCollider != null)
-        {
-            playerCollider.enabled = true;
-        }
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+
         rb.gravityScale = originalGravityScale; // 원래대로 중력 되돌려줌.
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
