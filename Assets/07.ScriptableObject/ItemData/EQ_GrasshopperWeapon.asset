@@ -17,6 +17,7 @@ MonoBehaviour:
   icon: {fileID: 2088864368, guid: ebaade6370fa2d6469b0455d452a94db, type: 3}
   skillIcon1: {fileID: 21300000, guid: 9727a05b8d7ee1341b7c17481fd2d3ae, type: 3}
   skillIcon2: {fileID: 21300000, guid: fce80bdd6071f5944b70d97043c929bf, type: 3}
+  playerSkin: {fileID: 21300000, guid: 8a21ad9a05f4ef04488b440d6175a331, type: 3}
   itemType: 1
   skinType: 1
   atkValue: 0

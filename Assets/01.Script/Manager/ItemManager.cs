@@ -12,6 +12,8 @@ public class ItemManager : MonoBehaviour
     // (이미 만들었던 외피 강화 레벨 정보)
     public SkinUpdateState skinState;
 
+    public SpriteRenderer bodyRenderer;     // 플레이어 오브젝트의 SpriteRenderer
+
     // 🔹 SO를 받아서 둘 다 세팅하는 버전
     public void EquipSkin(EquipmentItemData newSkinData)
     {
@@ -22,6 +24,18 @@ public class ItemManager : MonoBehaviour
         currentSkin = newSkinData.skinType;
 
         GameManager.Instance.PlayerUi.SkinNSkillIcon(currentskin.icon, currentskin.skillIcon1, currentskin.skillIcon2);
+        // 스프라이트 교체
+        if (bodyRenderer != null)
+        {
+            // 우선 playerSkinSprite를 쓰고, 없으면 icon으로 fallback
+            Sprite spriteToUse = newSkinData.playerSkin!= null
+                ? newSkinData.playerSkin
+                : newSkinData.icon;
+
+            if (spriteToUse != null)
+                bodyRenderer.sprite = spriteToUse;
+        }
+
         Debug.Log($"외피 교체: {newSkinData.itemName} / 타입: {currentSkin}");
         PlayerSkillController.Instance.SetState(currentSkin);
     }
