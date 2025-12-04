@@ -882,6 +882,10 @@ PrefabInstance:
       propertyPath: enemyLayer.m_Bits
       value: 64
       objectReference: {fileID: 0}
+    - target: {fileID: 5078942217870179898, guid: eaa8d7bbf956ee246ab19c1717b55cab, type: 3}
+      propertyPath: hitBoxData
+      value: 
+      objectReference: {fileID: 11400000, guid: f2f431211aca619488a058b546d7c2ea, type: 2}
     - target: {fileID: 6497775627293167419, guid: eaa8d7bbf956ee246ab19c1717b55cab, type: 3}
       propertyPath: m_Name
       value: Player
