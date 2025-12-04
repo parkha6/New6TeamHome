@@ -18,4 +18,16 @@ public class SkinUpdateState : MonoBehaviour
         else if (skinType == SkinType.Cockroach)
             cockroachLevel++;
     }
+
+    public int GetLevel(SkinType skinType)
+    {
+        if (skinType == SkinType.Mantis)
+            return mantisLevel;
+        else if (skinType == SkinType.Grasshopper)
+            return grasshopperLevel;
+        else if (skinType == SkinType.Cockroach)
+            return cockroachLevel;
+
+        return 0;
+    }
 }
