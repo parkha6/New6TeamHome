@@ -15,11 +15,13 @@ MonoBehaviour:
   upgradeName: "\uC774\uB3D9\uC18D\uB3C4"
   description: 
   statType: 3
-  maxLevel: 1
+  maxLevel: 2
+  currentLevel: 0
   costs:
   - item: {fileID: 11400000, guid: 5171b312a98b089499d303d4df9ca118, type: 2}
     amount: 0
   - item: {fileID: 11400000, guid: 3129817461f92e14b80c56e25f081b4e, type: 2}
     amount: 0
   evolveValues:
+  - 1
   - 2
