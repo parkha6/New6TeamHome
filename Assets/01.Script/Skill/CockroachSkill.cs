@@ -10,6 +10,7 @@ public class CockroachSkill : BaseSkill
     public float skill1Distance = 0f;
     public float skill1Height = 0.5f;
     public float skill1AttackDistance = 3;
+    private float totalAtk1;
 
     [Header("SkillEnhance Data")]
     public SkinEnhanceData enhanceData;
@@ -40,6 +41,11 @@ public class CockroachSkill : BaseSkill
 
     public override void SkillNum1()
     {
+        float playerAtk = PlayerManager.Instance.TotalAttack();
+        if (enhanceData.currentLevel >= 1) 
+        {
+            totalAtk1 = playerAtk * 1.7f;
+        }
         float currentFacingDirection = playerMovement.facingDirection;
         Vector2 attackDirection = new Vector2(currentFacingDirection, 0);
         CaptureSkillOrigin();
@@ -53,7 +59,7 @@ public class CockroachSkill : BaseSkill
         {
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
             {
-                //TakeDamage
+                enemy.TakePhisicalDamage(totalAtk1);
                 Debug.Log("Cockroach Skill 1 Attack");
             }
         }
