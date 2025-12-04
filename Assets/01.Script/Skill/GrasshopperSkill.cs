@@ -5,15 +5,17 @@ using UnityEngine;
 public class GrasshopperSkill : BaseSkill
 {
     [Header("Skill 1 Settings")]
-    public Vector2 skill1BoxSize = new Vector2(2f, 0.5f);
+    public Vector2 skill1BoxSize = new Vector2(3f, 0.5f);
     public float skill1Distance = 0f;
     public float skill1Height = 0f;
     public Vector2 attackDirection;
+    private float totalDef1;
 
     [Header("Skill 2 Settings")]
-    public Vector2 skill2BoxSize = new Vector2(0.5f, 1f);
-    public float skill2Distance = 0.5f;
+    public Vector2 skill2BoxSize = new Vector2(2f, 1f);
+    public float skill2Distance = 0f;
     public float skill2Height = 0.5f;
+    private float totalDef2;
 
     [Header("SkillEnhance Data")]
     public SkinEnhanceData enhanceData;
@@ -56,6 +58,11 @@ public class GrasshopperSkill : BaseSkill
 
     private IEnumerator SkillNum1Attack()
     {
+        float playerDef = PlayerManager.Instance.TotalDef();
+        if (enhanceData.currentLevel >= 1)
+        {
+            totalDef1 = playerDef * 1.7f;
+        }
         // 좌우 방향을 Jump에 적용
         yield return StartCoroutine(Jump(attackDirection, 2.5f, 4, 0.6f));
 
@@ -63,14 +70,15 @@ public class GrasshopperSkill : BaseSkill
 
         Collider2D[] hits = CheckRange(skill1BoxSize, skill1Distance, skill1Height);
 
-#if UNITY_EDITOR
-        DebugDrawBox(skillOrigin, skill1BoxSize, skill1Distance, Color.red, skill1Height, 0.5f);
-#endif
+        SpawnHitBoxEffect(skillOrigin, skill1BoxSize, skill1Distance, skill1Height, 0.3f);
+
+
 
         foreach (Collider2D hit in hits)
         {
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
             {
+                enemy.TakePhisicalDamage(totalDef1);
                 Debug.Log("Grasshopper Skill 1 Attack");
             }
         }
@@ -78,6 +86,11 @@ public class GrasshopperSkill : BaseSkill
 
     public override void SkillNum2()
     {
+        float playerDef = PlayerManager.Instance.TotalDef();
+        if (enhanceData.currentLevel >= 1)
+        {
+            totalDef2 = playerDef * 1.7f;
+        }
         float currentFacingDirection = playerMovement.facingDirection;
         Vector2 attackDirection = new Vector2(currentFacingDirection, 0);
 
@@ -89,13 +102,13 @@ public class GrasshopperSkill : BaseSkill
 
         Collider2D[] hits = CheckRange(skill2BoxSize, skill2Distance, skill2Height);
 
-#if UNITY_EDITOR
-        DebugDrawBox(skillOrigin, skill2BoxSize, skill2Distance, Color.red, skill2Height, 0.5f);
-#endif
+        SpawnHitBoxEffect(skillOrigin, skill2BoxSize, skill2Distance, skill2Height, 0.3f);
+
         foreach (Collider2D hit in hits)
         {
             if (hit.TryGetComponent<Enemy>(out Enemy enemy))
             {
+                enemy.TakePhisicalDamage(totalDef2);
                 Debug.Log("Grasshopper Skill 2 Attack");
             }
         }

@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour, IDamageable
         //amount = PlayerManager.Instance.TotalAttack();
         float hp = CurrentStatus.HP;
         hp -= amount;
+        Debug.Log("Hit");
         if (hp <= 0)
         {
             hp = Mathf.Max(hp, 0);
@@ -61,10 +62,12 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void Die()
     {
-        SpawnDrop(goldPrefab);
-        SpawnDrop(skinPiecePrefab);
-        SpawnDrop(wingPiecePrefab);
-
+        for(int i = 0; i < 5; i++)
+        {
+            SpawnDrop(goldPrefab);
+            SpawnDrop(skinPiecePrefab);
+            SpawnDrop(wingPiecePrefab);
+        }
         Destroy(gameObject);
     }
 

@@ -38,7 +38,7 @@ Transform:
   m_GameObject: {fileID: 9122601490110013903}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -175,6 +175,7 @@ MonoBehaviour:
   enhanceCoData: {fileID: 11400000, guid: 5507b907e7954a24fba8d3e1323782f0, type: 2}
   enhanceGrData: {fileID: 11400000, guid: d9d03e42043f4f34f83be462b4445ad7, type: 2}
   enhanceMaData: {fileID: 11400000, guid: 90c940970057ba34980a3cd9fbd52ccb, type: 2}
+  hitBoxData: {fileID: 11400000, guid: f2f431211aca619488a058b546d7c2ea, type: 2}
 --- !u!114 &2754418101816421725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +193,7 @@ MonoBehaviour:
   attackDistance: 0.5
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &2448905544188311055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +214,8 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 0
+  playerLayer: 0
+  enemyLayer: 0
   spriteRenderer: {fileID: 5546577497582836753}
 --- !u!114 &8269657225445766382
 MonoBehaviour:
@@ -290,6 +293,7 @@ MonoBehaviour:
   currentskin: {fileID: 0}
   currentSkin: 0
   skinState: {fileID: 0}
+  bodyRenderer: {fileID: 0}
 --- !u!114 &900510066590915783
 MonoBehaviour:
   m_ObjectHideFlags: 0
