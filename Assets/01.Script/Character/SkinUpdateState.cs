@@ -30,4 +30,9 @@ public class SkinUpdateState : MonoBehaviour
 
         return 0;
     }
+
+    public int GetLevel(SkinEnhanceData data)
+    {
+        return GetLevel(data.skinType);
+    }
 }

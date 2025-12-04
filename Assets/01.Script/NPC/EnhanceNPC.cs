@@ -49,8 +49,8 @@ public class EnhanceNPC : MonoBehaviour, IInteractable
     {
         SkinEnhanceData data = enhances[index];
 
-        // 1) 현재 레벨 가져오기
-        int currentLevel = 0;
+        // 1) 현재 레벨: SO에서 직접 가져오기
+        int currentLevel = data.currentLevel;
         // 2) 최대 레벨 체크
         if (data.skinType == SkinType.Mantis)
             currentLevel = skinState.mantisLevel;
@@ -80,6 +80,7 @@ public class EnhanceNPC : MonoBehaviour, IInteractable
         }
 
         // 5) 마지막으로 레벨 업
+        data.currentLevel++;
         skinState.IncreaseLevel(data.skinType);
     }
 
