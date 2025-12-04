@@ -335,7 +335,7 @@ PrefabInstance:
     - target: {fileID: 5717330008391620264, guid: ccc6fe0a3a6cb3f44911bfb59f8f5f65, type: 3}
       propertyPath: lobby
       value: 
-      objectReference: {fileID: 1398026832}
+      objectReference: {fileID: 1409113820}
     - target: {fileID: 5717330008391620264, guid: ccc6fe0a3a6cb3f44911bfb59f8f5f65, type: 3}
       propertyPath: easyStage
       value: 
@@ -343,7 +343,7 @@ PrefabInstance:
     - target: {fileID: 5717330008391620264, guid: ccc6fe0a3a6cb3f44911bfb59f8f5f65, type: 3}
       propertyPath: startLobby
       value: 
-      objectReference: {fileID: 1409113820}
+      objectReference: {fileID: 1398026832}
     - target: {fileID: 6116588449742180436, guid: ccc6fe0a3a6cb3f44911bfb59f8f5f65, type: 3}
       propertyPath: m_LocalScale.y
       value: 1000
@@ -691,7 +691,7 @@ PrefabInstance:
       objectReference: {fileID: 1398026832}
     - target: {fileID: 8112720681878268048, guid: 5db5dad34dcaed7498e001bc68ced366, type: 3}
       propertyPath: m_Name
-      value: LobbyDoor
+      value: StartLobbyDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -753,7 +753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8112720681878268048, guid: 5db5dad34dcaed7498e001bc68ced366, type: 3}
       propertyPath: m_Name
-      value: StartLobbyDoor
+      value: LobbyDoor
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -804,7 +804,7 @@ PrefabInstance:
     - target: {fileID: 6480825937852259563, guid: cf1988aafd397994aa6473e40d9f4c07, type: 3}
       propertyPath: lobby
       value: 
-      objectReference: {fileID: 1398026832}
+      objectReference: {fileID: 1409113820}
     - target: {fileID: 6480825937852259563, guid: cf1988aafd397994aa6473e40d9f4c07, type: 3}
       propertyPath: easyStage
       value: 
@@ -812,7 +812,7 @@ PrefabInstance:
     - target: {fileID: 6480825937852259563, guid: cf1988aafd397994aa6473e40d9f4c07, type: 3}
       propertyPath: startLobby
       value: 
-      objectReference: {fileID: 1409113820}
+      objectReference: {fileID: 1398026832}
     - target: {fileID: 6596853328453705161, guid: cf1988aafd397994aa6473e40d9f4c07, type: 3}
       propertyPath: m_LocalScale.x
       value: 5000
@@ -973,7 +973,7 @@ PrefabInstance:
     - target: {fileID: 3236316470547964265, guid: 3dbc4c1109d0bc24e84ad939f9d01b5e, type: 3}
       propertyPath: lobby
       value: 
-      objectReference: {fileID: 1398026832}
+      objectReference: {fileID: 1409113820}
     - target: {fileID: 3236316470547964265, guid: 3dbc4c1109d0bc24e84ad939f9d01b5e, type: 3}
       propertyPath: easyStage
       value: 
@@ -981,7 +981,7 @@ PrefabInstance:
     - target: {fileID: 3236316470547964265, guid: 3dbc4c1109d0bc24e84ad939f9d01b5e, type: 3}
       propertyPath: startLobby
       value: 
-      objectReference: {fileID: 1409113820}
+      objectReference: {fileID: 1398026832}
     - target: {fileID: 3481845594030140139, guid: 3dbc4c1109d0bc24e84ad939f9d01b5e, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1195,5 +1195,5 @@ SceneRoots:
   - {fileID: 1397819359}
   - {fileID: 1611312042}
   - {fileID: 1464238999}
-  - {fileID: 1409113819}
   - {fileID: 1398026831}
+  - {fileID: 1409113819}
