@@ -16,6 +16,8 @@ public abstract class BaseSkill : MonoBehaviour
     protected float originalGravityScale; // 원래 중력값 저장할 변수
     protected Rigidbody2D rb;
     protected PlayerMovement playerMovement;
+    public int playerLayer;
+    public int enemyLayer;
 
     public abstract void SkillNum1();
     public abstract void SkillNum2();
@@ -36,6 +38,8 @@ public abstract class BaseSkill : MonoBehaviour
         {
             Debug.LogError("PlayerMovement를 찾을 수 없습니다");
         }
+        playerLayer = LayerMask.NameToLayer("Player");
+        enemyLayer = LayerMask.NameToLayer("Enemy");
     }
 
     protected Collider2D[] CheckRange(Vector2 size, float distance, float height)
@@ -58,28 +62,23 @@ public abstract class BaseSkill : MonoBehaviour
         Vector2 start = player.transform.position;
         Vector2 end = start + direction.normalized * distance;
 
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
 
         float t = 0;
         while (t < duration)
         {
-            if (playerCollider != null)
-            {
-                playerCollider.enabled = false;
-            }
             t += Time.deltaTime;
             player.transform.position = Vector2.Lerp(start, end, t / duration);
             yield return null;
         }
         player.transform.position = end;
 
-        if (playerCollider != null)
-        {
-            playerCollider.enabled = true;
-        }
         rb.gravityScale = originalGravityScale;
+        Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
     }
+
     protected IEnumerator Jump(Vector2 direction, float distance, float height, float duration) // 점프
     {
         Vector2 start = player.transform.position; // 시작 위치
