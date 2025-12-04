@@ -11,6 +11,7 @@ public abstract class BaseSkill : MonoBehaviour
     [Header("Player")]
     [SerializeField]protected GameObject player;
     [SerializeField]protected Vector2 skillOrigin;
+    [SerializeField] private GameObject hitBoxPrefab; // 반투명 빨간 박스 프리팹
 
     protected BoxCollider2D playerCollider;
     protected float originalGravityScale; // 원래 중력값 저장할 변수
@@ -138,10 +139,28 @@ public abstract class BaseSkill : MonoBehaviour
     }
 
 
+    protected void SpawnHitBoxEffect(Vector2 origin, Vector2 size, float distance, float height, float time)
+    {
+        float facing = 1f;
+        if (playerMovement != null)
+            facing = playerMovement.facingDirection;
+
+        // DebugDrawBox에서 쓰던 계산 그대로!
+        Vector2 center = origin + Vector2.right * distance * facing + Vector2.up * height;
+
+        GameObject go = Instantiate(hitBoxPrefab, center, Quaternion.identity);
+        go.GetComponent<HitBoxEffect>().Init(size, time);
+    }
+
+
+
 #if UNITY_EDITOR
     protected void DebugDrawBox(Vector2 origin, Vector2 boxSize, float distance, Color color, float height, float duration = 0.1f)
     {
-        Vector2 center = origin + Vector2.right * distance + Vector2.up * height;
+        float facing = 1f;
+        if (playerMovement != null) facing = playerMovement.facingDirection;
+
+        Vector2 center = origin + Vector2.right * distance * facing + Vector2.up * height;
 
         Vector2 half = boxSize / 2f;
 

@@ -51,6 +51,7 @@ public class Enemy : MonoBehaviour, IDamageable
         //amount = PlayerManager.Instance.TotalAttack();
         float hp = CurrentStatus.HP;
         hp -= amount;
+        Debug.Log("Hit");
         if (hp <= 0)
         {
             hp = Mathf.Max(hp, 0);

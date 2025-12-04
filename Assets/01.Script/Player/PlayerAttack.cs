@@ -7,8 +7,8 @@ public class PlayerAttack : MonoBehaviour
 {
     [Header("Attack Settings")]
     public float attackDamage; // 추후 계산합시다.
-    public Vector2 attackBoxSize = new Vector2(1f, 1f); // 공격 판정 박스 크기
-    public float attackDistance = 0.5f; // 사거리
+    public Vector2 attackBoxSize = new Vector2(2f, 2f); // 공격 판정 박스 크기
+    public float attackDistance = 0f; // 사거리
     public LayerMask enemyLayer;
     private float facingDirection; // playermovement에서 가져와서 사용
     private Rigidbody2D rb;
