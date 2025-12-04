@@ -41,6 +41,7 @@ public class CurrencyWallet : MonoBehaviour
             if (gold >= amount)
             {
                 gold -= amount;
+                GameManager.Instance.PlayerUi.SetGoldScore(gold);
                 return true;
             }
             return false;
@@ -50,6 +51,7 @@ public class CurrencyWallet : MonoBehaviour
             if (skin_piece >= amount)
             {
                 skin_piece -= amount;
+                GameManager.Instance.PlayerUi.SetSkinScore(skin_piece);
                 return true;
             }
             return false;
@@ -59,6 +61,7 @@ public class CurrencyWallet : MonoBehaviour
             if (wing_piece >= amount)
             {
                 wing_piece -= amount;
+                GameManager.Instance.PlayerUi.SetWingScore(wing_piece);
                 return true;
             }
             return false;
