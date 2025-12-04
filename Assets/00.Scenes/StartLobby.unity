@@ -239,7 +239,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartLobbyMap
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1235379252324915145, guid: ccc6fe0a3a6cb3f44911bfb59f8f5f65, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
