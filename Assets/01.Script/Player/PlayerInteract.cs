@@ -41,14 +41,5 @@ public class PlayerInteract : MonoBehaviour
                 Debug.LogWarning($"콜라이더는 찾았지만, {hit.gameObject.name}에 IInteractable 인터페이스가 없습니다.");
             }
         }
-
-        if (hit != null)
-        {
-            if (hit.TryGetComponent<IInteractable>(out IInteractable interactableObject))
-            {
-                interactableObject.OnInteraction();
-                Debug.Log($"{hit.gameObject.name} 와 상호작용했습니다.");
-            }
-        }
     }
 }
