@@ -29,8 +29,8 @@ public class MonoSingleton<T> : MonoBehaviour where T : Component
         if (instance == null)
         {
             instance = new GameObject(typeof(T).Name).AddComponent<T>();
-            DontDestroyOnLoad(instance.gameObject);
         }
+        DontDestroyOnLoad(instance.gameObject);
     }
     /// <summary>
     /// 호출시 인스턴스 만들기
@@ -38,8 +38,6 @@ public class MonoSingleton<T> : MonoBehaviour where T : Component
     private void Awake()
     {
         if (instance != null && instance != this)
-        { Destroy(Instance.gameObject); }
-        else
-        { DontDestroyOnLoad(this.gameObject); }
+        { Destroy(this.gameObject); }
     }
 }
