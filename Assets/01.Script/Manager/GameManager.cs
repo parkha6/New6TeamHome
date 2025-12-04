@@ -15,6 +15,7 @@ public class GameManager : MonoSingleton<GameManager>
     /// </summary>
     internal AsyncOperation async;
     [SerializeField] private GameObject playerUiPrefab;
+    [SerializeField] private GameObject easyMapPrefab;
     
     private PlayerUi playerUi;
     public PlayerUi PlayerUi
@@ -30,6 +31,21 @@ public class GameManager : MonoSingleton<GameManager>
             return playerUi;
         }
     }
+    private EasyRandom easyRan;
+    public EasyRandom EasyRan
+    {
+        get
+        {
+            if (easyRan == null)
+            {
+                Debug.Log("쉬운 스테이지 생성");
+                GameObject easy = GameObject.Find("EasyStageMap");
+                easyRan = easy.GetComponent<EasyRandom>();
+            }
+            return easyRan;
+        }
+    }
+
     /// <summary>
     /// 다음 씬 이동 값
     /// </summary>
@@ -78,6 +94,13 @@ public class GameManager : MonoSingleton<GameManager>
             player.transform.position = Vector3.zero;
 
         SceneManager.sceneLoaded -= ResetPlayerPosition;
+    }
+    /// <summary>
+    /// 스테이지 진입할때 스테이지 배치
+    /// </summary>
+    public void EnterStage()
+    {
+        EasyRan.SetStage();
     }
     /// <summary>
     /// 일시정지시 UI띄우기

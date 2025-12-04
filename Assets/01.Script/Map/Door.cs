@@ -100,6 +100,7 @@ public class Door : MonoBehaviour, IInteractable
                     if (easyStage != null)
                     {
                         Debug.Log("스테이지 씬 이동");
+                        GameManager.Instance.EnterStage();
                         GameManager.Instance.nextDoorPosition = easyStage.transform.position;
                     }
                         break;
