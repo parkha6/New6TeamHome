@@ -44,9 +44,10 @@ public abstract class BaseSkill : MonoBehaviour
 
     protected Collider2D[] CheckRange(Vector2 size, float distance, float height)
     {
-        Vector2 center = skillOrigin + Vector2.right * distance + Vector2.up * height;
+        Vector2 center = skillOrigin + Vector2.zero * distance + Vector2.up * height;
         return Physics2D.OverlapBoxAll(center, size, 0f);
     }
+
     protected void CaptureSkillOrigin() // 스킬 사용전 위치 체크
     {
         skillOrigin = player.transform.position;
@@ -85,41 +86,7 @@ public abstract class BaseSkill : MonoBehaviour
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
     }
 
-    //protected IEnumerator Jump(Vector2 direction, float distance, float height, float duration) // 점프
-    //{
-    //    Vector2 start = player.transform.position; // 시작 위치
-    //    Vector2 peak = start + new Vector2(direction.x * distance / 2f, height); // 대각 점프
-    //    Vector2 end = start + new Vector2(direction.x * distance, 0f); // 대각 하강
 
-    //    float riseDuration = duration * 0.70f; // 상승 속도
-    //    float fallDuration = duration * 0.30f; // 하강 속도
-
-    //    // 상승
-    //    float t = 0f;
-    //    while (t < riseDuration)
-    //    {
-    //        t += Time.deltaTime;
-    //        float normalizedT = Mathf.Clamp01(t / riseDuration);
-    //        float x = Mathf.Lerp(start.x, peak.x, normalizedT);
-    //        float y = Mathf.Lerp(start.y, peak.y, normalizedT);
-    //        player.transform.position = new Vector2(x, y);
-    //        yield return null;
-    //    }
-
-    //    // 하강
-    //    t = 0f;
-    //    while (t < fallDuration)
-    //    {
-    //        t += Time.deltaTime;
-    //        float normalizedT = Mathf.Clamp01(t / fallDuration);
-    //        float x = Mathf.Lerp(peak.x, end.x, normalizedT);
-    //        float y = Mathf.Lerp(peak.y, end.y, normalizedT);
-    //        player.transform.position = new Vector2(x, y);
-    //        yield return null;
-    //    }
-
-    //    player.transform.position = end; // 최종 위치 보정
-    //}
     protected IEnumerator Jump(Vector2 direction, float distance, float height, float duration) // 점프
     {
         if (player == null || rb == null)
