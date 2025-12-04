@@ -5,8 +5,8 @@ using UnityEngine;
 public class MantisSkill : BaseSkill
 {
     [Header("Skill 1 Settings")]
-    public Vector2 skill1BoxSize = new Vector2(1f, 1f);
-    public float skill1Distance = 1f;
+    public Vector2 skill1BoxSize = new Vector2(2f, 1f);
+    public float skill1Distance = 0f;
     public float skill1Height = 0.5f;
 
     [Header("Skill 2 Settings")]

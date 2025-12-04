@@ -11,7 +11,7 @@ public abstract class BaseSkill : MonoBehaviour
     [Header("Player")]
     [SerializeField]protected GameObject player;
     [SerializeField]protected Vector2 skillOrigin;
-    [SerializeField] private GameObject hitBoxPrefab; // 반투명 빨간 박스 프리팹
+    
 
     protected BoxCollider2D playerCollider;
     protected float originalGravityScale; // 원래 중력값 저장할 변수
@@ -148,7 +148,7 @@ public abstract class BaseSkill : MonoBehaviour
         // DebugDrawBox에서 쓰던 계산 그대로!
         Vector2 center = origin + Vector2.right * distance * facing + Vector2.up * height;
 
-        GameObject go = Instantiate(hitBoxPrefab, center, Quaternion.identity);
+        GameObject go = Instantiate(PlayerSkillController.Instance.hitBoxData.hitBoxPrefab, center, Quaternion.identity);
         go.GetComponent<HitBoxEffect>().Init(size, time);
     }
 
