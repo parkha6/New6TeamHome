@@ -23,17 +23,28 @@ public class EasyRandom : MonoBehaviour
     /// <summary>
     /// 보상 아이템
     /// </summary>
-    [SerializeField] GameObject[] rewardSkin;
+    [SerializeField] GameObject rewardSkin;
     /// <summary>
-    /// 생성시 스테이지 랜덤배치
+    /// 사마귀 프리팹
     /// </summary>
-    private void Awake()
+    [SerializeField] GameObject ManPrefab;
+    /// <summary>
+    /// 메뚜기 프리팹
+    /// </summary>
+    [SerializeField] GameObject GraPrefab;
+    /// <summary>
+    /// 작동시 스테이지 랜덤배치
+    /// </summary>
+    GameObject MantisSkin;
+    GameObject GrassSkin;
+    internal void SetStage()
     {
         ArrRandom(enters);
         ArrRandom(leftPatterns);
         ArrRandom(rightPatterns);
         ArrRandom(exits);
-        ArrRandom(rewardSkin);
+        ArrSkin();
+
     }
     /// <summary>
     /// 지정된 게임오브젝트 배열중 하나만 활성화
@@ -44,13 +55,45 @@ public class EasyRandom : MonoBehaviour
         for (int i = Consts.none; i < targetObjs.Length; ++i)
         {
             if (i == whichOne)
-            { 
-                targetObjs[i].SetActive(true); 
+            {
+                targetObjs[i].SetActive(true);
             }
             else
-            { 
-                targetObjs[i].SetActive(false); 
+            {
+                targetObjs[i].SetActive(false);
             }
+        }
+    }
+    void ArrSkin()
+    {
+        int whichOne = Random.Range(Consts.none, Consts.dropSkinAmount);
+        if (whichOne == Consts.none)
+        {
+            if (MantisSkin == null)
+            {
+                MantisSkin = Instantiate(ManPrefab);
+                MantisSkin.transform.position = rewardSkin.transform.position;
+            }
+            else
+            {
+                MantisSkin.SetActive(true);
+            }
+            if (GrassSkin != null)
+                GrassSkin.SetActive(false);
+        }
+        else if (whichOne == Consts.minValue)
+        {
+            if (GrassSkin == null)
+            {
+                GrassSkin = Instantiate(GraPrefab);
+                GrassSkin.transform.position = rewardSkin.transform.position;
+            }
+            else
+            {
+                GrassSkin.SetActive(true);
+            }
+            if (MantisSkin != null)
+                MantisSkin.SetActive(false);
         }
     }
 }
