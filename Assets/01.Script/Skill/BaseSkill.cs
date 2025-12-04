@@ -16,8 +16,8 @@ public abstract class BaseSkill : MonoBehaviour
     protected float originalGravityScale; // 원래 중력값 저장할 변수
     protected Rigidbody2D rb;
     protected PlayerMovement playerMovement;
-    public int playerLayer;
-    public int enemyLayer;
+    public int playerLayer = 3;
+    public int enemyLayer = 6;
 
     public abstract void SkillNum1();
     public abstract void SkillNum2();
