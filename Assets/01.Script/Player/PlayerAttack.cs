@@ -43,7 +43,8 @@ public class PlayerAttack : MonoBehaviour
         Vector2 offset = new Vector2(attackDistance * facingDirection, 0.5f); // 전방
         Vector2 point = origin + offset;
         Collider2D[] hits = Physics2D.OverlapBoxAll(point, attackBoxSize, 0f, enemyLayer);
-        DebugDrawBox(point, attackBoxSize, Color.red, 0.2f);
+        SpawnHitBoxEffect(origin, attackBoxSize, attackDistance, 0.5f, 0.2f); // 0f는 Y축 height, 0.2f는 이펙트 지속 시간
+        //DebugDrawBox(point, attackBoxSize, Color.red, 0.2f);
         foreach (Collider2D hit in hits)
         {
             if (hit.TryGetComponent<Enemy>(out Enemy enemy)) // 실제로 데미지를 주기 위해서 enemy(스크립트)컴퍼넌트가 있는지 확인하고 있으면 데미지로직 실행
@@ -67,5 +68,19 @@ public class PlayerAttack : MonoBehaviour
         Debug.DrawLine(p2, p3, color, duration);
         Debug.DrawLine(p3, p4, color, duration);
         Debug.DrawLine(p4, p1, color, duration);
+    }
+    //private void SpawnHitBoxEffect(Vector2 origin, Vector2 size, float distance, float height, float time)
+    //{
+    //    Vector2 center = origin + Vector2.right * distance * facingDirection + Vector2.up * height;
+
+    //    GameObject go = Instantiate(PlayerSkillController.Instance.hitBoxData.hitBoxPrefab, center, Quaternion.identity);
+    //    go.GetComponent<HitBoxEffect>().Init(size, time);
+    //}
+    private void SpawnHitBoxEffect(Vector2 origin, Vector2 size, float distance, float height, float time)
+    {
+        Vector2 center = origin + Vector2.right * distance * facingDirection + Vector2.up * height;
+
+        GameObject go = Instantiate(PlayerSkillController.Instance.hitBoxData.hitBoxPrefab, center, Quaternion.identity);
+        go.GetComponent<HitBoxEffect>().Init(size, time);
     }
 }

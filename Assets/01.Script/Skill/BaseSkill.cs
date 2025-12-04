@@ -19,6 +19,7 @@ public abstract class BaseSkill : MonoBehaviour
     protected PlayerMovement playerMovement;
     public int playerLayer = 3;
     public int enemyLayer = 6;
+    public int resourceLayer = 8;
 
     public abstract void SkillNum1();
     public abstract void SkillNum2();
@@ -41,6 +42,7 @@ public abstract class BaseSkill : MonoBehaviour
         }
         playerLayer = LayerMask.NameToLayer("Player");
         enemyLayer = LayerMask.NameToLayer("Enemy");
+        resourceLayer = LayerMask.NameToLayer("Resource");
     }
 
     protected Collider2D[] CheckRange(Vector2 size, float distance, float height)
@@ -66,6 +68,7 @@ public abstract class BaseSkill : MonoBehaviour
         Vector2 end = start + direction.normalized * distance;
 
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
+        Physics2D.IgnoreLayerCollision(playerLayer, resourceLayer, true);
         rb.gravityScale = 0f;
         rb.velocity = Vector2.zero;
 
@@ -85,6 +88,7 @@ public abstract class BaseSkill : MonoBehaviour
 
         rb.gravityScale = originalGravityScale;
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, false);
+        Physics2D.IgnoreLayerCollision(playerLayer, resourceLayer, false);
     }
 
 
@@ -145,7 +149,6 @@ public abstract class BaseSkill : MonoBehaviour
         if (playerMovement != null)
             facing = playerMovement.facingDirection;
 
-        // DebugDrawBox에서 쓰던 계산 그대로!
         Vector2 center = origin + Vector2.right * distance * facing + Vector2.up * height;
 
         GameObject go = Instantiate(PlayerSkillController.Instance.hitBoxData.hitBoxPrefab, center, Quaternion.identity);
