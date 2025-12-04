@@ -6,7 +6,7 @@ public class GrasshopperSkill : BaseSkill
 {
     [Header("Skill 1 Settings")]
     public Vector2 skill1BoxSize = new Vector2(3f, 0.5f);
-    public float skill1Distance = -1f;
+    public float skill1Distance = 0f;
     public float skill1Height = 0f;
     public Vector2 attackDirection;
     private float totalDef1;
