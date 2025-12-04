@@ -10,6 +10,8 @@ public class PlayerSkillController : MonoBehaviour
 
     private SkinType skinType;
 
+    public bool initialized = false;
+
     public SkinEnhanceData enhanceCoData;
     public SkinEnhanceData enhanceGrData;
     public SkinEnhanceData enhanceMaData;
@@ -24,10 +26,12 @@ public class PlayerSkillController : MonoBehaviour
         }
 
         Instance = this;
+        SetState(SkinType.Cockroach);
+        DontDestroyOnLoad(gameObject);
     }
     private void Start()
     {
-        SetState(SkinType.Cockroach);
+        //SetState(SkinType.Cockroach);
     }
     private void Update()
     {

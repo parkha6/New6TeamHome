@@ -122,7 +122,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!70 &5566899474584050468
 CapsuleCollider2D:
@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd71e6eb3a8f42a4d9d1dfbcdb3996ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialized: 0
   enhanceCoData: {fileID: 11400000, guid: 5507b907e7954a24fba8d3e1323782f0, type: 2}
   enhanceGrData: {fileID: 11400000, guid: d9d03e42043f4f34f83be462b4445ad7, type: 2}
   enhanceMaData: {fileID: 11400000, guid: 90c940970057ba34980a3cd9fbd52ccb, type: 2}

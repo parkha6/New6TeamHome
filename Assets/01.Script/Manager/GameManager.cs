@@ -56,6 +56,17 @@ public class GameManager : MonoSingleton<GameManager>
     internal void ChangeScene(string sceneName)
     {
         async = SceneManager.LoadSceneAsync(sceneName);
+
+        SceneManager.sceneLoaded += ResetPlayerPosition;
+    }
+
+    private void ResetPlayerPosition(Scene scene, LoadSceneMode mode)
+    {
+        var player = GameObject.FindWithTag("Player");
+        if (player != null)
+            player.transform.position = Vector3.zero;
+
+        SceneManager.sceneLoaded -= ResetPlayerPosition;
     }
     /// <summary>
     /// 일시정지시 UI띄우기
