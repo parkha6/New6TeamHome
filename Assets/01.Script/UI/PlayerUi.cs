@@ -65,13 +65,6 @@ public class PlayerUi : MonoBehaviour
     /// </summary>
     [SerializeField] Image skillIcon2;
     /// <summary>
-    /// 생성시 삭제 막음
-    /// </summary>
-    private void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
-    /// <summary>
     /// 생성시 버튼 연결
     /// </summary>
     private void Start()

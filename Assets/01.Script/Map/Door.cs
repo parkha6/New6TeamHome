@@ -11,12 +11,12 @@ public class Door : MonoBehaviour, IInteractable
     [SerializeField] sceneName whichScene;
     [Header("메인매뉴 씬 이름")]
     [SerializeField] string mainscene;
-    [Header("시작로비 씬 이름")]
-    [SerializeField] string startLobby;
-    [Header("로비 씬 이름")]
-    [SerializeField] string lobby;
-    [Header("쉬움 스테이지 씬 이름")]
-    [SerializeField] string easyStage;
+    [Header("시작로비 씬 문짝")]
+    [SerializeField] GameObject startLobby;
+    [Header("로비 씬 문짝")]
+    [SerializeField] GameObject lobby;
+    [Header("쉬움 스테이지 씬 문짝")]
+    [SerializeField] GameObject easyStage;
     /// <summary>
     /// 작동하는 문인지 판단하는 불값
     /// </summary>
@@ -86,21 +86,21 @@ public class Door : MonoBehaviour, IInteractable
                     if (startLobby != null)
                     {
                         Debug.Log("시작로비 씬 이동");
-                        GameManager.Instance.ChangeScene(startLobby);
+                        GameManager.Instance.nextDoorPosition = startLobby.transform.position;
                     }
                         break;
                 case sceneName.Lobby:
                     if (lobby != null)
                     {
                         Debug.Log("로비 씬 이동");
-                        GameManager.Instance.ChangeScene(lobby);
+                        GameManager.Instance.nextDoorPosition = lobby.transform.position;
                     }
                         break;
                 case sceneName.EasyStage:
                     if (easyStage != null)
                     {
                         Debug.Log("스테이지 씬 이동");
-                        GameManager.Instance.ChangeScene(easyStage);
+                        GameManager.Instance.nextDoorPosition = easyStage.transform.position;
                     }
                         break;
                 case sceneName.None:

@@ -144,11 +144,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5158524683788387127, guid: 372c21bf442800f488d6826714dd9cfe, type: 3}
       propertyPath: m_LocalScale.y
-      value: 700
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5158524683788387127, guid: 372c21bf442800f488d6826714dd9cfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4
+      value: -8.8
       objectReference: {fileID: 0}
     - target: {fileID: 5158524683788387127, guid: 372c21bf442800f488d6826714dd9cfe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -350,11 +350,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5158524683788387127, guid: 372c21bf442800f488d6826714dd9cfe, type: 3}
       propertyPath: m_LocalScale.y
-      value: 700
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5158524683788387127, guid: 372c21bf442800f488d6826714dd9cfe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5158524683788387127, guid: 372c21bf442800f488d6826714dd9cfe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -416,15 +416,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1656871121725467314, guid: 169db90c41bbe434195d06b82edca2c5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2800
+      value: 3000
       objectReference: {fileID: 0}
     - target: {fileID: 1656871121725467314, guid: 169db90c41bbe434195d06b82edca2c5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7
+      value: -9.8734
       objectReference: {fileID: 0}
     - target: {fileID: 1656871121725467314, guid: 169db90c41bbe434195d06b82edca2c5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1656871121725467314, guid: 169db90c41bbe434195d06b82edca2c5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -564,6 +564,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5507b907e7954a24fba8d3e1323782f0, type: 2}
   - {fileID: 11400000, guid: d9d03e42043f4f34f83be462b4445ad7, type: 2}
   - {fileID: 11400000, guid: 90c940970057ba34980a3cd9fbd52ccb, type: 2}
+  player: {fileID: 0}
+  closeDistance: 3
   enhanceUI: {fileID: 0}
   mantisText: {fileID: 0}
   grasshopperText: {fileID: 0}
