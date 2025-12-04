@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     public int enemyLayer;
     private int maxDashCount = 1;
     private int dashCount;
+    private int maxJumpCount = 2;
+    private int jumpCount;
     public float facingDirection { get; private set; } = 1.0f; // 바라보는 방향 디폴트는 1f(오른쪽)
     private float originalGravityScale; // 원래 중력값 저장할 변수
     private Collider2D playerCollider;
@@ -48,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnJump(InputAction.CallbackContext context)
     {
-        if(context.started && isGrounded)
+        if(context.started && jumpCount < maxJumpCount)
         {
             Jump();
         }
@@ -81,6 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump()
     {
+        jumpCount++;
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         isGrounded = false;
     }
@@ -93,6 +96,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             isGrounded = true;
+            jumpCount = 0;
         }
     }
 
