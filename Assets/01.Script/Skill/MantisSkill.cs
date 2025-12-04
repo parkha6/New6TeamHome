@@ -67,7 +67,7 @@ public class MantisSkill : BaseSkill
     public override void SkillNum2()
     {
         float playerAtk = PlayerManager.Instance.TotalAttack();
-        if (enhanceData.currentLevel >= 1)
+        if (enhanceData.currentLevel >= 3)
         {
             totalAtk2 = playerAtk * 2f;
         }
