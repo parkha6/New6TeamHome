@@ -11,8 +11,8 @@ public class MantisSkill : BaseSkill
 
     [Header("Skill 2 Settings")]
     public Vector2 skill2BoxSize = new Vector2(3.5f, 0.5f);
-    public float skill2Distance = 0.4f;
-    public float skill2Height = 1f;
+    public float skill2Distance = -0.1f;
+    public float skill2Height = 0.5f;
 
     [Header("SkillEnhance Data")]
     public SkinEnhanceData enhanceData;

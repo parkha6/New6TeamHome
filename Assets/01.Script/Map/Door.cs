@@ -77,20 +77,32 @@ public class Door : MonoBehaviour, IInteractable
             {
                 case sceneName.MainScene:
                     if (mainscene != null)
+                    {
+                        Debug.Log("메인 씬 이동");
                         GameManager.Instance.ChangeScene(mainscene);
+                    }
                     break;
                 case sceneName.StartLobby:
                     if (startLobby != null)
+                    {
+                        Debug.Log("시작로비 씬 이동");
                         GameManager.Instance.ChangeScene(startLobby);
-                    break;
+                    }
+                        break;
                 case sceneName.Lobby:
                     if (lobby != null)
+                    {
+                        Debug.Log("로비 씬 이동");
                         GameManager.Instance.ChangeScene(lobby);
-                    break;
+                    }
+                        break;
                 case sceneName.EasyStage:
                     if (easyStage != null)
+                    {
+                        Debug.Log("스테이지 씬 이동");
                         GameManager.Instance.ChangeScene(easyStage);
-                    break;
+                    }
+                        break;
                 case sceneName.None:
                 default:
                     break;
