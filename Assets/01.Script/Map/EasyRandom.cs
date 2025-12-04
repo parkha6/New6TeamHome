@@ -34,7 +34,6 @@ public class EasyRandom : MonoBehaviour
         ArrRandom(rightPatterns);
         ArrRandom(exits);
         ArrRandom(rewardSkin);
-        GameManager.Instance.PlayerUi.SetPlayerScreenUi(false);
     }
     /// <summary>
     /// 지정된 게임오브젝트 배열중 하나만 활성화

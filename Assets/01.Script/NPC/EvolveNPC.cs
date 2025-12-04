@@ -11,15 +11,35 @@ public class EvolveNPC : MonoBehaviour, IInteractable
     public PermanentStats permanentStats;
     public EvolutionUpgradeData[] upgrades;
     public GameObject evolutionUI;
+
     public TextMeshProUGUI atkText;
     public TextMeshProUGUI defText;
     public TextMeshProUGUI hpText;
     public TextMeshProUGUI speedText;
 
+    public Transform player;      // 플레이어 Transform
+    public float closeDistance = 3f; // 이 거리보다 멀어지면 UI 닫기
+
     public void Start()
     {
         evolutionUI.SetActive(false);
         UITextSet();
+    }
+
+    void Update()
+    {
+        // 🔹 UI가 열려 있을 때만 거리 체크
+        if (evolutionUI != null && evolutionUI.activeSelf)
+        {
+            if (player == null) return;
+
+            float dist = Vector3.Distance(player.position, transform.position);
+
+            if (dist > closeDistance)
+            {
+                evolutionUI.SetActive(false);
+            }
+        }
     }
 
     public void OnInteraction()

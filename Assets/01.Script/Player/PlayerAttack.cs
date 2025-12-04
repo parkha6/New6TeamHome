@@ -40,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
     {
         float playerAtk = PlayerManager.Instance.TotalAttack();
         Vector2 origin = rb.position; 
-        Vector2 offset = new Vector2(attackDistance * facingDirection, 0f); // 전방
+        Vector2 offset = new Vector2(attackDistance * facingDirection, 0.5f); // 전방
         Vector2 point = origin + offset;
         Collider2D[] hits = Physics2D.OverlapBoxAll(point, attackBoxSize, 0f, enemyLayer);
         DebugDrawBox(point, attackBoxSize, Color.red, 0.2f);

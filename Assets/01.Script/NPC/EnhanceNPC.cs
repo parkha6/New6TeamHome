@@ -6,6 +6,8 @@ public class EnhanceNPC : MonoBehaviour, IInteractable
     public CurrencyWallet wallet;          // 재화
     public SkinUpdateState skinState;      // 각 외피 강화 레벨
     public SkinEnhanceData[] enhances;     // Mantis / Grasshopper / Cockroach 강화 데이터들
+    public Transform player;      // 플레이어 Transform
+    public float closeDistance = 3f; // 이 거리보다 멀어지면 UI 닫기
 
     // 강화 UI 패널 + 텍스트들
     public GameObject enhanceUI;
@@ -19,6 +21,22 @@ public class EnhanceNPC : MonoBehaviour, IInteractable
             enhanceUI.SetActive(false);
 
         UITextSet();
+    }
+
+    void Update()
+    {
+        // UI가 열려 있을 때만 거리 체크
+        if (enhanceUI != null && enhanceUI.activeSelf)
+        {
+            if (player == null) return;
+
+            float dist = Vector3.Distance(player.position, transform.position);
+
+            if (dist > closeDistance)
+            {
+                enhanceUI.SetActive(false);
+            }
+        }
     }
 
     public void OnInteraction()

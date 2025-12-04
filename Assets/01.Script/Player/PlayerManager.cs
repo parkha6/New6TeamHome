@@ -59,8 +59,6 @@ public class PlayerManager : MonoBehaviour
             {
                 CharacterData defaultStatus = playerArray[0].ToObject<CharacterData>();
                 CurrentSaveData.status = defaultStatus;
-                //CurrentSaveData.inventoryStacks = new Dictionary<int, int> //추후 인벤토리 제작 후 주석해제
-
                 //Debug.Log("기본 아이템을 가지고 시작합니다"); // 초기 아이템 있다면 추가
                 Debug.Log("디폴트 플레이어로 시작합니다");
             }
@@ -72,55 +70,8 @@ public class PlayerManager : MonoBehaviour
         OnPlayerStatusChanged?.Invoke();
         OnPlayerInvChanged?.Invoke(); // 초기 로드 후 UI에 알려줌
     }
-    //public void AddItem(int itemID) // 아이템 추가
-    //{
-    //    if (CurrentSaveData.inventoryStacks.ContainsKey(itemID))
-    //    {
-    //        CurrentSaveData.inventoryStacks[itemID]++; // 딕셔너리에 이미 있으면 수량 추가
-    //    }
-    //    else
-    //    {
-    //        CurrentSaveData.inventoryStacks.Add(itemID, 1); // 없으면 1개 새로 추가 
-    //    }
-    //    OnPlayerInvChanged?.Invoke(); // 인벤 바뀐거 알려주고 오토 세이브 
-    //} //인벤토리 추가되면 주석 해제
 
-    //public void RemoveItem(int itemID, int amount = 1) // 아이템 사용 이하는 additem이랑 거의 같음.
-    //{
-    //    if (CurrentSaveData.inventoryStacks.ContainsKey(itemID))
-    //    {
-    //        CurrentSaveData.inventoryStacks[itemID] -= amount;
 
-    //        if (CurrentSaveData.inventoryStacks[itemID] < 0)
-    //        {
-    //            CurrentSaveData.inventoryStacks.Remove(itemID);
-    //        }
-    //        OnPlayerInvChanged?.Invoke();
-    //    }
-    //} 인벤토리 추가되먼 주석해제
-    public void AddItem(ItemData data)
-    {
-        if(data.itemType != ItemType.Currency)
-        {
-            Debug.LogError($"{data.itemName}은 Currency 타입이 아닙니다");
-            return;
-        }
-        int currencyValue = 1;
-        string currencyName = data.itemName;
-        int currencyId = data.id;
-
-        if (CurrencyAmounts.ContainsKey(currencyId))
-        {
-            CurrencyAmounts[currencyId] += currencyValue;
-            Debug.Log($"{data.itemName}을  {currencyValue}개 만큼 획득하였습니다.");
-        }
-        else
-        {
-            CurrencyAmounts.Add(currencyId, currencyValue); // 획득한 적 없는 화폐(딕셔너리에 id가없음)라면 새로 추가하고 수량을 설정
-        }
-        OnPlayerInvChanged?.Invoke(); // 나중에 가져가서 구독하세요
-
-    }
     public void EquipItem(EquipmentItemData data) // 나중에 itemdata 받아서 다시 수정
     {
         string slotKey;
@@ -146,32 +97,6 @@ public class PlayerManager : MonoBehaviour
         Debug.Log($"{TotalAttack()}공격력 적용");
         OnPlayerInvChanged?.Invoke();// 나중에 가져가서 구독하세요
         OnPlayerStatusChanged?.Invoke();// 나중에 가져가서 구독하세요
-    }
-    public void OnSkinItemPickedUp(EquipmentItemData skinData)
-    {
-        EquipItem(skinData);
-        Debug.Log($"{skinData.itemName}을(를) 획득하고 장착했습니다.");
-    }
-
-    public void UnEquipItem(EquipmentItemData data)
-    {
-        string slotKey;
-        if (data.itemType.ToString() == "Equipment")
-        {
-            slotKey = "weapon"; 
-        }
-        else
-        {
-            return;
-        }
-        //string type = data.type.ToLower();
-        if (EquippedItems.ContainsKey(slotKey) && EquippedItems[slotKey].id == data.id)
-        {
-            EquippedItems.Remove(slotKey);
-            Debug.Log($"{data.itemName} 해제 완료. 상태 업데이트.");
-            OnPlayerInvChanged?.Invoke();
-            OnPlayerStatusChanged?.Invoke();
-        }
     }
 
     public float TotalAttack()
