@@ -59,12 +59,7 @@ public class Door : MonoBehaviour, IInteractable
             { 
                 fkeyUi.SetActive(false); 
             }
-            else
-                Debug.Log("F키 UI가 없음");
         }
-        else
-            Debug.Log("플레이어가 아님");
-        Debug.Log("충돌인식은 되나?");
     }
     /// <summary>
     /// 작동하는 문이면 씬을 이동한다.

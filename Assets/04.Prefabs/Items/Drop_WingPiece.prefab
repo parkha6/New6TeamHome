@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6621429380532408385}
   - component: {fileID: -289185543435644871}
   - component: {fileID: 8278089573586527060}
-  m_Layer: 7
+  m_Layer: 8
   m_Name: Drop_WingPiece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.25}
+  m_Size: {x: 0.15, y: 0.15}
   m_EdgeRadius: 0
 --- !u!114 &8278089573586527060
 MonoBehaviour:
