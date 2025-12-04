@@ -15,7 +15,9 @@ MonoBehaviour:
   enhanceName: Cockreach
   description: 
   skinType: 2
-  maxLevel: 3
+  maxLevel: 1
   costs:
   - item: {fileID: 11400000, guid: 3521be1c7d7330742b8669a95eabebe8, type: 2}
     amount: 0
+  enhanceValues:
+  - 0
