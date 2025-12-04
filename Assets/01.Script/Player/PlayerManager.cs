@@ -17,7 +17,6 @@ public class PlayerManager : MonoBehaviour
     public event Action OnPlayerInvChanged; // invUI에 알려주기 위한 이벤트
     public bool isInvincible = false;
     public float invincibilityDuration; //무적 지속 시간
-    float baseValue = 1.0f;
     [SerializeField] private EvolutionUpgradeData evAttackData;
     [SerializeField] private EvolutionUpgradeData evDefenceData;
     [SerializeField] private EvolutionUpgradeData evHPData;
