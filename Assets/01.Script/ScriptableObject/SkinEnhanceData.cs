@@ -12,4 +12,5 @@ public class SkinEnhanceData : ScriptableObject
     public int maxLevel;
 
     public EvolutionCost[] costs;
+    public float[] enhanceValues;
 }
