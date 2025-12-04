@@ -80,13 +80,13 @@ public class Enemy : MonoBehaviour, IDamageable
         Rigidbody2D rb = drop.GetComponent<Rigidbody2D>();
         if (rb == null) return;
 
-        // 3) 랜덤 방향 + 위로 튀어오르게 힘 주기
-        Vector2 ranPop = new Vector2(UnityEngine.Random.Range(-1f, 1f), 1f).normalized;
+        // 랜덤 방향 위
+        Vector2 ranPop = new Vector2(UnityEngine.Random.Range(-0.3f, 0.3f), 1.5f).normalized;
         float force = UnityEngine.Random.Range(3f, 6f);
 
         rb.AddForce(ranPop * force, ForceMode2D.Impulse);
 
-        // 4) 랜덤 회전도 살짝 추가(있으면 느낌 좋음)
+        // 랜덤 회전
         float torque = UnityEngine.Random.Range(-2f, 2f);
         rb.AddTorque(torque, ForceMode2D.Impulse);
     }
