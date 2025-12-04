@@ -16,6 +16,8 @@ public class EvolutionUpgradeData : ScriptableObject
 
     public EvolutionStatType statType;
     public int maxLevel;
+    [Header("현재 강화 레벨 (0 ~ maxLevel)")]
+    public int currentLevel;
 
     public EvolutionCost[] costs;
     public float[] evolveValues;
