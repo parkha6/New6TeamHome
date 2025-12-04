@@ -153,6 +153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   systemPhase: 0
   playerUiPrefab: {fileID: 4769970095234070474, guid: 2d2ac6099a37a804c8cf397ea2eaee32, type: 3}
+  easyMapPrefab: {fileID: 0}
 --- !u!4 &203902840
 Transform:
   m_ObjectHideFlags: 0

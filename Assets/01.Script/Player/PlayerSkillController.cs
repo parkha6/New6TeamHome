@@ -16,6 +16,8 @@ public class PlayerSkillController : MonoBehaviour
     public SkinEnhanceData enhanceGrData;
     public SkinEnhanceData enhanceMaData;
 
+    public SkillHitBoxData hitBoxData;
+
     private void Awake()
     {
         // 같은 씬에서 중복 생성 방지
@@ -26,12 +28,11 @@ public class PlayerSkillController : MonoBehaviour
         }
 
         Instance = this;
-        SetState(SkinType.Cockroach);
         DontDestroyOnLoad(gameObject);
     }
     private void Start()
     {
-        //SetState(SkinType.Cockroach);
+        SetState(SkinType.Cockroach);
     }
     private void Update()
     {

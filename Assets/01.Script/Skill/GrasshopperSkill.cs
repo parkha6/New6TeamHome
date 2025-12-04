@@ -11,8 +11,8 @@ public class GrasshopperSkill : BaseSkill
     public Vector2 attackDirection;
 
     [Header("Skill 2 Settings")]
-    public Vector2 skill2BoxSize = new Vector2(0.5f, 1f);
-    public float skill2Distance = 0.5f;
+    public Vector2 skill2BoxSize = new Vector2(2f, 1f);
+    public float skill2Distance = 0f;
     public float skill2Height = 0.5f;
 
     [Header("SkillEnhance Data")]
