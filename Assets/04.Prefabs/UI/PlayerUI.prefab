@@ -1769,12 +1769,12 @@ GameObject:
   - component: {fileID: 4505319219143054532}
   - component: {fileID: 2311950146115901024}
   m_Layer: 5
-  m_Name: Circle2
+  m_Name: StageCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2987053518201753124
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2528,6 +2528,13 @@ MonoBehaviour:
   skinIcon: {fileID: 7360009940303331251}
   skillIcon1: {fileID: 6701539233082182633}
   skillIcon2: {fileID: 7868634662921410171}
+  startLobbycircle: {fileID: 5452463726657063231}
+  stagecircle: {fileID: 3727035873725651882}
+  lobbycircle: {fileID: 6487253381090692279}
+  currentPlaceIcon: {fileID: 690975357201654721}
+  startLobbyIcon: {fileID: 21300000, guid: 2a2f32a287b9a8e41bb5649814cd0998, type: 3}
+  stageIcon: {fileID: 21300000, guid: c3e5b74a6ea7b4e4f8b52daa595e3ba5, type: 3}
+  lobbyIcon: {fileID: 21300000, guid: 6c2bb00dcfdd3dc4e87261ddf5e3f3d1, type: 3}
 --- !u!1 &4793221245222950214
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,7 +2971,7 @@ GameObject:
   - component: {fileID: 5036002579273613595}
   - component: {fileID: 7064038221345859292}
   m_Layer: 5
-  m_Name: Circle1
+  m_Name: StartLobbyCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3389,12 +3396,12 @@ GameObject:
   - component: {fileID: 8093006379067699621}
   - component: {fileID: 3152918213933841894}
   m_Layer: 5
-  m_Name: Circle3
+  m_Name: LobbyCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4658932615324309790
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4986,7 +4993,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 2a2f32a287b9a8e41bb5649814cd0998, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

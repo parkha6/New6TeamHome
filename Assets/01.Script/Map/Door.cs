@@ -87,6 +87,7 @@ public class Door : MonoBehaviour, IInteractable
                     {
                         Debug.Log("시작로비 씬 이동");
                         GameManager.Instance.nextDoorPosition = startLobby.transform.position;
+                        GameManager.Instance.PlayerUi.SetStartLobbyCircle();
                     }
                         break;
                 case sceneName.Lobby:
@@ -94,6 +95,7 @@ public class Door : MonoBehaviour, IInteractable
                     {
                         Debug.Log("로비 씬 이동");
                         GameManager.Instance.nextDoorPosition = lobby.transform.position;
+                        GameManager.Instance.PlayerUi.SetLobbyCircle();
                     }
                         break;
                 case sceneName.EasyStage:
@@ -102,6 +104,7 @@ public class Door : MonoBehaviour, IInteractable
                         Debug.Log("스테이지 씬 이동");
                         GameManager.Instance.EnterStage();
                         GameManager.Instance.nextDoorPosition = easyStage.transform.position;
+                        GameManager.Instance.PlayerUi.SetStageCircle();
                     }
                         break;
                 case sceneName.None:
