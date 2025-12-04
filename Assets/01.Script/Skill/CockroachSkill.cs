@@ -29,23 +29,16 @@ public class CockroachSkill : BaseSkill
         {
             SkillNum1();
         }
-        if (enhanceData.maxLevel >= 2)
+        if (Input.GetKeyDown(KeyCode.S))
         {
-            if (Input.GetKeyDown(KeyCode.S))
-            {
-                SkillNum2();
-            }
+            SkillNum2();
         }
-
     }
 
     public override void SkillNum1()
     {
         float playerAtk = PlayerManager.Instance.TotalAttack();
-        if (enhanceData.currentLevel >= 1) 
-        {
-            totalAtk1 = playerAtk * 1.7f;
-        }
+        totalAtk1 = playerAtk * 1.7f;
         float currentFacingDirection = playerMovement.facingDirection;
         Vector2 attackDirection = new Vector2(currentFacingDirection, 0);
         CaptureSkillOrigin();

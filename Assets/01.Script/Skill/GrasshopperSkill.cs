@@ -61,7 +61,7 @@ public class GrasshopperSkill : BaseSkill
         float playerDef = PlayerManager.Instance.TotalDef();
         if (enhanceData.currentLevel >= 1)
         {
-            totalDef1 = playerDef * 1.7f;
+            totalDef1 = playerDef * 2f;
         }
         // 좌우 방향을 Jump에 적용
         yield return StartCoroutine(Jump(attackDirection, 2.5f, 4, 0.6f));
@@ -87,9 +87,9 @@ public class GrasshopperSkill : BaseSkill
     public override void SkillNum2()
     {
         float playerDef = PlayerManager.Instance.TotalDef();
-        if (enhanceData.currentLevel >= 1)
+        if (enhanceData.currentLevel >= 3)
         {
-            totalDef2 = playerDef * 1.7f;
+            totalDef2 = playerDef * 2f;
         }
         float currentFacingDirection = playerMovement.facingDirection;
         Vector2 attackDirection = new Vector2(currentFacingDirection, 0);
