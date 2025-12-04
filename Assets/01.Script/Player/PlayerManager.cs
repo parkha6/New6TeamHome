@@ -44,6 +44,13 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 시작시 스텟 삽입
+    /// </summary>
+    private void Start()
+    {
+        PutStatInUi();
+    }
     private void LoadDefaultData()
     {
         if (defaultPlayerDataAsset == null)
@@ -97,6 +104,7 @@ public class PlayerManager : MonoBehaviour
         Debug.Log($"{TotalAttack()}공격력 적용");
         Debug.Log($"{TotalDef()}방어력 적용");
         Debug.Log($"{TotalHP()}HP 적용");
+        PutStatInUi();
         OnPlayerInvChanged?.Invoke();// 나중에 가져가서 구독하세요
         OnPlayerStatusChanged?.Invoke();// 나중에 가져가서 구독하세요
     }
@@ -167,10 +175,7 @@ public class PlayerManager : MonoBehaviour
         isInvincible = false;
         Debug.Log("무적 종료");
     }
-    /// <summary>
-    /// 시작시 스텟 삽입
-    /// </summary>
-    private void Start()
+    void PutStatInUi()
     {
         float itemAtkValue = Consts.none;
         float itemDefValue = Consts.none;
@@ -183,7 +188,7 @@ public class PlayerManager : MonoBehaviour
             itemSpdValue += item.spdValue;
             itemHpValue += item.hpValue;
         }
-        GameManager.Instance.PlayerUi.SetStat(itemAtkValue,itemDefValue,itemSpdValue,itemHpValue);
+        GameManager.Instance.PlayerUi.SetStat(itemAtkValue, itemDefValue, itemSpdValue, itemHpValue);
     }
 
 }
