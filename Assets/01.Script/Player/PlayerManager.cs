@@ -6,17 +6,21 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
     public event Action OnPlayerStatusChanged; // statusUI에 알려주기 위한 이벤트
     public event Action OnPlayerInvChanged; // invUI에 알려주기 위한 이벤트
-    public bool isInvincible = false; 
+    public bool isInvincible = false;
     public float invincibilityDuration; //무적 지속 시간
+    float baseValue = 1.0f;
+    [SerializeField] private EvolutionUpgradeData evAttackData;
+
+    public Dictionary<EvolutionStatType, int> AppliedEvolutionLevels = new Dictionary<EvolutionStatType, int>();
 
     public Dictionary<string, EquipmentItemData> EquippedItems { get; private set; } = new Dictionary<string, EquipmentItemData>();
     public Dictionary<int, int> CurrencyAmounts { get; private set; } = new Dictionary<int, int>(); // item의 id를 사용하여 딕셔너리로 관리
@@ -112,10 +116,11 @@ public class PlayerManager : MonoBehaviour
     public float TotalAttack()
     {
         float totalAttack = CurrentStatus.ATK;
+        totalAttack += evAttackData.evolveValues[]; // currentlevel값 찾아서 넣
         float itemAtkValue = Consts.none;
         foreach (var item in EquippedItems.Values)
         {
-            totalAttack += totalAttack * item.atkValue; // 추후 강화value도 추가하자.
+            totalAttack += totalAttack * item.atkValue; // 추후 강화value도 추가하자. so를 가지고있자
             itemAtkValue += item.atkValue;
         }
         GameManager.Instance.PlayerUi.SetAtkStat(itemAtkValue);
