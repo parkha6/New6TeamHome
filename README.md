@@ -39,4 +39,5 @@
 
   ## 프레임 워크
 ![프레임 워크 이미지](https://github.com/parkha6/New6TeamHome/blob/main/ReadMe/Frame.png?raw=true)  
+* 새창에서 열기를 추천드립니다.
 ![플레이어 프레임 워크](https://github.com/parkha6/New6TeamHome/blob/main/ReadMe/Player.png?raw=true)
