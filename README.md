@@ -38,4 +38,4 @@
 - 곽민진 : 스테이지, 게임 매니저, UI
 
   ## 프레임 워크
-![이미지](주소)
+![프레임 워크 이미지](https://github.com/parkha6/New6TeamHome/blob/main/ReadMe/Frame.png?raw=true)
