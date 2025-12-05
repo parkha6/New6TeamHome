@@ -39,6 +39,8 @@
 - 곽민진 : 게임매니저, 스테이지, UI 담당
 
   ## 프레임 워크
+### 게임 로직
 * 새창에서 열기를 추천드립니다.
 ![프레임 워크 이미지](https://github.com/parkha6/New6TeamHome/blob/main/ReadMe/Frame.png?raw=true)  
+### 플레이어 로직
 ![플레이어 프레임 워크](https://github.com/parkha6/New6TeamHome/blob/main/ReadMe/Player.png?raw=true)
