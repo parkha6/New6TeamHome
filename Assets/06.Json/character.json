@@ -1,0 +1,40 @@
+
+ [
+ {
+  "ID": 10001,
+  "Name": "Player",
+  "ATK": 10,
+  "DEF": 5,
+  "SPD": 3,
+  "HP": 100,
+  "Atk_Value": 1,
+  "Def_Value": 1,
+  "Spd_Value_min": 1,
+  "Spd_Value_max": 2
+ },
+ {
+  "ID": 10002,
+  "Name": "Enemy",
+  "ATK": 5,
+  "DEF": 0,
+  "SPD": 1,
+  "HP": 50,
+  "Atk_Value": 1,
+  "Def_Value": 1,
+  "Spd_Value_min": 1,
+  "Spd_Value_max": 1
+ },
+ {
+  "ID": 10003,
+  "Name": "Ant",
+  "ATK": 10,
+  "DEF": 5,
+  "SPD": 0,
+  "HP": 20,
+  "Atk_Value": 0.3,
+  "Def_Value": 0.3,
+  "Spd_Value_min": 0.3,
+  "Spd_Value_max": 0.6
+ }
+ ]
+ 
